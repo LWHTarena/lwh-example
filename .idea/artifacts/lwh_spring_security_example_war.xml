@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lwh-spring-security-example:war">
+    <output-path>$PROJECT_DIR$/lwh-spring-security-example/target</output-path>
+    <root id="archive" name="lwh-spring-security-example.war">
+      <element id="artifact" artifact-name="lwh-spring-security-example:war exploded" />
+    </root>
+  </artifact>
+</component>
