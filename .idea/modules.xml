@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/lwh-example.iml" filepath="$PROJECT_DIR$/lwh-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lwh-lucene-example/lwh-lucene-example.iml" filepath="$PROJECT_DIR$/lwh-lucene-example/lwh-lucene-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/lwh-spring-security-example/lwh-spring-security-example.iml" filepath="$PROJECT_DIR$/lwh-spring-security-example/lwh-spring-security-example.iml" />
     </modules>
   </component>

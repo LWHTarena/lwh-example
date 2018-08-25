@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lwh-lucene-example" />
         <module name="lwh-spring-security-example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="lwh-example" target="1.7" />
+      <module name="lwh-lucene-example" target="1.7" />
       <module name="lwh-spring-security-example" target="1.7" />
     </bytecodeTargetLevel>
   </component>

@@ -21,6 +21,7 @@
     
     <modules>
         <module>lwh-spring-security-example</module>
+        <module>lwh-lucene-example</module>
     </modules>
 
 
