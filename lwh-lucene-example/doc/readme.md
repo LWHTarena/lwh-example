@@ -31,3 +31,4 @@ Directory(4个子类)
 - IndexableField 文档内部数据信息
 - IndexWriterConfig 索引生成配置信息
 - IndexWriter  索引生成对象
+

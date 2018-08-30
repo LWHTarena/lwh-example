@@ -22,6 +22,7 @@
     <modules>
         <module>lwh-spring-security-example</module>
         <module>lwh-lucene-example</module>
+        <module>lwh-hibernate-search-example</module>
     </modules>
 
 
