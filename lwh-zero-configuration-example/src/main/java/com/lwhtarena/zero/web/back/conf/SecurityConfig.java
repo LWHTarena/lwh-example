@@ -79,6 +79,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(encodeFilter, CsrfFilter.class); // 放在csrf filter前面
         http.headers().disable();
         HeaderWriter headerWriter = new HeaderWriter() {
+            @Override
             public void writeHeaders(HttpServletRequest request, HttpServletResponse response) {
                 response.setHeader("Cache-Control", "no-cache, no-store, max-age=0, must-revalidate");
                 response.setHeader("Expires", "0");
