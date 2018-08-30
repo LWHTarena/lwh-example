@@ -1,5 +1,6 @@
 package com.lwhtarena.zero.web.back.conf;
 
+import com.lwhtarena.zero.web.cache.conf.CacheConfig;
 import com.lwhtarena.zero.web.dao.conf.DatabaseConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -32,7 +33,7 @@ public class WebApplicationInitializer extends AbstractAnnotationConfigDispatche
      */
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { BackConfig.class, DatabaseConfig.class, SecurityConfig.class };
+        return new Class[] { BackConfig.class, DatabaseConfig.class, SecurityConfig.class, CacheConfig.class };
     }
     @Override
     protected Class<?>[] getServletConfigClasses() {
