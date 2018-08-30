@@ -2,8 +2,10 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lwh-h2-example" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-hibernate-search-example" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-lucene-example" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-spring-security-example" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lwh-zero-configuration-example" charset="UTF-8" />
   </component>
 </project>

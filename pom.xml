@@ -24,6 +24,7 @@
         <module>lwh-lucene-example</module>
         <module>lwh-hibernate-search-example</module>
         <module>lwh-zero-configuration-example</module>
+        <module>lwh-h2-example</module>
     </modules>
 
 

@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lwh-h2-example" />
         <module name="lwh-hibernate-search-example" />
         <module name="lwh-lucene-example" />
         <module name="lwh-spring-security-example" />
+        <module name="lwh-zero-configuration-example" />
       </profile>
     </annotationProcessing>
   </component>
