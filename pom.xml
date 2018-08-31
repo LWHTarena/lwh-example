@@ -25,6 +25,7 @@
         <module>lwh-hibernate-search-example</module>
         <module>lwh-zero-configuration-example</module>
         <module>lwh-h2-example</module>
+        <module>lwh-springmvc5-hibernate5-example</module>
     </modules>
 
 
