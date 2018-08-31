@@ -54,3 +54,23 @@ Memory-Only数据库不是持久化的而是全部在随机访问的内存中。
 空的数据库。这个特点的副作用就是让那些新用户产生疑惑。在指定连接已存在的数据库路径的时候，如果出现了什么错误的话，就会建立
 一个指向新数据库的连接。为了解决这个问题，你可以指定一个连接属性ifexists=true只允许和已存在的数据库建立连接而避免创建新
 的数据库，如果数据库不存在的话，getConnection()方法将会抛出异常。
+
+Hsqldb有四种运行模式：
++ 1、内存（Memory-Only）模式，这种很少用，还不如直接List<Map<?,?>>呢
+```$xslt
+DriverManager.getConnection("jdbc:hsqldb:mem:dbname","username","password");
+```
++ 2、进行（In-Process）模式,通俗的来说就是类似sqlite的文件形式的数据库，可以试一下在Android上应该也没多大的问题
+```$xslt
+DriverManager.getConnection("jdbc:hsqldb:file:/E:/hsqldb/data/dbname","username","password");
+DriverManager.getConnection("file:/opt/db/dbname","username","password");
+DriverManager.getConnection("jdbc:hsqldb:file:dbname","username","password");
+```
++ 3、服务器模式，当然这种在Android上也没啥问题.
+```$xslt
+DriverManager.getConnection("jdbc:hsqldb:hsql://localhost:port/dbname","username","password");
+```
++ 4、Web服务器模式
+```$xslt
+DriverManager.getConnection("jdbc:hsqldb:hsql://localhost:port/dbname","username","password");
+```
