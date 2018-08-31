@@ -24,7 +24,7 @@ public class hsqlmain {
         System.out.println("-----------------------------");
         try {
             Class.forName("org.hsqldb.jdbcDriver");
-            connection = DriverManager.getConnection("jdbc:hsqldb:mem:aname", "sa", "");
+            connection = DriverManager.getConnection("jdbc:hsqldb:mem:lwhtarena", "sa", "");
             Statement statement =null;
             ResultSet resultSet =null;
 

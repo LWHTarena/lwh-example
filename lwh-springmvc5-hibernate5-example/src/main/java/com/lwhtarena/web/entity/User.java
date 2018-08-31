@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "TBL_USERS")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue

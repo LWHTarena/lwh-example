@@ -32,7 +32,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("")
+    @GetMapping("/")
     public String userForm(Locale locale, Model model) {
         model.addAttribute("users", userService.list());
         return "editUsers";
