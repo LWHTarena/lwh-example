@@ -10,3 +10,5 @@ Hibernate5
 hibernate-search
 
 Lucene7.4
+
+框架整合实现零配置
