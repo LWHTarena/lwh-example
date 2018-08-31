@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/lwh-h2-example" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-hibernate-search-example" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-spring-security-example" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-springmvc5-hibernate5-example" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-zero-configuration-example" />
   </component>
   <component name="MavenProjectsManager">

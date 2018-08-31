@@ -10,6 +10,7 @@
         <module name="lwh-hibernate-search-example" />
         <module name="lwh-lucene-example" />
         <module name="lwh-spring-security-example" />
+        <module name="lwh-springmvc5-hibernate5-example" />
         <module name="lwh-zero-configuration-example" />
       </profile>
     </annotationProcessing>
