@@ -1,7 +1,7 @@
 # lwh-example
 学习各类框架的example
 
-内存数据库HSQLDB、H2
+内存数据库HSQLDB、H2、SQLite
 
 SpringMVC5
 
