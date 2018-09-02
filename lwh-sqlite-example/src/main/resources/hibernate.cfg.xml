@@ -16,7 +16,8 @@
         <!--注：hsqldb的默认用户是sa密码为空。-->
         <property name="hibernate.connection.username"></property>
         <property name="hibernate.connection.password"></property>
-        <property name="hibernate.connection.url">jdbc:sqlite:lwhtarena.db</property>
+        <property name="hibernate.connection.url">jdbc:sqlite:C:\liwenhao\lwh-example\lwh-sqlite-example\src\main\resources\lwhtarena.db</property>
+        <!--<property name="hibernate.connection.url">jdbc:sqlite:lwhtarena.db</property>-->
         <!-- hbm2ddl.auto: 生成表结构的策略配置
          update(最常用的取值): 如果当前数据库中不存在表结构,那么自动创建表结构.
                  如果存在表结构,并且表结构与实体一致,那么不做修改
@@ -25,7 +26,7 @@
          create-drop(极少): 无论是否存在表结构.每次启动Hibernate都会重新创建表结构.每次Hibernate运行结束时,删除表结构.
          validate(很少):不会自动创建表结构.也不会自动维护表结构.Hibernate只校验表结构. 如果表结构不一致将会抛出异常.
       -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <property name="hibernate.c3p0.min_size">5</property>
         <property name="hibernate.c3p0.max_size">20</property>

@@ -15,5 +15,9 @@
         <module name="lwh-zero-configuration-example" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="lwh-lucene-example" target="8" />
+      <module name="lwh-spring-security-example" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

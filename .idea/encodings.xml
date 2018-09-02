@@ -9,5 +9,6 @@
     <file url="file://$PROJECT_DIR$/lwh-springmvc5-hibernate5-example" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-sqlite-example" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-zero-configuration-example" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lwh.db" charset="US-ASCII" />
   </component>
 </project>
