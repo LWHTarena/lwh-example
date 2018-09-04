@@ -27,6 +27,8 @@
         <module>lwh-h2-example</module>
         <module>lwh-springmvc5-hibernate5-example</module>
         <module>lwh-sqlite-example</module>
+        <module>lwh-spring-mybatis</module>
+        <module>lwh-spring-quartz-example</module>
     </modules>
 
 
