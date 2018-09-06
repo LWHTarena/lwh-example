@@ -1,6 +1,5 @@
-package com.lwhtarena.zero.web.back.conf;
+package com.lwhtarena.jpa;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -11,15 +10,15 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
  * <p>
- * <h2>简述：负责处理SpirngMVC的配置信息以及组件的加载</h2>
+ * <h2>简述：</h2>
  * <ol></ol>
- * <h2>功能描述：负责处理SpirngMVC的配置信息以及组件的加载</h2>
+ * <h2>功能描述：</h2>
  * <ol></ol>
  * </p>
  *
  * WebMvcConfigurerAdapter 在spring 5.0 废弃
  *
- * 官方推荐WebMvcConfigurer
+ * 官方推荐实现 WebMvcConfigurer
  *
  * 也可以继承直接继承 WebMvcConfigurationSupport
  *
@@ -31,11 +30,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableAspectJAutoProxy
 @EnableScheduling
 @ComponentScan(basePackages = {
-        "com.lwhtarena.zero.web.back.controller",
-        "com.lwhtarena.zero.web.service",
-        "com.lwhtarena.zero.web.task"})
-@MapperScan("com.lwhtarena.zero.web.dao.mapper")
-public class MvcConfig implements WebMvcConfigurer {
+        "com.lwhtarena.jpa.handler",
+        "com.lwhtarena.jpa.service"})
+public class MvcConfig extends WebMvcConfigurationSupport {
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
@@ -54,7 +52,7 @@ public class MvcConfig implements WebMvcConfigurer {
     public InternalResourceViewResolver jspViewResolver() {
         InternalResourceViewResolver bean = new InternalResourceViewResolver();
         bean.setViewClass(org.springframework.web.servlet.view.JstlView.class);
-        bean.setPrefix("/WEB-INF/pages/");
+        bean.setPrefix("/WEB-INF/views/");
         bean.setSuffix(".jsp");
         return bean;
     }
@@ -69,5 +67,4 @@ public class MvcConfig implements WebMvcConfigurer {
         common.setMaxUploadSize(10 * 1024 * 1024);//10M
         return common;
     }
-
 }
