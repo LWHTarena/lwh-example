@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="lwh-h2-example" />
         <module name="lwh-hibernate-search-example" />
+        <module name="lwh-hibernate-search-jpa-example" />
+        <module name="lwh-hibernate5-example" />
         <module name="lwh-lucene-example" />
         <module name="lwh-spring-mybatis" />
         <module name="lwh-spring-quartz-example" />
