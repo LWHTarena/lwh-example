@@ -14,5 +14,5 @@ package com.lwhtarena.search.dao;
  */
 public interface SearchDao{
 
-    
+
 }

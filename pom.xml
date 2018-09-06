@@ -29,6 +29,8 @@
         <module>lwh-sqlite-example</module>
         <module>lwh-spring-mybatis</module>
         <module>lwh-spring-quartz-example</module>
+        <module>lwh-hibernate5-example</module>
+        <module>lwh-hibernate-search-jpa-example</module>
     </modules>
 
 

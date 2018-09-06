@@ -28,20 +28,15 @@
         <jsp.version>2.2</jsp.version>
         <jstl.version>1.2</jstl.version>
         <servlet.version>3.1.0</servlet.version>
+        <lucene.servsion>7.4.0</lucene.servsion>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.12</version>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.lwhtarena</groupId>
-            <artifactId>lwh-lucene-example</artifactId>
-            <version>1.0.0</version>
         </dependency>
 
         <!--ORM 5.3和JPA 2.2兼容，通过Hibernate ORM 5.3集成到DI框架，升级到WildFly 12和JGroups 4，JPMS自动模块名称。-->
@@ -55,6 +50,11 @@
             <artifactId>hibernate-ehcache</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.2.Final</version>
+        </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -63,9 +63,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-search-engine</artifactId>
-            <version>${hibernate-search.version}</version>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.0.9.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -199,9 +199,6 @@
             <version>${jsp.version}</version>
             <scope>provided</scope>
         </dependency>
-
-
-
 
     </dependencies>
 

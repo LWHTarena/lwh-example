@@ -2,6 +2,9 @@
 
 **通过hibernate search 创建 lucene全文索引**
 
+`Hibernate Search` 是基于`lucence`的，无需手动编写lucence代码即可进行Hibernate操作，
+会自动创建索引、修改索引、删除索引。所以这里重启服务器，查看索引。
+
 **原理：** 
 Hibernate Search是给Hibernate持久化模型架构来使用的一套全文检索工具，
 其全文检索依赖于Lucence引擎。全文搜索引擎（lucence）会将你要查询的这个
