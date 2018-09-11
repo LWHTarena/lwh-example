@@ -1,0 +1,45 @@
+# Server settings
+server:
+  port: 8765
+
+## 自定义磁盘目录
+web:
+  upload-path: /var/log/cloud-upgrade/
+  sqliteDB: /var/log/winhong-pxe/
+
+# DataSource settings
+spring:
+  datasource:
+
+#spring.datasource.url=jdbc:sqlite::resource:example.db
+    url: jdbc:sqlite:C:/db/example.db
+    driver-class-name: org.sqlite.JDBC
+    username: root
+    password: Winhong#EDC
+
+    tomcat:
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: true
+  mvc:
+    favicon:
+      enabled: false
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
+
+# Logger settings
+logging:
+  file: /var/log/winhong-pxe/winhong-pxe.log
+  level: info
+  pattern:
+    level: com.lwhtarena.pxe
+
+## mybatis 配置
+
+
+
+
+mybatis:
+  type-aliases-package: com.lwhtarena.sqlite.domain
+  mapper-locations: classpath:com/lwhtarena/sqlite/domain/mapper/*.xml

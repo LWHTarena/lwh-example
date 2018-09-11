@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/list.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<style>
+		.openController a.disable{color:#ccc;}
+	</style>
+</head>
+<body>
+	<div class="step1">
+		<div class="config">
+			<p>基本信息配置</p>
+			
+			<ul id="physicalList">
+				<li class="physical-config-list">
+					<form class="physicalForm">
+						<div class="physical-container">				
+							<div class="wrapper wrapper-top clearfix">								
+								<div class="ip-config">
+									<p class="icon-tip"><i>i</i><span>请配置这台物理机的IPMI</span></p>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI IP：</span>
+										<div class="inputWrap ipWrap">
+											<input class="input ip-input" maxlength=3 type="text"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text">
+										</div>	
+										<label class="error ip-error">请输入正确的IP</label>								
+									</div>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI 帐号：</span>
+										<div class="inputWrap">
+											<input class="input text-input" type="text" placeholder="请输入IPMI帐号" name="ipmiAccount">
+											<label class="error">请输入ipmi帐号</label>
+										</div>							
+									</div>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI 密码：</span>
+										<div class="inputWrap">
+											<input class="input text-input" type="text" placeholder="请输入IPMI密码" name="ipmiPsw">
+											<label class="error">请输入ipmi密码</label>
+										</div>							
+									</div>
+									<div><span class="common-btn saveIPMI">保存</span></div>
+								</div>						
+							</div>
+
+							<div class="wrapper wrapper-bottom clearfix">
+								<div class="physical-config unConfigIPMI">									
+									<div>
+										<p class="icon-tip"><i>i</i><span>请配置这台物理机的基本配置</span><span class="openController">提示：以下配置信息可通过<a class="disable">登录服务器远程控制台</a>进行获取。</span></p>
+										<div class="physical-ip-config">
+											<div class="line IP">
+												<i class="text-red">*</i>
+												<span class="text">物理机IP：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly>
+												</div>
+												<label class="error ip-error">请输入正确的IP</label>							
+											</div>
+
+											<div class="line YM">
+												<i class="text-red">*</i>
+												<span class="text">掩码：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly>
+												</div>
+												<label class="error ym-error">请输入正确的掩码</label>
+											</div>
+
+											<div class="line WG">
+												<i class="text-red">*</i>
+												<span class="text">网关：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly>
+												</div>
+												<label class="error wg-error">请输入正确的网关</label>							
+											</div>
+
+										</div>
+										
+										<div>
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">物理机密码：</span>
+												<div class="inputWrap">
+													<input readonly class="input phy-psw-input" type="text" placeholder="请输入物理机密码" name="physicalPsw">
+													<label class="error">请输入6-12个字符的密码</label>
+												</div>							
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">系统盘盘符：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：sda" name="diskName">
+													<label class="error">请输入系统盘盘符</label>
+												</div>							
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">dom0内存：</span>
+												<div class="inputWrap">
+													<input readonly class="input" type="text" placeholder="请输入内存，至少8G" name="memory">
+													<label class="error">请输入内存,至少8G</label>
+													<em class="unit">GB</em>
+												</div>							
+											</div>													
+										</div>
+										
+										<div>
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">管理网卡名称：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：eth0" name="manageNet">
+													<label class="error">请输入管理网卡</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">存储网卡名称：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：eth0 多个用，隔开" name="storageNet">
+													<label class="error">请输入存储网卡</label>
+												</div>							
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">管理网卡MAC地址：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：01:a2:43:ab:32:dd" name="macAddress">
+													<label class="error">请输入MAC地址</label>
+												</div>
+											</div>
+
+										</div>
+									</div>															
+								</div>																	
+							</div>	
+
+							<strong class="deletePhysical"></strong>
+							<strong class="physicalNumber"><span>1</span></strong>
+
+						</div>
+					</form>
+				</li>
+
+				<!--<li class="physical-config-list">
+					<form class="physicalForm">
+						<div class="physical-container">
+							<div class="wrapper wrapper-top clearfix">
+								<div class="ip-config">
+									<p class="icon-tip"><i>i</i><span>请配置这台物理机的IPMI</span></p>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI IP：</span>
+										<div class="inputWrap ipWrap">
+											<input class="input ip-input" maxlength=3 type="text" value="192"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text" value="168"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text" value="223"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text" value="91">
+										</div>
+										<label class="error ip-error">请输入正确的IP</label>
+									</div>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI 帐号：</span>
+										<div class="inputWrap">
+											<input class="input text-input" type="text" placeholder="请输入IPMI帐号" name="ipmiAccount" value="admin">
+											<label class="error">请输入ipmi</label>
+										</div>
+									</div>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI 密码：</span>
+										<div class="inputWrap">
+											<input class="input text-input" type="text" placeholder="请输入IPMI密码" name="ipmiPsw" value="admin">
+											<label class="error">请输入ipmi密码</label>
+										</div>
+									</div>
+									<div><span class="common-btn saveIPMI configed">保存</span></div>
+								</div>
+							</div>
+
+							<div class="wrapper wrapper-bottom clearfix">
+								<div class="physical-config unConfigIPMI">
+									<div>
+										<p class="icon-tip"><i>i</i><span>请配置这台物理机的基本配置</span><span class="openController">提示：以下配置信息可通过<a>登录服务器远程控制台</a>进行获取。</span></p>
+										<div class="physical-ip-config">
+											<div class="line IP">
+												<i class="text-red">*</i>
+												<span class="text">物理机IP：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly value="192"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="168"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="222"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="181">
+												</div>
+												<label class="error ip-error">请输入正确的IP</label>
+											</div>
+
+											<div class="line WG">
+												<i class="text-red">*</i>
+												<span class="text">网关：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly value="192"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="168"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="222"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="254">
+												</div>
+												<label class="error wg-error">请输入正确的网关</label>
+											</div>
+
+											<div class="line YM">
+												<i class="text-red">*</i>
+												<span class="text">掩码：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly value="255"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="255"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="255"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="0">
+												</div>
+												<label class="error ym-error">请输入正确的掩码</label>
+											</div>
+										</div>
+
+										<div>
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">物理机密码：</span>
+												<div class="inputWrap">
+													<input readonly class="input phy-psw-input" type="text" placeholder="请输入物理机密码" name="physicalPsw" value="123456">
+													<label class="error">请输入6-12个字符的密码</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">系统盘盘符：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：sda" name="diskName" value="sdg">
+													<label class="error">请输入系统盘盘符</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">dom0内存：</span>
+												<div class="inputWrap">
+													<input readonly class="input" type="text" placeholder="请输入内存，至少8G" name="memory" value="8">
+													<label class="error">请输入内存,至少8G</label>
+													<em class="unit">GB</em>
+												</div>
+											</div>
+										</div>
+
+										<div>
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">管理网卡MAC地址：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：01-a2-43-ab-32-dd" name="macAddress" value="00:8C:FA:E0:57:F4">
+													<label class="error">请输入MAC地址</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">存储网卡名称：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：etho0 多个用，隔开" name="storageNet" value="eth1">
+													<label class="error">请输入存储网卡</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">管理网卡名称：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：etho0" name="manageNet" value="eth0">
+													<label class="error">请输入管理网卡</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<strong class="deletePhysical"></strong>
+							<strong class="physicalNumber"><span>1</span></strong>
+
+						</div>
+					</form>
+				</li>
+				<li class="physical-config-list">
+					<form class="physicalForm">
+						<div class="physical-container">
+							<div class="wrapper wrapper-top clearfix">
+								<div class="ip-config">
+									<p class="icon-tip"><i>i</i><span>请配置这台物理机的IPMI</span></p>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI IP：</span>
+										<div class="inputWrap ipWrap">
+											<input class="input ip-input" maxlength=3 type="text" value="192"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text" value="168"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text" value="223"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text" value="92">
+										</div>
+										<label class="error ip-error">请输入正确的IP</label>
+									</div>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI 帐号：</span>
+										<div class="inputWrap">
+											<input class="input text-input" type="text" placeholder="请输入IPMI帐号" name="ipmiAccount" value="admin">
+											<label class="error">请输入ipmi</label>
+										</div>
+									</div>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI 密码：</span>
+										<div class="inputWrap">
+											<input class="input text-input" type="text" placeholder="请输入IPMI密码" name="ipmiPsw" value="admin">
+											<label class="error">请输入ipmi密码</label>
+										</div>
+									</div>
+									<div><span class="common-btn saveIPMI configed">保存</span></div>
+								</div>
+							</div>
+
+							<div class="wrapper wrapper-bottom clearfix">
+								<div class="physical-config unConfigIPMI">
+									<div>
+										<p class="icon-tip"><i>i</i><span>请配置这台物理机的基本配置</span><span class="openController">提示：以下配置信息可通过<a>登录服务器远程控制台</a>进行获取。</span></p>
+										<div class="physical-ip-config">
+											<div class="line IP">
+												<i class="text-red">*</i>
+												<span class="text">物理机IP：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly value="192"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="168"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="222"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="182">
+												</div>
+												<label class="error ip-error">请输入正确的IP</label>
+											</div>
+
+											<div class="line WG">
+												<i class="text-red">*</i>
+												<span class="text">网关：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly value="192"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="168"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="222"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="254">
+												</div>
+												<label class="error wg-error">请输入正确的网关</label>
+											</div>
+
+											<div class="line YM">
+												<i class="text-red">*</i>
+												<span class="text">掩码：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly value="255"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="255"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="255"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="0">
+												</div>
+												<label class="error ym-error">请输入正确的掩码</label>
+											</div>
+										</div>
+
+										<div>
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">物理机密码：</span>
+												<div class="inputWrap">
+													<input readonly class="input phy-psw-input" type="text" placeholder="请输入物理机密码" name="physicalPsw" value="123456">
+													<label class="error">请输入6-12个字符的密码</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">系统盘盘符：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：sda" name="diskName" value="sdg">
+													<label class="error">请输入系统盘盘符</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">dom0内存：</span>
+												<div class="inputWrap">
+													<input readonly class="input" type="text" placeholder="请输入内存，至少8G" name="memory" value="8">
+													<label class="error">请输入内存,至少8G</label>
+													<em class="unit">GB</em>
+												</div>
+											</div>
+										</div>
+
+										<div>
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">管理网卡MAC地址：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：01-a2-43-ab-32-dd" name="macAddress" value="00:8C:FA:E0:52:9C">
+													<label class="error">请输入MAC地址</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">存储网卡名称：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：etho0 多个用，隔开" name="storageNet" value="eth1">
+													<label class="error">请输入存储网卡</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">管理网卡名称：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：etho0" name="manageNet" value="eth0">
+													<label class="error">请输入管理网卡</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<strong class="deletePhysical"></strong>
+							<strong class="physicalNumber"><span>1</span></strong>
+
+						</div>
+					</form>
+				</li>
+				<li class="physical-config-list">
+					<form class="physicalForm">
+						<div class="physical-container">
+							<div class="wrapper wrapper-top clearfix">
+								<div class="ip-config">
+									<p class="icon-tip"><i>i</i><span>请配置这台物理机的IPMI</span></p>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI IP：</span>
+										<div class="inputWrap ipWrap">
+											<input class="input ip-input" maxlength=3 type="text" value="192"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text" value="168"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text" value="223"><span>-</span>
+											<input class="input ip-input" maxlength=3 type="text" value="93">
+										</div>
+										<label class="error ip-error">请输入正确的IP</label>
+									</div>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI 帐号：</span>
+										<div class="inputWrap">
+											<input class="input text-input" type="text" placeholder="请输入IPMI帐号" name="ipmiAccount" value="admin">
+											<label class="error">请输入ipmi</label>
+										</div>
+									</div>
+									<div class="line">
+										<i class="text-red">*</i>
+										<span class="text">IPMI 密码：</span>
+										<div class="inputWrap">
+											<input class="input text-input" type="text" placeholder="请输入IPMI密码" name="ipmiPsw" value="admin">
+											<label class="error">请输入ipmi密码</label>
+										</div>
+									</div>
+									<div><span class="common-btn saveIPMI configed">保存</span></div>
+								</div>
+							</div>
+
+							<div class="wrapper wrapper-bottom clearfix">
+								<div class="physical-config unConfigIPMI">
+									<div>
+										<p class="icon-tip"><i>i</i><span>请配置这台物理机的基本配置</span><span class="openController">提示：以下配置信息可通过<a>登录服务器远程控制台</a>进行获取。</span></p>
+										<div class="physical-ip-config">
+											<div class="line IP">
+												<i class="text-red">*</i>
+												<span class="text">物理机IP：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly value="192"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="168"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="222"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="183">
+												</div>
+												<label class="error ip-error">请输入正确的IP</label>
+											</div>
+
+											<div class="line WG">
+												<i class="text-red">*</i>
+												<span class="text">网关：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly value="192"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="168"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="222"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="254">
+												</div>
+												<label class="error wg-error">请输入正确的网关</label>
+											</div>
+
+											<div class="line YM">
+												<i class="text-red">*</i>
+												<span class="text">掩码：</span>
+												<div class="inputWrap ipWrap">
+													<input class="input ip-input" maxlength=3 type="text" readonly value="255"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="255"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="255"><span>-</span>
+													<input class="input ip-input" maxlength=3 type="text" readonly value="0">
+												</div>
+												<label class="error ym-error">请输入正确的掩码</label>
+											</div>
+										</div>
+
+										<div>
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">物理机密码：</span>
+												<div class="inputWrap">
+													<input readonly class="input phy-psw-input" type="text" placeholder="请输入物理机密码" name="physicalPsw" value="123456">
+													<label class="error">请输入6-12个字符的密码</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">系统盘盘符：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：sda" name="diskName" value="sdg">
+													<label class="error">请输入系统盘盘符</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">dom0内存：</span>
+												<div class="inputWrap">
+													<input readonly class="input" type="text" placeholder="请输入内存，至少8G" name="memory" value="8">
+													<label class="error">请输入内存,至少8G</label>
+													<em class="unit">GB</em>
+												</div>
+											</div>
+										</div>
+
+										<div>
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">管理网卡MAC地址：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：01-a2-43-ab-32-dd" name="macAddress" value="00:8C:FA:E0:28:0C">
+													<label class="error">请输入MAC地址</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">存储网卡名称：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：etho0 多个用，隔开" name="storageNet" value="eth1">
+													<label class="error">请输入存储网卡</label>
+												</div>
+											</div>
+
+											<div class="line">
+												<i class="text-red">*</i>
+												<span class="text">管理网卡名称：</span>
+												<div class="inputWrap">
+													<input readonly class="input text-input" type="text" placeholder="示例：etho0" name="manageNet" value="eth0">
+													<label class="error">请输入管理网卡</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<strong class="deletePhysical"></strong>
+							<strong class="physicalNumber"><span>1</span></strong>
+
+						</div>
+					</form>
+				</li>-->
+			</ul>
+			<div id="addServer">
+				<span class="common-btn iconfont icon-iconfont707">添加服务器</span>
+			</div>				
+		</div>
+
+		<div class="next">
+			<span class="common-btn" id="firstStep">下一步</span>
+		</div>
+	</div>
+<script type="text/javascript">
+		var testIP=/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;
+		var testName=/^[a-zA-Z0-9\u4e00-\u9fa5-_\.\(\)\s]{1,32}$/;
+		var dot=".";
+		var loading=null;
+
+
+		$(function(){
+
+            var historyInput=sessionStorage.getItem("reSeeData");
+            if(historyInput){
+                var historyList=JSON.parse(historyInput);
+                historyList.forEach(function(v,i){
+                    var cloneEl=$(".physical-config-list:first").clone(true);
+
+					cloneEl.find(".physicalNumber span").text(i+1);
+                    var impi_ip_el=cloneEl.find(".ip-config .ipWrap input");
+                    impi_ip_el.each(function(index,item){
+                      	$(item).val(v.ipmi_ip_list[index]);
+                    })
+                    cloneEl.find("[name='ipmiAccount']").val(v.ipmi_account);
+                    cloneEl.find("[name='ipmiPsw']").val(v.ipmi_password);
+
+					/*物理机IP信息*/
+                    var host_ip_el=cloneEl.find(".IP input");
+                    host_ip_el.each(function(index,item){
+                       $(item).val(v.host_ip_list[index]);
+                    })
+
+					/*物理机网关信息*/
+                    var wg_el=cloneEl.find(".WG input");
+                    wg_el.each(function(index,item){
+                        $(item).val(v.wg_list[index]);
+                    })
+					/*物理机掩码信息*/
+                    var ym_el=cloneEl.find(".YM input");
+                    ym_el.each(function(index,item){
+                        $(item).val(v.ym_list[index]);
+                    })
+
+                    cloneEl.find("[name='physicalPsw']").val(v.hostPsw);
+                    cloneEl.find("[name='diskName']").val(v.diskName);
+                    cloneEl.find("[name='memory']").val(v.memory);
+
+                    cloneEl.find("[name='macAddress']").val(v.macAddress);
+                    cloneEl.find("[name='storageNet']").val(v.storageNet);
+                    cloneEl.find("[name='manageNet']").val(v.manageNet);
+
+                   if(v.hasConfigIPMI){
+                       cloneEl.find(".physical-config").removeClass("unConfigIPMI");
+                       cloneEl.find(".physical-config input").prop("readonly",null);
+                       cloneEl.find(".ip-config input").prop("readonly",true).addClass("configedIPMI");
+                       cloneEl.find(".saveIPMI").addClass("configed");
+				   }
+                    $("#physicalList").append(cloneEl);
+				})
+                $(".physical-config-list:first").remove();
+			}
+
+
+
+			function computedIp(el){
+				var ip="";
+				el.each(function(){
+					ip+=$(this).val()+dot;			
+				})
+				ip=ip.slice(0,-1);
+				return ip
+			}
+
+			/*添加服务器*/
+			$("#addServer span").click(function(){
+			    var cloneEl=$(".physical-config-list:last");
+			    var errorEl=cloneEl.find(".show");
+			    var inputEl=cloneEl.find("input");
+
+				if(errorEl.length>0){
+				    layer.open({
+						title:"提示",
+						content:"请先检查错误项"
+					})
+					return false
+				}
+
+				var hasEmptyInput=false;
+                inputEl.each(function(i,ele){
+                    if(!$(ele).val()){
+                        hasEmptyInput=true;
+					}
+				})
+
+				if(hasEmptyInput){
+                    layer.open({
+                        title:"提示",
+                        content:"请填写所有的配置项"
+                    })
+                    return false
+				}
+
+
+				var physical=cloneEl.clone(true);
+
+				var physicalNumber=physical.find(".physicalNumber span");
+				physicalNumber.text(parseInt(physicalNumber.text())+1);
+
+				/*物理机 ip加1*/
+				var lastPhysicalIp=physical.find(".physical-config .IP input:last");
+				var phy_val=lastPhysicalIp.val();
+				lastPhysicalIp.val(isNaN(parseInt(phy_val))?"":parseInt(phy_val)+1);
+				/*IPMI ip加1*/
+				var lastIpmiIp=physical.find(".ip-config .ip-input:last");
+				var ipmi_val=lastIpmiIp.val();
+				lastIpmiIp.val(isNaN(parseInt(ipmi_val))?"":parseInt(ipmi_val)+1);
+
+				physical.find(".physical-config").addClass("unConfigIPMI");
+                physical.find(".physical-config").addClass("unConfigIPMI");
+				physical.find(".physical-config input").prop("readonly",true);
+                physical.find(".openController a").addClass("disable");
+
+				physical.find(".ip-config input").prop("readonly",null).removeClass("configedIPMI");
+				physical.find(".saveIPMI").removeClass("configed");
+		
+				$("#physicalList").append(physical);					
+			})
+
+			/*记录输入框的内容，刷新页面时获取历史输入记录填充*/
+			$("#physicalList").on("input","input",function(){
+			    var reSeeData=[];
+                $(".physical-config-list").each(function(i,v){
+                    /!*保存impi信息*!/
+                    var ipmi_ip_list=[];
+					var impi_ip_el=$(v).find(".ip-config .ipWrap input");
+                    impi_ip_el.each(function(index,item){
+                        ipmi_ip_list.push($(item).val())
+					})
+                    var ipmi_account=$(v).find("[name='ipmiAccount']").val();
+                    var ipmi_password=$(v).find("[name='ipmiPsw']").val();
+
+
+					/*保存物理机IP信息*/
+                    var host_ip_list=[];
+                    var host_ip_el=$(v).find(".IP input");
+                    host_ip_el.each(function(index,item){
+                        host_ip_list.push($(item).val())
+                    })
+					/*保存物理机网关信息*/
+                    var wg_list=[];
+                    var wg_el=$(v).find(".WG input");
+                    wg_el.each(function(index,item){
+                        wg_list.push($(item).val())
+                    })
+					/*保存物理机掩码信息*/
+                    var ym_list=[];
+                    var ym_el=$(v).find(".YM input");
+                    ym_el.each(function(index,item){
+                        ym_list.push($(item).val())
+                    })
+
+					/*保存物理机设备信息*/
+					var hostPsw=$(v).find("[name='physicalPsw']").val();
+                    var diskName=$(v).find("[name='diskName']").val();
+                    var memory=$(v).find("[name='memory']").val();
+
+					/*保存网络信息*/
+                    var macAddress=$(v).find("[name='macAddress']").val();
+                    var storageNet=$(v).find("[name='storageNet']").val();
+                    var manageNet=$(v).find("[name='manageNet']").val();
+
+                    var hasConfigIPMI=$(v).find(".saveIPMI").hasClass("configed")?true:false;
+                    reSeeData.push({
+                        ipmi_ip_list:ipmi_ip_list,
+                        ipmi_account:ipmi_account,
+                        ipmi_password:ipmi_password,
+                        host_ip_list:host_ip_list,
+                        wg_list:wg_list,
+                        ym_list:ym_list,
+                        hostPsw:hostPsw,
+                        diskName:diskName,
+                        memory:memory,
+                        macAddress:macAddress,
+                        storageNet:storageNet,
+                        manageNet:manageNet,
+                        hasConfigIPMI:hasConfigIPMI
+					})
+
+                })
+                reSeeData=JSON.stringify(reSeeData);
+                sessionStorage.setItem("reSeeData",reSeeData);
+			})
+
+
+			/*ip输入框操作*/
+	        $(".ip-input")
+	        .on("input",function(){
+	        	/*限制非数字的输入，当长度为3时下一个输入框自动聚焦*/
+	            var val=$(this).val();
+	            val=val.replace(/\D/g,'')
+	            $(this).val(val);
+	            if(val.length==3&&$(this).next()){
+	                $(this).next().next().focus();
+	            }
+	        })
+	        .on("keydown",function(e){
+	        	var self=$(this);
+		        var e=e||window.event;
+		            if(e.keyCode==110&&self.val()!=""&&self.next()){
+		                $(this).next().next().focus();
+		                return false
+		            }
+		            if(e.keyCode==8&&self.val().length==0&&self.prev()){
+		                $(this).prev().prev().focus();
+		            }
+				})
+
+			/*存储网卡限制输入中文的"，"*/
+			$("[name='storageNet']").on("input",function(){
+                var val=$(this).val();
+                val=val.replace(/，/g,'')
+                $(this).val(val);
+			})
+
+			/*存储网卡限制输入中文的"，"*/
+            $(".physicalForm input").on("input",function(){
+                var val=$(this).val();
+                val=val.replace(/[\u4e00-\u9fa5]/g,'')
+                $(this).val(val);
+            })
+
+
+
+	       /* 删除物理机*/
+	        $("#physicalList").on("click",".deletePhysical",function(){
+	        	var self=$(this);
+	        	if($(".deletePhysical").length==1){
+        			layer.open({
+        				title:"提示",
+        				content:"至少保留一台"
+        			})
+	        		return false
+	        	}
+	        	layer.open({
+	        		title:"提示",
+	        		content:"确定要删除该服务器吗？",
+	        		btn:["取消","确定"],
+	        		btn2:function(){
+	        			self.parents(".physical-config-list").remove();
+	        			$(".physical-config-list").each(function(i,v){
+	        				$(v).find(".physicalNumber span").text(i+1);
+	        			})
+	        		}
+	        	})
+	        })
+	 
+	 		function check(){	 		
+	 			$(".physicalForm").each(function(i,v){
+	 				/*检验非空输入框*/
+	 				$(v).find(".text-input").each(function(index,item){
+	 					var el=$(item);
+	 					var val=$.trim(el.val());
+	 					if(!val){
+	 						el.siblings("label").addClass("show");
+	 					}else{
+	 						el.siblings("label").removeClass("show");
+	 					}
+	 				})
+
+					/*输入时检验物内存大小*/
+                    var memory=$(v).find('[name="memory"]');
+					if(parseInt(memory.val())<8){
+                        memory.siblings("label").addClass("show");
+					}else{
+                        memory.siblings("label").removeClass("show");
+					}
+
+
+	 				/*检验物理机密码*/
+	 				var phyPsw=$(v).find(".phy-psw-input");
+	 				if(phyPsw.val().length>12||phyPsw.val().length<6){
+						phyPsw.siblings("label").addClass("show");
+	 				}else{
+	 					phyPsw.siblings("label").removeClass("show");
+	 				}
+	 				/*检验物理机IP*/
+	 				var phy_ip_el=$(v).find(".IP .ip-input");
+	 				var phy_ip=computedIp(phy_ip_el);
+
+	 				if(!testIP.test(phy_ip)){
+	 					$(v).find(".IP").find(".error").addClass("show");
+	 				}else{
+	 					$(v).find(".IP").find(".error").removeClass("show");
+	 				}
+
+	 				/*检验物理机掩码*/
+	 				var phy_ym_el=$(v).find(".YM .ip-input");
+	 				var phy_ym=computedIp(phy_ym_el);
+ 				
+	 				if(!testIP.test(phy_ym)){
+	 					$(v).find(".YM").find(".error").addClass("show");
+	 				}else{
+	 					$(v).find(".YM").find(".error").removeClass("show");
+	 				}
+
+	 				/*检验物理机网关*/
+	 				var phy_wg_el=$(v).find(".WG .ip-input");
+	 				var phy_wg=computedIp(phy_wg_el);
+	 				
+	 				if(!testIP.test(phy_wg)){
+	 					$(v).find(".WG").find(".error").addClass("show");
+	 				}else{
+	 					$(v).find(".WG").find(".error").removeClass("show");
+	 				}
+
+
+	 				/*检验ipmi ip*/
+	 				var impi_ip_el=$(v).find(".ip-config .ip-input");
+	 				var impi_ip=computedIp(impi_ip_el);
+	 								
+	 				if(!testIP.test(impi_ip)){
+	 					$(v).find(".ip-config .ipWrap").siblings("label").addClass("show");
+	 				}else{
+	 					$(v).find(".ip-config .ipWrap").siblings("label").removeClass("show");
+	 				}
+				
+	 			})
+	 		}
+
+			/*保存ipmi*/
+	 		$(".saveIPMI").click(function(){
+	 			var self=$(this);
+	 			if(self.hasClass("configed")){
+	 				return false
+	 			}else{
+		 			/*检验ipmi ip*/
+		 			var parent=self.parents(".ip-config");
+		 			var impi_ip_el=parent.find(".ipWrap .ip-input");
+		 			var impi_ip=computedIp(impi_ip_el);		
+		 			if(!testIP.test(impi_ip)){
+		 				parent.find(".ipWrap").siblings("label").addClass("show");
+		 			}else{
+		 				parent.find(".ipWrap").siblings("label").removeClass("show");
+		 			}
+
+		 			var account=parent.find("[name='ipmiAccount']");
+		 			if(!account.val()){account.siblings("label").addClass("show")}	
+
+					var psw=parent.find("[name='ipmiPsw']");
+					if(!psw.val()){psw.siblings("label").addClass("show")}	
+
+					var errorNumber=parent.find(".show").length;
+
+                    var data1={"ipmiIP":impi_ip,"username":account.val(),"pwd":psw.val()};
+                    if(errorNumber>0){
+						return false
+					}else{
+						var flag=true;
+                        $(".saveIPMI.configed").each(function(i,v){
+                            var el=$(v).parents(".ip-config").find(".ipWrap input");
+                            var haveSaveIpmi=computedIp(el);
+                            if(impi_ip==haveSaveIpmi){
+                                flag=false;
+							}
+						})
+
+						if(flag==false){
+                            layer.open({
+								title:"提示",
+								content:"当前ipmi ip已经配置过"
+							})
+							return false
+						}
+						layer.open({
+							title:"提示",
+							content:"保存后会从PXE启动物理机，是否继续？",
+							btn:["取消","确定"],
+							btn2:function(){
+                                $.ajax({
+                                    url:"/authInstall/testIpmi",
+                                    type:"POST",
+                                    data: JSON.stringify(data1) ,
+                                    dataType:"json",
+                                    contentType:"application/json",
+                                    beforeSend:function(){
+                                        loading=layer.load(2,{shade: [0.5, '#000']});
+                                    },
+                                    timeout:20000,
+                                    success:function(res){
+                                        layer.close(loading);
+                                        if(res.code=="s"){
+                                            layer.open({
+                                                title:"提示",
+                                                content:"ipmi信息保存成功",
+                                                end:function(){
+                                                    self.parents(".physical-container").find(".physical-config").removeClass("unConfigIPMI");
+                                                    self.parents(".physical-container").find(".physical-config input").prop("readonly",null);
+                                                    self.parents(".physical-container").find(".openController a").removeClass("disable");
+                                                    self.parents(".ip-config").find("input").prop("readonly",true).addClass("configedIPMI");
+                                                    self.addClass("configed");
+                                                }
+                                            })
+                                        }else{
+                                            layer.open({
+                                                title: "提示",
+                                                content:"无法连接"
+                                            })
+                                        }
+                                    },
+                                    error:function(){
+                                        layer.close(loading);
+                                        layer.open({
+                                            title:"提示",
+                                            content:"无法连接"
+                                        })
+                                    }
+                                })
+							}
+						})
+					}
+	 			}
+	 		})
+
+			/*打开控制台*/
+	 		$(".openController a").click(function(){
+	 			if($(this).parents(".physical-config").hasClass("unConfigIPMI")){
+	 				return false
+	 			}else{
+	 				var parent=$(this).parents(".physical-container");
+					var el=parent.find(".ip-config .ipWrap .ip-input");
+	 				var ip=computedIp(el);
+	 				var account=parent.find("[name='ipmiAccount']").val();
+                    var password=parent.find("[name='ipmiPsw']").val();
+
+                    window.open('http://'+ip);
+	 			}
+	 		})
+
+			/*输入时检验物理机密码*/
+			$(".phy-psw-input").on("input",function(){
+				var el=$(this);
+				if(el.val().length>12||el.val().length<6){
+					el.siblings("label").addClass("show");
+				}else{
+					el.siblings("label").removeClass("show");
+				}
+			})
+
+			/*输入时检验物内存大小*/
+			$('[name="memory"]').on("input",function(){
+				var el=$(this);
+				var val=el.val();
+	            val=val.replace(/\D/g,'')
+	            el.val(val);
+	            if(parseInt(val)<8){
+	            	el.siblings("label").addClass("show");
+	            }else{
+	            	el.siblings("label").removeClass("show");
+	            }			
+			})
+	
+			/*输入时检测非空*/
+	 		$(".text-input").on("input",function(){
+	 			var el=$(this);
+	 			var val=$.trim(el.val());
+	 			if(!val){
+	 				el.siblings("label").addClass("show");
+	 			}else{
+	 				el.siblings("label").removeClass("show");
+	 			}
+	 		})
+
+	 		/*输入时检测IP*/
+	 		$(".ip-input").on("input",function(){
+	 			var el=$(this).parents(".ipWrap").find(".ip-input");
+	 			var ip=computedIp(el);
+	 			var allHasValue=true;
+	 			el.each(function(){
+	 				if(!$(this).val()){
+	 					allHasValue=false;
+	 				}
+	 			})
+	 			if(!testIP.test(ip)&&allHasValue){
+	 				$(this).parents(".line").find("label").addClass("show");
+	 			}else{
+	 				$(this).parents(".line").find("label").removeClass("show");
+	 			}			
+	 		})
+
+			/*下一步*/
+	        $("#firstStep").click(function(){
+	        	check();
+	        	if($(".show").length>0){
+	        		return false
+	        	}else{
+	        	    /*检测物理机数量大于3*/
+	        	    var length=$(".physical-config-list").length;
+	        		if(length<3){
+	        			layer.open({
+	        				title:"提示",
+	        				content:"超融合自动化部署最低配置为3台服务器，您目前仅配置了"+length+"台，不可进入下一步"
+	        			})
+	        			return false
+	        		}
+	        		/*检测所有impi都已保存*/
+	        		var all_impi_config=true;
+	        		$(".physical-config-list").each(function(i,v){
+	        			var el=$(v).find(".saveIPMI");
+	        			if(!el.hasClass("configed")){
+	        				all_impi_config=false
+	        			}
+	        		})
+
+	        		if(!all_impi_config){
+	        			layer.open({
+	        				title:"提示",
+	        				content:"检测到有未保存的ipmi"
+	        			})
+	        			return false
+	        		}
+
+					/*检测IP地址不能重复*/
+	        		var hostIpList=[];
+	        		$(".physical-ip-config .IP").each(function(i,v){
+	        		    var el=$(v).find("input");
+                        var ip=computedIp(el);
+                        hostIpList.push(ip);
+					})
+
+                    var checkIpRepeat=hostIpList.every(function(item,i){
+                        return hostIpList.indexOf(item)==i
+                    })
+
+                    if(!checkIpRepeat){
+                        layer.open({
+                            title:"提示",
+                            content:"物理机IP地址不能重复"
+                        })
+                        return false
+                    }
+
+
+
+	        		/*检测Mac地址不能重复*/
+	        		var macList=[];
+	        		var macRegular=/([A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2}/;
+	        		$("[name='macAddress']").each(function(i,v){
+                        macList.push($(v).val())
+					})
+					var checkMacRepeat=macList.every(function(item,i){
+					    return macList.indexOf(item)==i
+					})
+					var checkMacRegular=macList.every(function(item,i){
+                        return macRegular.test(item);
+                    })
+
+					if(!checkMacRepeat){
+	        		    layer.open({
+							title:"提示",
+							content:"MAC地址不能重复"
+						})
+						return false
+					}
+
+                    if(!checkMacRegular){
+                        layer.open({
+                            title:"提示",
+                            content:"存在错误的MAC地址"
+                        })
+                        return false
+                    }
+
+
+                    /*检测存储网卡和管理网卡相同*/
+					/*检测物理机ip和ipmiip相同*/
+					var networkEqualList=[];
+					var ipEqualList=[];
+					$(".physical-config-list").each(function(i,v){
+						var storage=$(v).find("[name='storageNet']").val();
+                        var manage=$(v).find("[name='manageNet']").val();
+                        var ipmiIp=computedIp($(v).find(".ip-config .ipWrap input"));
+                        var hostIp=computedIp($(v).find(".IP input"));
+
+                        if(storage==manage){
+                            networkEqualList.push(i+1)
+						}
+                        if(ipmiIp==hostIp){
+                            ipEqualList.push(i+1)
+                        }
+					})
+
+					if(networkEqualList.length>0){
+					    var networkEqualListStr="";
+                        networkEqualList.forEach(function(item,i){
+                            networkEqualListStr+="<p>第"+item+"台服务器：存储网卡同管理网卡不能相同</p>"
+						})
+						layer.open({
+							title:"提示",
+							content:networkEqualListStr
+						})
+						return false
+					}
+
+                    if(ipEqualList.length>0){
+                        var ipEqualListStr="";
+                        ipEqualList.forEach(function(item,i){
+                            ipEqualListStr+="<p>第"+item+"台服务器：ipmiIP同物理机IP不能相同</p>"
+                        })
+                        layer.open({
+                            title:"提示",
+                            content:ipEqualListStr
+                        })
+                        return false
+                    }
+
+
+	        		var data=[];
+	        		$(".physical-config-list").each(function(i,v){
+	 					var phy_ip=computedIp($(v).find(".IP .ip-input"));
+	 					var gate_way=computedIp($(v).find(".WG .ip-input"));
+	 					var net_mask=computedIp($(v).find(".YM .ip-input"));
+	 					var phy_psw=$(v).find(".phy-psw-input").val();
+
+	 					var ipmi_ip=computedIp($(v).find(".ip-config .ip-input"));	 					
+	 					var ipmi_account=$(v).find("[name='ipmiAccount']").val();
+	 					var ipmi_psw=$(v).find("[name='ipmiPsw']").val();
+
+	 					var storageNet=$(v).find("[name='storageNet']").val();
+                        var manageNet=$(v).find("[name='manageNet']").val();
+	 					var disk=$(v).find("[name='diskName']").val();
+	 					var mac=$(v).find("[name='macAddress']").val();
+	 					var memory=$(v).find("[name='memory']").val();
+
+	 					data.push({
+	 						hostIp:phy_ip,
+	 						gateway:gate_way,
+	 						netmask:net_mask,
+
+	 						ipmiIp:ipmi_ip,
+                            ipmiUname:ipmi_account,
+	 						ipmiPwd:ipmi_psw,
+
+                            hostPwd:phy_psw,
+                            systemVolume:disk,
+                            ram:memory,
+
+                            storeNetwork:storageNet,
+                            manageNetwork:manageNet,
+                            macAddr:mac,
+	 					}) 		
+	        		})
+
+
+                    var str="";
+                    for(var i=0;i<data.length;i++){
+                        str+="<li><span style='margin-right: 4px'>"+(i+1+".")+"</span><span style='margin-right: 8px'>物理机IP：</span>"+data[i].hostIp+"</li>"
+                    }
+                    layer.open({
+                        title:"提示",
+                        content:"<div style='padding: 10px'>"+
+                        "<p style='margin-bottom: 15px'>是否确定要对以下物理机进行重装系统，所有数据将会被格式化，请谨慎操作。</p>"+
+                        "<ul style='max-height:200px;overflow-y: scroll;'>"+
+                        	str+
+                        "</ul>"+
+                        "</div>",
+						btn:["取消","确定"],
+						btn2:function(){
+                            $.ajax({
+                                url:"/authInstall/createConfigFile",
+                                type:"POST",
+                                data: JSON.stringify(data),
+                                dataType:"json",
+                                beforeSend:function(){
+                                    loading=layer.load(2,{shade: [0.5, '#000']});
+                                },
+                                contentType:"application/json",
+                                success:function(res){
+                                    layer.close(loading);
+                                    if(res.code=="s"){
+										var taskId=res.detail.taskId;
+                                        $.ajax({
+                                            url: "/authInstall/startInstall",
+                                            type: "POST",
+                                            data: {
+                                                taskId:taskId
+											},
+                                            beforeSend:function(){
+                                                loading=layer.load(2,{shade: [0.5, '#000']});
+                                            },
+											success:function(res){
+                                                layer.close(loading);
+                                                if(res.code=="success"){
+                                                    $("#router-view").attr("data-task",taskId);
+                                                    layer.open({
+														title:"提示",
+														content:res.msg,
+														end:function(){
+                                                            $(".step li").removeClass("active");
+                                                            $(".step li").eq(2).addClass("active");
+                                                            sessionStorage.removeItem('reSeeData');
+                                                            $("#router-view").load("./secondStep.html");
+														},
+														time:3000
+													})
+
+												}else{
+                                                    layer.open({
+														title:"提示",
+														content:res.msg
+													})
+												}
+											},
+											error:function(){
+                                                layer.close(loading);
+                                                layer.open({
+                                                    title:"提示",
+                                                    content:"系统异常"
+                                                })
+											}
+                                        })
+                                    }else{
+                                        var errorList="";
+                                        if(res.detail.errorList&&res.detail.errorList.length>0){
+											for(var i=0;i<res.detail.errorList.length;i++){
+                                                errorList+="<p><span>第"+(parseInt(res.detail.errorList[i].index)+1)+"台物理机</span>"+res.detail.errorList[i].errorMsg+"</p>"
+											}
+                                            layer.open({
+												title:"提示",
+												content:errorList
+											})
+										}else if(res.detail.createFileError&&res.detail.createFileError.length>0){
+                                            for(var i=0;i<res.detail.createFileError.length;i++){
+                                                errorList+="<p>"+res.detail.createFileError[i]+"</p></br>"
+                                            }
+                                            layer.open({
+                                                title:"提示",
+                                                content:errorList
+                                            })
+                                        }else{
+                                            layer.open({
+                                                title:"提示",
+                                                content:res.msg
+                                            })
+										}
+                                    }
+                                },
+                                error:function(){
+                                    layer.close(loading);
+                                    layer.open({
+                                        title:"提示",
+                                        content:"系统异常"
+                                    })
+                                }
+                            })
+							return false
+						}
+                    })
+
+
+	        	}
+	        });
+	  })
+</script>
+</body>
+</html>
