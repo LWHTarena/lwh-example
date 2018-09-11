@@ -14,6 +14,7 @@
         <module name="lwh-spring-mybatis" />
         <module name="lwh-spring-quartz-example" />
         <module name="lwh-spring-security-example" />
+        <module name="lwh-springboot-sqlite-mybatis-example" />
         <module name="lwh-springmvc5-hibernate5-example" />
         <module name="lwh-sqlite-example" />
         <module name="lwh-zero-configuration-example" />
