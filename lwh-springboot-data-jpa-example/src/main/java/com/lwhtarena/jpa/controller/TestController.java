@@ -17,10 +17,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -52,6 +49,14 @@ public class TestController {
 
     @Autowired
     private WeiboRepository weiboRepository;
+
+    @ApiOperation(value = "创建用户信息",notes = "创建用户信息")
+    @ApiImplicitParam(name = "username",value = "名称",paramType = "path",dataType = "User")
+    @RequestMapping(value = "/user/create",method = RequestMethod.POST)
+    public User createUser(@RequestBody User user){
+        this.userRepository.save(user);
+        return user;
+    }
 
     @ApiOperation(value = "根据名称获取用户信息",notes = "查询数据库中某个用户的信息")
     @ApiImplicitParam(name = "username",value = "名称",paramType = "path",required = true,dataType = "String")

@@ -1,6 +1,8 @@
 package com.lwhtarena.jpa.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -17,7 +19,7 @@ import java.util.Set;
  * @Date :
  * @Version: 版本
  */
-
+@ApiModel(value="User对象",description="用户对象User")
 @Entity
 @Table(name = "users")
 public class User {
@@ -26,6 +28,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
 
+    @ApiModelProperty(value="用户名",name="username",example="liwh")
     @Column(name = "username")
     private String username;
 
