@@ -9,34 +9,12 @@ web:
 
 # DataSource settings 配置数据库的连接方式
 spring:
-  datasource:
-
-#spring.datasource.url=jdbc:sqlite::resource:example.db
-    url: jdbc:sqlite:C:\db\example.db
-    driver-class-name: org.sqlite.JDBC
-    username: root
-    password: Winhong#EDC
-
-    tomcat:
-      validation-query: SELECT 1
-      test-while-idle: true
-      test-on-borrow: true
   mvc:
     favicon:
       enabled: false
     static-path-pattern: /**
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
-
-### sqlite需要自己配置连接方式
-  jpa:
-    database-platform: com.lwhtarena.pxe.dialect.SQLiteDialect
-    hibernate:
-      ddl-auto: update
-    show-sql: false
-#          format-sql: true
-
-
 
 # Logger settings
 logging:
