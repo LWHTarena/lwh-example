@@ -1,5 +1,9 @@
 package com.lwhtarena.pxe.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -14,15 +18,25 @@ import java.io.Serializable;
  * @Date :
  * @Version: 版本
  */
+
+@Entity
 public class Net implements Serializable {
+
+    @Id
+    @GeneratedValue
+    private String id;
+
+    @Column(nullable = false)
     private String ip;      //通信ip
+
+    @Column(nullable = false)
     private String netmask; //掩码
+
+    @Column(nullable = false)
     private String gateway;  //网关
-    private String subnet;  //子网
-    private String dhcpUpper; //dhcp上限 （形如：192.168.222.119）
-    private String dhcpLower; //dhcp下限 （形如：192.168.222.110）
 
     public Net() {
+
     }
 
     public String getIp() {
@@ -49,48 +63,11 @@ public class Net implements Serializable {
         this.gateway = gateway;
     }
 
-    public String getSubnet() {
-        return subnet;
+    public String getId() {
+        return id;
     }
 
-    public void setSubnet(String subnet) {
-        this.subnet = subnet;
-    }
-
-    public String getDhcpUpper() {
-        return dhcpUpper;
-    }
-
-    public void setDhcpUpper(String dhcpUpper) {
-        this.dhcpUpper = dhcpUpper;
-    }
-
-    public String getDhcpLower() {
-        return dhcpLower;
-    }
-
-    public void setDhcpLower(String dhcpLower) {
-        this.dhcpLower = dhcpLower;
-    }
-
-    public Net(String ip, String netmask, String gateway, String subnet, String dhcpUpper, String dhcpLower) {
-        this.ip = ip;
-        this.netmask = netmask;
-        this.gateway = gateway;
-        this.subnet = subnet;
-        this.dhcpUpper = dhcpUpper;
-        this.dhcpLower = dhcpLower;
-    }
-
-    @Override
-    public String toString() {
-        return "Net{" +
-                "ip='" + ip + '\'' +
-                ", netmask='" + netmask + '\'' +
-                ", gateway='" + gateway + '\'' +
-                ", subnet='" + subnet + '\'' +
-                ", dhcpUpper='" + dhcpUpper + '\'' +
-                ", dhcpLower='" + dhcpLower + '\'' +
-                '}';
+    public void setId(String id) {
+        this.id = id;
     }
 }

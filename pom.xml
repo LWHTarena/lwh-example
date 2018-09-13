@@ -32,6 +32,7 @@
         <module>lwh-hibernate5-example</module>
         <module>lwh-hibernate-search-jpa-example</module>
         <module>lwh-springboot-sqlite-mybatis-example</module>
+        <module>lwh-springboot-data-jpa-example</module>
     </modules>
 
 
