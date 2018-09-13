@@ -4,7 +4,13 @@ import com.lwhtarena.jpa.domain.User;
 import com.lwhtarena.jpa.domain.Weibo;
 import com.lwhtarena.jpa.repository.UserRepository;
 import com.lwhtarena.jpa.repository.WeiboRepository;
+import com.sun.org.apache.regexp.internal.RE;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -13,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -36,6 +43,7 @@ import java.util.List;
  * @Version: 版本
  */
 
+@Api("TestController相关的api")
 @Controller
 public class TestController {
 
@@ -45,25 +53,38 @@ public class TestController {
     @Autowired
     private WeiboRepository weiboRepository;
 
-    @RequestMapping("/searchUser/{username}")
+    @ApiOperation(value = "根据名称获取用户信息",notes = "查询数据库中某个用户的信息")
+    @ApiImplicitParam(name = "username",value = "名称",paramType = "path",required = true,dataType = "String")
+    @RequestMapping(value = "/searchUser/{username}",method = RequestMethod.GET)
     public @ResponseBody
     List<User> searchUser(@PathVariable("username") String username) {
         List<User> result = this.userRepository.findByUsernameContaining(username);
         return result;
     }
 
-    @RequestMapping("/username/{username}")
+    @ApiOperation(value = "根据名称获取用户微博信息",notes = "查询数据库中用户微博信息")
+    @ApiImplicitParam(name = "username",value = "名称",paramType = "path",required = true,dataType = "String")
+    @RequestMapping(value = "/username/{username}",method = RequestMethod.GET)
     public List<Weibo> getUserWeibo(@PathVariable("username") String username) {
         return this.weiboRepository.searchUserWeibo(username,new Sort(new Sort.Order(Sort.Direction.DESC,"weiboId")));
     }
 
-    @RequestMapping("/simpleSearch")
+    @ApiOperation(value = "微博信息",notes = "查询数据库中微博信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "username",value = "名称",paramType = "query",dataType = "String"),
+            @ApiImplicitParam(name = "weiboText",value = "微博",paramType = "query",dataType = "String"),
+            @ApiImplicitParam(name = "pageNo",value = "当前页",paramType = "query",dataType = "Integer"),
+            @ApiImplicitParam(name = "pageSize",value = "当前页数量",paramType = "query",dataType = "Integer"),
+    })
+    @RequestMapping(value = "/simpleSearch",method = RequestMethod.POST)
     public Page<Weibo> simpleSearch(String username, String weiboText, int pageNo, int pageSize){
         User user = this.userRepository.getByUsernameIs(username);
         return this.weiboRepository.findByUserIsAndWeiboTextContaining(user,weiboText,new PageRequest(pageNo,pageSize));
     }
 
-    @RequestMapping("/searchWeibo")
+    @ApiOperation(value = "获户微博信息",notes = "获户微博信息")
+    @ApiImplicitParam(name = "username",value = "名称",paramType = "query",dataType = "String")
+    @RequestMapping(value = "/searchWeibo",method = RequestMethod.POST)
     public Page<Weibo> searchWeibo(final String username, final String weiboText, final Date startDate, final Date endDate, int pageNo, int pageSize) {
         Page<Weibo> page = this.weiboRepository.findAll(new Specification<Weibo>() {
             @Override

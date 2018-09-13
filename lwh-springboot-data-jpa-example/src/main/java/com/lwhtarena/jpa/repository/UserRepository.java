@@ -42,6 +42,6 @@ public interface UserRepository extends JpaRepository<User,Long> {
      */
     User getByUsernameIs(String username);
 
-    @Transactional(readOnly = false)
-    int deleteByUser(User user);
+//    @Transactional(readOnly = false)
+//    int deleteByUser(User user);
 }
