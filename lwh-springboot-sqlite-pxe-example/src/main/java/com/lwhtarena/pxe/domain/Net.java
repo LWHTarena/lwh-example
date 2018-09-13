@@ -1,9 +1,9 @@
 package com.lwhtarena.pxe.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -18,22 +18,38 @@ import java.io.Serializable;
  * @Date :
  * @Version: 版本
  */
-
+@ApiModel(value = "Net对象",description = "本地虚拟机WIN服务虚拟机网卡信息")
 @Entity
+@Table(name = "t_net")
 public class Net implements Serializable {
 
     @Id
     @GeneratedValue
     private String id;
 
+    @ApiModelProperty(value="通信ip",name="ip",example="192.168.222.10")
     @Column(nullable = false)
     private String ip;      //通信ip
 
+    @ApiModelProperty(value="掩码",name="netmask",example="255.255.255.0")
     @Column(nullable = false)
     private String netmask; //掩码
 
+    @ApiModelProperty(value="网关",name="gateway",example="192.168.222.1")
     @Column(nullable = false)
     private String gateway;  //网关
+
+    /**
+     * referencedColumnName：参考列名,默认的情况下是列表的主键
+     * nullable=是否可以为空，
+     * insertable：是否可以插入，
+     * updatable：是否可以更新
+     * columnDefinition=列定义，
+     */
+    @ApiModelProperty(value="任务",name="net")
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "task_id",referencedColumnName = "taskId",nullable = false)
+    private Task task;
 
     public Net() {
 
@@ -69,5 +85,13 @@ public class Net implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
     }
 }

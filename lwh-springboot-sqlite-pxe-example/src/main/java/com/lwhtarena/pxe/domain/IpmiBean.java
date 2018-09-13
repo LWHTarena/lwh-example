@@ -1,9 +1,6 @@
 package com.lwhtarena.pxe.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -33,6 +30,10 @@ public class IpmiBean implements Serializable {
 
     @Column(nullable = false)
     private String pwd; //ipmi 远程登录密码
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "task_id")
+    private Task task;
 
     public IpmiBean() {
     }
@@ -74,5 +75,13 @@ public class IpmiBean implements Serializable {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
+    }
+
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
     }
 }
