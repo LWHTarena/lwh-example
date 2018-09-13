@@ -1,5 +1,9 @@
 package com.lwhtarena.pxe.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -14,11 +18,20 @@ import java.io.Serializable;
  * @Date :
  * @Version: 版本
  */
+@Entity
 public class IpmiBean implements Serializable {
 
+    @Id
+    @GeneratedValue
     private String id; //标识符
+
+    @Column(nullable = false)
     private String ipmiIP; //ipmi远程连接IP
+
+    @Column(nullable = false)
     private String username; //ipmi 远程登录用户
+
+    @Column(nullable = false)
     private String pwd; //ipmi 远程登录密码
 
     public IpmiBean() {
