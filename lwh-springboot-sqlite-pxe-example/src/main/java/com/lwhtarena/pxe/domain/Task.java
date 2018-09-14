@@ -35,11 +35,18 @@ public class Task {
     @Column(nullable = true)
     Integer nodeNum;
 
+    @Column(nullable = true)
+    int inStep =1;  //部署任务的第几步骤
+
+    @Column
+    private String createTime;
+
     @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE,mappedBy = "")
     private List<IpmiBean> ipmiBeans;
 
     @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE,mappedBy = "")
     private List<HostConf> hostConfs;
+
 
 
     public Task() {
@@ -83,5 +90,21 @@ public class Task {
 
     public void setHostConfs(List<HostConf> hostConfs) {
         this.hostConfs = hostConfs;
+    }
+
+    public int getInStep() {
+        return inStep;
+    }
+
+    public void setInStep(int inStep) {
+        this.inStep = inStep;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 }

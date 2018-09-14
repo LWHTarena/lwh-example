@@ -4,13 +4,11 @@ import com.lwhtarena.jpa.domain.User;
 import com.lwhtarena.jpa.domain.Weibo;
 import com.lwhtarena.jpa.repository.UserRepository;
 import com.lwhtarena.jpa.repository.WeiboRepository;
-import com.sun.org.apache.regexp.internal.RE;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -18,7 +16,6 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -50,46 +47,46 @@ public class TestController {
     @Autowired
     private WeiboRepository weiboRepository;
 
-    @ApiOperation(value = "创建用户信息",notes = "创建用户信息")
-    @ApiImplicitParam(name = "username",value = "名称",paramType = "path",dataType = "User")
-    @RequestMapping(value = "/user/create",method = RequestMethod.POST)
-    public User createUser(@RequestBody User user){
+    @ApiOperation(value = "创建用户信息", notes = "创建用户信息")
+    @ApiImplicitParam(name = "username", value = "名称", paramType = "path", dataType = "User")
+    @RequestMapping(value = "/user/create", method = RequestMethod.POST)
+    public User createUser(@RequestBody User user) {
         this.userRepository.save(user);
         return user;
     }
 
-    @ApiOperation(value = "根据名称获取用户信息",notes = "查询数据库中某个用户的信息")
-    @ApiImplicitParam(name = "username",value = "名称",paramType = "path",required = true,dataType = "String")
-    @RequestMapping(value = "/searchUser/{username}",method = RequestMethod.GET)
+    @ApiOperation(value = "根据名称获取用户信息", notes = "查询数据库中某个用户的信息")
+    @ApiImplicitParam(name = "username", value = "名称", paramType = "path", required = true, dataType = "String")
+    @RequestMapping(value = "/searchUser/{username}", method = RequestMethod.GET)
     public @ResponseBody
     List<User> searchUser(@PathVariable("username") String username) {
         List<User> result = this.userRepository.findByUsernameContaining(username);
         return result;
     }
 
-    @ApiOperation(value = "根据名称获取用户微博信息",notes = "查询数据库中用户微博信息")
-    @ApiImplicitParam(name = "username",value = "名称",paramType = "path",required = true,dataType = "String")
-    @RequestMapping(value = "/username/{username}",method = RequestMethod.GET)
+    @ApiOperation(value = "根据名称获取用户微博信息", notes = "查询数据库中用户微博信息")
+    @ApiImplicitParam(name = "username", value = "名称", paramType = "path", required = true, dataType = "String")
+    @RequestMapping(value = "/username/{username}", method = RequestMethod.GET)
     public List<Weibo> getUserWeibo(@PathVariable("username") String username) {
-        return this.weiboRepository.searchUserWeibo(username,new Sort(new Sort.Order(Sort.Direction.DESC,"weiboId")));
+        return this.weiboRepository.searchUserWeibo(username, new Sort(new Sort.Order(Sort.Direction.DESC, "weiboId")));
     }
 
-    @ApiOperation(value = "微博信息",notes = "查询数据库中微博信息")
+    @ApiOperation(value = "微博信息", notes = "查询数据库中微博信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "username",value = "名称",paramType = "query",dataType = "String"),
-            @ApiImplicitParam(name = "weiboText",value = "微博",paramType = "query",dataType = "String"),
-            @ApiImplicitParam(name = "pageNo",value = "当前页",paramType = "query",dataType = "Integer"),
-            @ApiImplicitParam(name = "pageSize",value = "当前页数量",paramType = "query",dataType = "Integer"),
+            @ApiImplicitParam(name = "username", value = "名称", paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "weiboText", value = "微博", paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "pageNo", value = "当前页", paramType = "query", dataType = "Integer"),
+            @ApiImplicitParam(name = "pageSize", value = "当前页数量", paramType = "query", dataType = "Integer"),
     })
-    @RequestMapping(value = "/simpleSearch",method = RequestMethod.POST)
-    public Page<Weibo> simpleSearch(String username, String weiboText, int pageNo, int pageSize){
+    @RequestMapping(value = "/simpleSearch", method = RequestMethod.POST)
+    public Page<Weibo> simpleSearch(String username, String weiboText, int pageNo, int pageSize) {
         User user = this.userRepository.getByUsernameIs(username);
-        return this.weiboRepository.findByUserIsAndWeiboTextContaining(user,weiboText,new PageRequest(pageNo,pageSize));
+        return this.weiboRepository.findByUserIsAndWeiboTextContaining(user, weiboText, new PageRequest(pageNo, pageSize));
     }
 
-    @ApiOperation(value = "获户微博信息",notes = "获户微博信息")
-    @ApiImplicitParam(name = "username",value = "名称",paramType = "query",dataType = "String")
-    @RequestMapping(value = "/searchWeibo",method = RequestMethod.POST)
+    @ApiOperation(value = "获户微博信息", notes = "获户微博信息")
+    @ApiImplicitParam(name = "username", value = "名称", paramType = "query", dataType = "String")
+    @RequestMapping(value = "/searchWeibo", method = RequestMethod.POST)
     public Page<Weibo> searchWeibo(final String username, final String weiboText, final Date startDate, final Date endDate, int pageNo, int pageSize) {
         Page<Weibo> page = this.weiboRepository.findAll(new Specification<Weibo>() {
             @Override
@@ -100,20 +97,20 @@ public class TestController {
                     //Join有两种方式
 //                    Join<Weibo,User> userJoin = root.join("user",JoinType.INNER);
 //                    predicates.add(criteriaBuilder.equal(userJoin.get("username"), username));
-                    predicates.add(criteriaBuilder.equal(root.get("user").get("username"),username));
+                    predicates.add(criteriaBuilder.equal(root.get("user").get("username"), username));
                 }
                 if (!StringUtils.isEmpty(weiboText)) {
-                    predicates.add(criteriaBuilder.like(root.<String>get("weiboText"), "%" + weiboText + "%") );
+                    predicates.add(criteriaBuilder.like(root.<String>get("weiboText"), "%" + weiboText + "%"));
                 }
-                if(startDate!=null){
-                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("createDate").as(Date.class),startDate));
+                if (startDate != null) {
+                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("createDate").as(Date.class), startDate));
                 }
-                if(endDate != null){
-                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("createDate").as(Date.class),endDate));
+                if (endDate != null) {
+                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("createDate").as(Date.class), endDate));
                 }
                 return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
             }
-        },new PageRequest(pageNo,pageSize));
+        }, new PageRequest(pageNo, pageSize));
         return page;
     }
 }
