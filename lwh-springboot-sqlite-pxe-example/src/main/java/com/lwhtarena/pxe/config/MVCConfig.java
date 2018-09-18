@@ -1,4 +1,4 @@
-package com.lwhtarena.pxe;
+package com.lwhtarena.pxe.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -22,9 +22,9 @@ import org.springframework.web.servlet.view.JstlView;
  * @Version: 版本
  */
 @Configuration
-@EnableWebMvc
-@ComponentScan("com.lwhtarena.pxe")
-public class MappingConfig extends WebMvcConfigurerAdapter {
+@EnableWebMvc //开启Spring MVC支持，若无此句，重写WebMvcConfigurerAdapter方法无效
+@ComponentScan("com.lwhtarena.pxe.config")
+public class MVCConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public InternalResourceViewResolver viewResolver() {

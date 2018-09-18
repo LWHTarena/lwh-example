@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>lwh-springboot-sqlite-pxe-example</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>lwh-springboot-sqlite-pxe-example Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
@@ -62,17 +62,17 @@
         </dependency>
 
         <!--mybatis依赖-->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.3.2</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.mybatis.spring.boot</groupId>-->
+            <!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
+            <!--<version>1.3.2</version>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.4.6</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.mybatis</groupId>-->
+            <!--<artifactId>mybatis</artifactId>-->
+            <!--<version>3.4.6</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
@@ -140,27 +140,28 @@
                 <includes>
                     <include>**/**</include>
                 </includes>
-                <filtering>false</filtering>
+                <filtering>true</filtering>
             </resource>
             <!--把src/main/java下的资源文件加载打入jar包-->
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
+            <!--<resource>-->
+                <!--<directory>src/main/java</directory>-->
+                <!--<includes>-->
+                    <!--<include>**/*.xml</include>-->
+                <!--</includes>-->
+            <!--</resource>-->
         </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.4.2.RELEASE</version>
+                <version>1.5.16.RELEASE</version>
                 <!--<configuration>-->
                 <!--<executable>true</executable>-->
                 <!--</configuration>-->
                 <configuration>
-                    <mainClass>com.winhong.pxe.Application</mainClass>
+                    <mainClass>com.lwhtarena.pxe.Application</mainClass>
                 </configuration>
+                <!--如果父项目不是spring-boot-starter-parent，需要显示指定execution-->
                 <executions>
                     <execution>
                         <goals>
@@ -174,10 +175,15 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArguments>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <bootclasspath>${JAVA_HOME}/jre/lib/rt.jar</bootclasspath>
+                    </compilerArguments>
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 </project>

@@ -8,20 +8,20 @@ web:
   sqliteDB: /var/log/winhong-pxe/
 
 # DataSource settings 配置数据库的连接方式
-spring:
-  mvc:
-    favicon:
-      enabled: false
-    static-path-pattern: /**
-  resources:
-    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
+#spring:
+#  mvc:
+#    favicon:
+#      enabled: false
+#    static-path-pattern: /**
+#  resources:
+#    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
 
 # Logger settings
-logging:
-  file: /var/log/winhong-pxe/winhong-pxe.log
-  level: info
-  pattern:
-    level: com.lwhtarena.pxe
+#logging:
+#  file: /var/log/winhong-pxe/winhong-pxe.log
+#  level: info
+#  pattern:
+#    level: com.lwhtarena.pxe
 
 ## mybatis 配置
 
