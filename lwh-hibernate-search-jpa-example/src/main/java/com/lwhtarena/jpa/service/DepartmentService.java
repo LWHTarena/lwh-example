@@ -21,6 +21,7 @@ import java.util.List;
  * @Version: 版本
  */
 @Service
+@Transactional
 public class DepartmentService {
 
     @Autowired

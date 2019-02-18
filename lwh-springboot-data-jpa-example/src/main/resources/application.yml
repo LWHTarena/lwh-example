@@ -1,0 +1,26 @@
+# Server settings
+server:
+  port: 8765
+
+### 配置数据源
+#spring:
+#  datasource:
+#    driver-class-name: org.sqlite.JDBC
+#    url: jdbc:sqlite:C:\db\example.db
+#    username: root
+#    password: tarena
+#    tomcat:
+#      max-active: 20
+#      test-while-idle: true
+#      validation-query: select 1
+#      default-auto-commit: false
+#      min-idle: 15
+#      initial-size: 15
+
+### JPA 配置
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#  jackson:
+#    serialization: true

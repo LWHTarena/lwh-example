@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/list.css">
+	<style type="text/css">
+		#shadow{position: fixed;top:0;left:0;right:0;bottom:0;background: rgba(0,0,0,0.5);z-index: 1000;display: none;}
+		.physical-config-list{background: #fff;
+			width: 1200px;
+			margin: 0 auto;
+			margin-top: 100px
+		}
+		.physical-config-list .physical-container{border: none;}
+		.ip-config{background: #eee;}
+		#modify_host_btn{text-align: center;}
+		#modify_host_btn button{border: none;margin:5px 15px 15px 30px;}
+		input[disabled]{background: #eee;}
+
+		.step2{background: #fff;padding:25px 30px;padding-top: 60px;border: 1px solid #ddd;}
+		.step2 >div{width: 750px;margin: 0 auto;}
+		.step2  ul{padding-left: 80px;}
+		.step2 .installing-winserver{font-weight: 600;font-size: 18px;text-align: center;margin-bottom:40px;}
+		.step2 .installing-winserver .iconfont{color:#67be89;font-size: 24px;margin-right: 8px;width: 22px;height: 22px;display: inline-block;}
+		.step2 .installing-winserver .loading{background: url(./img/loading.gif) no-repeat center/cover;}
+
+		.step2 .installing-winserver span{vertical-align: middle;}
+
+		.step2 li{margin-bottom: 28px;}
+		.step2 li >div,.step2 li >span{display: inline-block;vertical-align: middle;color: #2a2a2a;font-size: 14px;}
+
+		.step2 .install-status{text-align: center;line-height: 28px;border-radius: 50%;font-size: 26px;margin-right: 14px; }
+		.step2 .install-status.icon-loading{background: url(./img/dian.gif) no-repeat center/cover;display: inline-block;width:28px;height:18px;}
+		.step2 .install-status.icon-dui{color:#67be89;width: 20px;}
+		.step2 .install-status.icon-cuowu{color:#e61919;}
+
+		
+		.step2 li >div {width: 600px;}
+		.step2 li >div p a{float: right;color: #4776c8;text-decoration: underline;cursor: pointer;}
+		.step2 li >div h6{height: 4px;width: 100%;background: #f1f1f1;margin-top: 10px;position: relative;border-radius: 4px;}
+		.step2 li >div h6 strong{position: absolute;height:100%;background: #67be89;border-radius: 4px;transition: all 1s linear;}
+		.step2 .re-install{margin:0 18px;}
+		.step2 li .re-install.success{color:#ddd;}
+		
+		.install-ip{font-weight: bold;}
+		.install-time{margin-top: 5px;font-size: 13px;}
+		.tip{color: #444;text-align: center;font-size: 14px;padding-top: 12px;}
+		.next-step {text-align: right; }
+		.next-step button{margin:43px 0;border: none}
+		.next-step button.disabled{background: #fff;border:1px solid #aaa;color:#aaa;}
+		#reset{margin-right: 20px;background: red;}
+
+
+		#editHost{padding-left:5px;box-sizing: border-box;}
+		#editHost .text{width: 100px;}
+		#editHost >div{
+			margin:0 auto;
+			margin-bottom:21px;
+			position: relative;
+		}
+		#editHost >div input{
+			height:25px;padding: 0;width: 185px;padding-left: 10px;
+		}
+		#editHost .inputWrap span{display: inline-block;width:14px;text-align: center;}
+		#editHost >div p{
+			position: absolute;top:26px;left:100px;color:red;visibility: hidden;font-size: 12px;
+		}
+		#editHost >div p.show{visibility: visible;}
+
+
+	</style>
+</head>
+<body>
+<div id="shadow">
+	<div class="physical-config-list">
+	<p style="text-align: center;height:35px;line-height:35px;border-bottom: 1px solid #aaa;">修改信息</p>
+    <form class="physicalForm">
+        <div class="physical-container">
+            <div class="wrapper wrapper-top clearfix">
+                <div class="ip-config">
+                    <p class="icon-tip"><i>i</i><span>请配置这台物理机的IPMI</span></p>
+                    <div class="line">
+                        <i class="text-red">*</i>
+                        <span class="text">IPMI IP：</span>
+                        <div class="inputWrap ipWrap">
+                            <input class="input ip-input" maxlength=3 type="text" disabled><span>-</span>
+                            <input class="input ip-input" maxlength=3 type="text" disabled><span>-</span>
+                            <input class="input ip-input" maxlength=3 type="text" disabled><span>-</span>
+                            <input class="input ip-input" maxlength=3 type="text" disabled>
+                        </div>
+                        <label class="error ip-error">请输入正确的IP</label>
+                    </div>
+                    <div class="line">
+                        <i class="text-red">*</i>
+                        <span class="text">IPMI 帐号：</span>
+                        <div class="inputWrap">
+                            <input class="input text-input" type="text" placeholder="请输入IPMI帐号" name="ipmiAccount" disabled>
+                            <label class="error">请输入ipmi帐号</label>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <i class="text-red">*</i>
+                        <span class="text">IPMI 密码：</span>
+                        <div class="inputWrap">
+                            <input class="input text-input" type="text" placeholder="请输入IPMI密码" name="ipmiPsw" disabled>
+                            <label class="error">请输入ipmi密码</label>
+                        </div>
+                    </div>
+                    <div><span class="common-btn saveIPMI">编辑</span></div>
+                </div>
+            </div>
+            <div class="wrapper wrapper-bottom clearfix">
+                <div class="physical-config">
+                    <div>
+                        <p class="icon-tip"><i>i</i><span>请配置这台物理机的基本配置</span><span class="openController">提示：以下配置信息可通过<a>登录服务器远程控制台</a>进行获取。</span></p>
+                        <div class="physical-ip-config">
+                            <div class="line IP">
+                                <i class="text-red">*</i>
+                                <span class="text">物理机IP：</span>
+                                <div class="inputWrap ipWrap">
+                                    <input class="input ip-input" maxlength=3 type="text" ><span>-</span>
+                                    <input class="input ip-input" maxlength=3 type="text" ><span>-</span>
+                                    <input class="input ip-input" maxlength=3 type="text" ><span>-</span>
+                                    <input class="input ip-input" maxlength=3 type="text" >
+                                </div>
+                                <label class="error ip-error">请输入正确的IP</label>
+                            </div>
+                            <div class="line YM">
+                                <i class="text-red">*</i>
+                                <span class="text">掩码：</span>
+                                <div class="inputWrap ipWrap">
+                                    <input class="input ip-input" maxlength=3 type="text" ><span>-</span>
+                                    <input class="input ip-input" maxlength=3 type="text" ><span>-</span>
+                                    <input class="input ip-input" maxlength=3 type="text"><span>-</span>
+                                    <input class="input ip-input" maxlength=3 type="text" >
+                                </div>
+                                <label class="error ym-error">请输入正确的掩码</label>
+                            </div>
+                            <div class="line WG">
+                                <i class="text-red">*</i>
+                                <span class="text">网关：</span>
+                                <div class="inputWrap ipWrap">
+                                    <input class="input ip-input" maxlength=3 type="text"><span>-</span>
+                                    <input class="input ip-input" maxlength=3 type="text"><span>-</span>
+                                    <input class="input ip-input" maxlength=3 type="text"><span>-</span>
+                                    <input class="input ip-input" maxlength=3 type="text">
+                                </div>
+                                <label class="error wg-error">请输入正确的网关</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="line">
+                                <i class="text-red">*</i>
+                                <span class="text">物理机密码：</span>
+                                <div class="inputWrap">
+                                    <input class="input phy-psw-input" type="text" placeholder="请输入物理机密码" name="physicalPsw">
+                                    <label class="error">请输入6-12个字符的密码</label>
+                                </div>
+                            </div>
+                            <div class="line">
+                                <i class="text-red">*</i>
+                                <span class="text">系统盘盘符：</span>
+                                <div class="inputWrap">
+                                    <input  class="input text-input" type="text" placeholder="示例：sda" name="diskName">
+                                    <label class="error">请输入系统盘盘符</label>
+                                </div>
+                            </div>
+                            <div class="line">
+                                <i class="text-red">*</i>
+                                <span class="text">dom0内存：</span>
+                                <div class="inputWrap">
+                                    <input class="input" type="text" placeholder="请输入内存，至少8G" name="memory">
+                                    <label class="error">请输入内存,至少8G</label>
+                                    <em class="unit">GB</em>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="line">
+                                <i class="text-red">*</i>
+                                <span class="text">管理网卡名称：</span>
+                                <div class="inputWrap">
+                                    <input class="input text-input" type="text" placeholder="示例：eth0" name="manageNet">
+                                    <label class="error">请输入管理网卡</label>
+                                </div>
+                            </div>
+                            <div class="line">
+                                <i class="text-red">*</i>
+                                <span class="text">存储网卡名称：</span>
+                                <div class="inputWrap">
+                                    <input class="input text-input" type="text" placeholder="示例：eth0 多个用，隔开" name="storageNet">
+                                    <label class="error">请输入存储网卡</label>
+                                </div>
+                            </div>
+                            <div class="line">
+                                <i class="text-red">*</i>
+                                <span class="text">管理网卡MAC地址：</span>
+                                <div class="inputWrap">
+                                    <input class="input text-input" type="text" placeholder="示例：01:a2:43:ab:32:dd" name="macAddress">
+                                    <label class="error">请输入MAC地址</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+	<div id="modify_host_btn">
+		<button class="common-btn cancel">取消</button>
+		<button class="common-btn save">保存</button>
+	</div>
+</div>
+</div>
+	<div class="step2">
+		<div>
+			<h4 class="installing-winserver">
+				<span class="iconfont loading" id="install_state"></span>
+				<span id="install_state_word">正在安装winserver和winstore，请勿关闭浏览器。</span>
+			</h4>
+			<ul id="installing-physical"></ul>
+			<p class=tip>提示：点击登录服务器远程控制台可查看当前安装进度。</p>
+		</div>	
+	</div>
+
+	<p class="next-step">
+		<button class="common-btn" id="reset">重置</button>
+		<button class="common-btn disabled" disabled id="nextStep2">下一步</button>
+	</p>
+<script type="text/javascript">
+    var testIP=/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;
+
+    $(function(){
+        var requestInstallProgress;
+        var TASK_ID=$("#router-view").attr("data-task");
+        var loading=null;
+
+        function formatDate(time){
+            var hours = parseInt((time% (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = parseInt((time % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = parseInt((time % (1000 * 60))/ 1000);
+
+            hours=hours<10?"0"+hours:hours;
+            minutes=minutes<10?"0"+minutes:minutes;
+            seconds=seconds<10?"0"+seconds:seconds;
+
+            return  hours+":"+minutes+":"+seconds
+        }
+
+        function getProgress(){
+            $.ajax({
+                url: "/authInstall/gatherInfo",
+                type: "POST",
+                data: {
+                    taskId:TASK_ID
+                },
+                success:function(res){
+                    if(res.code=="success"){
+                        var progressList=res.detail.data;
+                        var allOver=progressList.every(function(v){
+                            return v.progress.installState==2;
+                        })
+                        if(allOver){
+                            clearInterval(requestInstallProgress);
+							$("#nextStep2").prop("disabled",null).removeClass("disabled");
+							$("#install_state").removeClass("loading").addClass("icon-dui");
+							$("#install_state_word").text("安装完成");
+							setTimeout(function(){
+                                $("#router-view").load("./thirdStep.html");
+							},2000);
+
+                        }else{
+                            $("#nextStep2").prop("disabled",true).addClass("disabled");
+						}
+
+                        var str="";
+                        progressList.forEach(function(item,i){
+                            var now=res.detail.currentTime;
+                            var createTime=item.progress.createTime;
+                            var haveInstall=parseInt(now)-parseInt(createTime);
+
+                            var haveInstallTime="";
+                            if(createTime){
+                                haveInstallTime= formatDate(haveInstall);
+                            }else{
+                                haveInstallTime="(修改配置成功，请点击重新安装)"
+                            }
+
+
+                            var icon=item.progress.installState==2?"icon-dui":"icon-loading";
+                            var progress=item.progress.installState==2?"100":item.progress.installState==1?"50":"0";
+                            var success=item.progress.installState==2?"success":"";
+
+                            var installWord=item.progress.installState==2?'<p class="install-time">安装成功</p>':'<p class="install-time">安装时间：'+haveInstallTime+'</p>';
+
+                            str+=
+                                '<li>'+
+                                '<span class="iconfont install-status '+icon+'"></span>'+
+                                '<div>'+
+                                '<p><span class="install-ip">'+item.hostName+'（'+item.hostIp+'）</span><a data-task="'+res.detail.taskId+'"  data-id="'+item.hostId+'" class="modify">修改配置</a><a data-task="'+res.detail.taskId+'"  data-id="'+item.hostId+'" class="re-install '+success+'">重新安装</a><a class="loginControllder" data-psw="'+item.ipmiPwd+'" data-account="'+item.ipmiUname+'" data-ip="'+item.ipmiIp+'">登录控制台</a></p>'+
+                                '<h6><strong style="width:'+progress+'%"></strong></h6>'+
+                                installWord+
+                                '</div>'+
+                                '</li>'
+                        })
+                        $("#installing-physical").html(str);
+
+
+                    }
+                }
+            })
+		}
+
+
+        $("#installing-physical").on("click",".loginControllder",function(){
+          	var ip=$(this).attr("data-ip");
+            var password=$(this).attr("data-psw");
+            var account=$(this).attr("data-account");
+
+            window.open('http://'+ip);
+        })
+
+        $("#installing-physical").on("click",".re-install",function(){
+            var self=$(this);
+            if(self.hasClass("success")){return false}
+            var taskId=self.attr("data-task");
+            var hostId=self.attr("data-id");
+            layer.open({
+                title:"提示",
+                content:"确定要重新安装吗?",
+                btn:["取消","确定"],
+                btn2:function() {
+                    $.ajax({
+                        url: "/authInstall/reSingleStall",
+                        type: "get",
+                        data: {
+                            taskId: taskId,
+                            hostId: hostId
+                        },
+                        beforeSend:function(){
+                            loading=layer.load(2,{shade: [0.5, '#000']});
+                        },
+                        success: function (res) {
+                            layer.close(loading);
+							if(res.code=="success"){
+								layer.open({
+									title:"提示",
+									content:res.msg,
+									end:function(){
+                                        getProgress();
+									},
+									time:3000
+								})
+							}else{
+                                layer.open({
+                                    title:"提示",
+                                    content:res.msg
+                                })
+							}
+                        },
+						error:function(){
+                            layer.close(loading);
+                            layer.open({
+                                title:"提示",
+                                content:"系统异常"
+                            })
+						}
+                    })
+                }
+            })
+        })
+
+       $("#installing-physical").on("click",".modify",function(){
+            var self=$(this);
+            var taskId=self.attr("data-task");
+            var hostId=self.attr("data-id");
+            $.ajax({
+                url: "/authInstall/getHostInfo",
+                type: "get",
+                data: {
+                    taskId: taskId,
+                    hostId: hostId
+                },
+                beforeSend: function () {
+                    loading = layer.load(2, {shade: [0.5, '#000']});
+                },
+                success: function (res) {
+                    layer.close(loading);
+                    if (res.code == "s") {
+                        var message=res.detail.hostInfo;
+                        $("#shadow").attr("data-id",message.hostId);
+                        $(".saveIPMI").text("保存").addClass("configed");
+                        $(".ip-config").css("background","#eee");
+                        $(".ip-config input").prop("disabled",true);
+                        $(".physical-config input").prop("disabled",null);
+                        $(".physical-config").removeClass("unConfigIPMI");
+                        $(".physicalForm .error").removeClass("show");
+
+                        $(".openController a").attr("href","http://"+message.ipmiIp).attr("target","_blank");
+
+
+
+                        $('[name="macAddress"]').val(message.macAddr);
+                        $('[name="storageNet"]').val(message.storeNetwork);
+                        $('[name="manageNet"]').val(message.manageNetwork);
+
+                        $('[name="memory"]').val(message.ram);
+                        $('[name="diskName"]').val(message.systemVolume);
+                        $('[name="physicalPsw"]').val(message.hostPwd);
+
+                        var wgList=message.gateway.split(".");
+                        var ymList=message.netmask.split(".");
+                        var ipList=message.hostIp.split(".");
+
+
+                        $(".WG input").each(function(i,v){
+							$(v).val(wgList[i])
+						})
+                        $(".YM input").each(function(i,v){
+                            $(v).val(ymList[i])
+                        })
+                        $(".IP input").each(function(i,v){
+                            $(v).val(ipList[i])
+                        })
+
+                        var impiList=message.ipmiIp.split(".");
+                        $(".ip-config .ipWrap input").each(function(i,v){
+                            $(v).val(impiList[i])
+                        })
+                        $('[name="ipmiAccount"]').val(message.ipmiUname);
+                        $('[name="ipmiPsw"]').val(message.ipmiPwd);
+                        $("#shadow").show();
+                    }else{
+                        layer.open({
+                            title:"提示",
+                            content:"获取失败"
+                        })
+                    }
+                },
+				error:function(){
+                    layer.open({
+                        title:"提示",
+                        content:"系统异常"
+                    })
+				}
+            })
+        })
+
+		$("#modify_host_btn .save").click(function(){
+		    check();
+            if($(".physical-config-list .show").length>0){
+                return false
+            }else{
+                var macRegular=/[A-Fa-f0-9]{2}:[A-Fa-f0-9]{2}:[A-Fa-f0-9]{2}:[A-Fa-f0-9]{2}:[A-Fa-f0-9]{2}:[A-Fa-f0-9]{2}/;
+                var checkMacRegular=macRegular.test($("[name='macAddress']").val());
+                if(!checkMacRegular){
+                    layer.open({
+                        title:"提示",
+                        content:"MAC地址格式有误"
+                    })
+                    return false
+                }
+
+				/*检测存储网卡和管理网卡相同*/
+                var storage=$("[name='storageNet']").val();
+                var manage=$("[name='manageNet']").val();
+				if(storage==manage){
+					layer.open({
+						title:"提示",
+						content:"存储网卡同管理网卡不能相同"
+					})
+					return false
+				}
+
+
+				var ele=$("#shadow");
+
+				var phy_ip=computedIp(ele.find(".IP .ip-input"));
+				var gate_way=computedIp(ele.find(".WG .ip-input"));
+				var net_mask=computedIp(ele.find(".YM .ip-input"));
+				var phy_psw=ele.find(".phy-psw-input").val();
+
+				var ipmi_ip=computedIp(ele.find(".ip-config .ip-input"));
+				var ipmi_account=ele.find("[name='ipmiAccount']").val();
+				var ipmi_psw=ele.find("[name='ipmiPsw']").val();
+
+				var storageNet=ele.find("[name='storageNet']").val();
+				var manageNet=ele.find("[name='manageNet']").val();
+				var disk=ele.find("[name='diskName']").val();
+				var mac=ele.find("[name='macAddress']").val();
+				var memory=ele.find("[name='memory']").val();
+
+
+				var postData={
+					hostIp:phy_ip,
+					gateway:gate_way,
+					netmask:net_mask,
+
+					ipmiIp:ipmi_ip,
+					ipmiUname:ipmi_account,
+					ipmiPwd:ipmi_psw,
+
+					hostPwd:phy_psw,
+					systemVolume:disk,
+					ram:memory,
+
+					storeNetwork:storageNet,
+					manageNetwork:manageNet,
+					macAddr:mac,
+                    hostId: $("#shadow").attr("data-id"),
+                     taskId:TASK_ID
+				}
+                var finalData={
+                    hostInfo:postData,
+                    taskId:TASK_ID
+                }
+
+                $.ajax({
+                    url: "/authInstall/saveHostInfo",
+                    type:"POST",
+                    contentType:"application/json",
+                    dataType:"json",
+                    data: JSON.stringify(postData),
+                    beforeSend: function () {
+                        loading = layer.load(2, {shade: [0.5, '#000']});
+                    },
+                    success: function (res) {
+                        layer.close(loading);
+                        if(res.code=="s"){
+                            layer.open({
+                                title:"提示",
+                                content:"修改配置成功",
+                                end:function(){
+                                    $("#shadow").hide();
+                                },
+                                time:3000
+                            })
+                        }else{
+                            var errorList="";
+                            if(res.detail.errorList&&res.detail.errorList.length>0){
+                                for(var i=0;i<res.detail.errorList.length;i++){
+                                    errorList+="<p><span>物理机</span>"+res.detail.errorList[i].errorMsg+"</p>"
+                                }
+                                layer.open({
+                                    title:"提示",
+                                    content:errorList
+                                })
+                            }else if(res.detail.createFileError&&res.detail.createFileError.length>0){
+                                for(var i=0;i<res.detail.createFileError.length;i++){
+                                    errorList+="<p>"+res.detail.createFileError[i]+"</p></br>"
+                                }
+                                layer.open({
+                                    title:"提示",
+                                    content:errorList
+                                })
+                            }else{
+                                layer.open({
+                                    title:"提示",
+                                    content:res.msg
+                                })
+                            }
+                        }
+                    },
+                    error: function () {
+                        layer.close(loading);
+                        layer.open({
+                            title:"提示",
+                            content:"系统异常"
+                        })
+                    }
+                })
+			}
+		})
+
+        $("#modify_host_btn .cancel").click(function(){
+            $("#shadow").hide();
+		})
+
+
+
+		$("#nextStep2").click(function(){
+		    layer.open({
+				title:"提示",
+				content:"确定要进入到下一步吗？",
+				btn:["取消","确定"],
+				btn2:function(){
+                    $(".step li").removeClass("active");
+                    $(".step li").eq(3).addClass("active");
+                    $("#router-view").load("./thirdStep.html");
+				}
+			})
+		})
+
+		$("#reset").click(function(){
+		    layer.open({
+				title:"提示",
+				content:"<div>"+
+							"<h1 style='font-weight: bold;font-size:22px;margin-bottom: 24px;'>确定重置吗？</h1>"+
+							"<p>提示：重置指清除所有的基本配置信息和应答文件，并从头开始安装系统，请谨慎操作。</p>"+
+						"</div>",
+				btn:["取消","确定"],
+				btn2:function(){
+				    $.ajax({
+						url:"/authInstall/reset",
+						data:{
+                            taskId:TASK_ID
+						},
+                        beforeSend:function(){
+                            loading=layer.load(2,{shade: [0.5, '#000']});
+                        },
+						success:function(res){
+						    layer.close(loading);
+						    if(res.code=="success"){
+                                layer.open({
+                                    title:"提示",
+                                    content:"重置成功",
+                                    end:function(){
+                                        window.location.reload();
+                                    },
+                                    time:3000
+                                })
+							}else{
+                                layer.open({
+                                    title:"提示",
+                                    content:res.msg
+                                })
+							}
+						},
+						error:function(){
+                            layer.close(loading);
+                            layer.open({
+								title:"提示",
+								content:"系统异常"
+							})
+						}
+                    })
+				}
+			})
+		})
+
+
+        getProgress();
+		requestInstallProgress=setInterval(getProgress,1000);
+
+       
+	})
+</script>
+<script src="./js/secondStep.js"></script>
+</body>
+</html>

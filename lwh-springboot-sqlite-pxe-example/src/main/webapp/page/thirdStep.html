@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.step3 {background: #fff;}
+		.step3 >div{width:100%;height:450px;margin-top: 30px;border: 1px solid #ddd;position: relative;}
+		#mask{position: absolute;top:0;left:0;width:100%;height:100%;line-height: 450px;text-align: center;background: #fff;}
+		#mask span{vertical-align: middle;}
+		.icon-loading{width: 22px;height: 22px;display: inline-block;background:url(./img/loading.gif) no-repeat center/cover;margin-right: 10px;}
+		.step3 iframe{border: none;width: 100%;height: 100%;background: #fff;}
+		.next-step {text-align: right; background: #f6f6f6;}
+
+		#nextStep3{
+			margin:43px 0;
+		}
+		#nextStep3.disbaled{
+			background: #fff;
+			border: 1px solid #aaa;
+			color: #aaa;
+		}
+
+
+		#reset{margin-right: 20px;background: red;}
+		#reset_resourcePool{margin-right: 20px;}
+	</style>
+</head>
+<body>
+	<div class="step3">
+		<div>
+			<div id="mask"><span class="icon-loading"></span><span>正在加载页面</span></div>
+			<iframe id="resourceAddress"></iframe>
+		</div>
+		<p class="next-step">
+			<span class="common-btn" id="reset">重装</span>
+			<span class="common-btn" id="reset_resourcePool">重新配置分布式存储</span>
+			<button class="common-btn disbaled" id="nextStep3" disabled>下一步</button>
+		</p>
+	</div>
+<script>
+    var TASK_ID=$("#router-view").attr("data-task");
+    var loading=null;
+    var timer=null;
+    $.ajax({
+        url:"/authInstall/winStoreInitConfig",
+        data:{
+            taskId:TASK_ID
+        },
+        success:function(res){
+			if(res.code=="200"){
+			    setTimeout(function(){
+                    $("#resourceAddress").attr("src",res.detail.ebs_host);
+                    $("#mask").remove();
+				},5000)
+
+			}else{
+                $("#mask").remove();
+                layer.open({
+					title:"提示",
+					content:res.msg
+				})
+			}
+        },
+		error:function(){
+            $("#mask").remove();
+            layer.open({
+                title:"提示",
+                content:"系统异常"
+            })
+		}
+    })
+
+	timer=setInterval(function(){
+        $.ajax({
+            url:"/authInstall/getWinStoreStatus",
+            data:{
+                taskId:TASK_ID
+            },
+            success:function(res){
+                if(res.code=="200"){
+                    var total=res.detail.data.total;
+                    var successNumber=res.detail.data.success;
+                    if(total==successNumber){
+                        clearInterval(timer);
+                        $("#nextStep3").removeClass("disabled").prop("disabled",null);
+                        $(".step li").removeClass("active");
+                        $(".step li").eq(4).addClass("active"); //跳到第4步骤
+                        $("#router-view").load("./fourthStep.html");
+                    }
+                }
+            }
+        })
+	},3000)
+
+
+	$("#nextStep3").click(function(){
+        layer.open({
+            title:"提示",
+            content:"确定要进入到下一步吗？",
+            btn:["取消","确定"],
+            btn2:function(){
+                $.ajax({
+                    url:"/authInstall/getWinStoreStatus",
+                    data:{
+                        taskId:TASK_ID
+                    },
+                    beforeSend:function(){
+                        loading=layer.load(2,{shade: [0.5, '#000']});
+                    },
+                    success:function(res){
+                        layer.close(loading);
+                        if(res.code=="200"){
+                            var total=res.detail.data.total;
+                            var successNumber=res.detail.data.success;
+                            if(total==successNumber){
+                                $(".step li").removeClass("active");
+                                $(".step li").eq(4).addClass("active");
+                                $("#router-view").load("./fourthStep.html");
+							}else{
+                               layer.open({
+                                    title:"提示",
+                                    content:"请先配置完分布式存储"
+                                })
+							}
+                        }else{
+                            layer.open({
+                                title:"提示",
+                                content:res.msg
+                            })
+                        }
+                    },
+                    error:function(){
+                        layer.close(loading);
+                        layer.open({
+                            title:"提示",
+                            content:"系统异常"
+                        })
+                    }
+                })
+            }
+        })
+	})
+
+
+    $("#reset").click(function(){
+        layer.open({
+            title:"提示",
+            content:"<div>"+
+            "<h1 style='font-weight: bold;font-size:22px;margin-bottom: 24px;'>确定重置吗？</h1>"+
+            "<p>提示：重置指清除所有的基本配置信息和应答文件，并从头开始安装系统，请谨慎操作。</p>"+
+            "</div>",
+            btn:["取消","确定"],
+            btn2:function(){
+                $.ajax({
+                    url:"/authInstall/reset",
+                    data:{
+                        taskId:TASK_ID
+                    },
+                    beforeSend:function(){
+                        loading=layer.load(2,{shade: [0.5, '#000']});
+                    },
+                    success:function(res){
+                        layer.close(loading);
+                        if(res.code=="success"){
+                            layer.open({
+                                title:"提示",
+                                content:"重置成功",
+                                end:function(){
+                                    window.location.reload();
+                                },
+                                time:3000
+                            })
+                        }else{
+                            layer.open({
+                                title:"提示",
+                                content:res.msg
+                            })
+                        }
+                    },
+                    error:function(){
+                        layer.close(loading);
+                        layer.open({
+                            title:"提示",
+                            content:"系统异常"
+                        })
+                    }
+                })
+            }
+        })
+    })
+
+
+    $("#reset_resourcePool").click(function(){
+        layer.open({
+            title:"提示",
+            content:"<div>"+
+            "<h1 style='font-weight: bold;font-size:22px;margin-bottom: 24px;'>确定重置确定重新初始化此页面信息吗？</h1>"+
+            "<p>提示：重新初始化指清除此页面所有的配置信息，并重新开始配置分布式存储信息。</p>"+
+            "</div>",
+            btn:["取消","确定"],
+            btn2:function(){
+                $.ajax({
+                    url:"/authInstall/reInit",
+                    data:{
+                        taskId:TASK_ID
+                    },
+                    beforeSend:function(){
+                        loading= layer.load(2,{shade: [0.7, '#000'],content:'<span style="width:363px;margin-left: -135px;line-height:2;font-size:15px;display: inline-block;color:#fff">正在初始化，初始化成功后会重启物理机，请到控制台查看重启进度</span>',time: 10*1000000,success: function(layero){
+                            layero.find('.layui-layer-content').css('padding-top', '40px');
+                        }})
+                    },
+                    success:function(res){
+                        layer.close(loading);
+                        if(res.code=="success"){
+                            layer.open({
+                                title:"提示",
+                                content:"初始化成功",
+                                end:function(){
+                                    window.location.reload();
+                                },
+                                time:3000
+                            })
+                        }else{
+                            layer.open({
+                                title:"提示",
+                                content:res.msg
+                            })
+                        }
+                    },
+                    error:function(){
+                        layer.close(loading);
+                        layer.open({
+                            title:"提示",
+                            content:"系统异常"
+                        })
+                    }
+                })
+            }
+        })
+    })
+
+
+
+</script>
+</body>
+</html>

@@ -23,6 +23,7 @@ import java.util.Date;
  * @Version: 版本
  */
 @Service
+@Transactional
 public class EmployeeService {
 
     @Autowired

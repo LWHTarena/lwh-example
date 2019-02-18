@@ -1,11 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="lwhtarena.db" uuid="33cf8713-6b50-4e6a-92d5-f1a437a41cc9">
+    <data-source source="LOCAL" name="jdbc" uuid="f085e01b-3ee8-4c06-9250-cd6460bcebc2">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>jdbc.properties
+
+D:/2018lwh/lwh-example/lwh-hibernate-search-example/src/main/resources/jdbc.properties</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:liwh;DB_CLOSE_DELAY=-1;MVCC=TRUE</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="ad6f6037-81c4-4cc4-b76d-1afee575e630">
+      <driver-ref>hsqldb.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+D:/2018lwh/lwh-example/lwh-springmvc5-hibernate5-example/src/main/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.hsqldb.jdbcDriver</jdbc-driver>
+      <jdbc-url>jdbc:hsqldb:mem:lwhtarena</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="jdbc" uuid="11cdbf24-c86f-4b85-9ede-dd7b43247c6f">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>jdbc.properties
+
+D:/2018lwh/lwh-example/lwh-h2-example/src/main/resources/jdbc.properties</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:testdb;MODE=MYSQL;DB_CLOSE_DELAY=-1</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="db" uuid="cef759eb-a927-4787-8025-c056f6b72ec5">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>jdbc.properties
+
+D:/2018lwh/lwh-example/lwh-hibernate-search-jpa-example/src/main/resources/db.properties</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:liwh;DB_CLOSE_DELAY=-1;MVCC=TRUE</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="34bf570c-4336-477f-919f-b1c66ca3d191">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+D:/2018lwh/lwh-example/lwh-hibernate5-example/src/test/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1;MVCC=TRUE</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="d29cef5b-2b8d-4d8e-b6d5-63e3df54ba58">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+D:/2018lwh/lwh-example/lwh-sqlite-example/src/main/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\liwenhao\lwh-example\lwh-sqlite-example\src\main\resources\lwhtarena.db</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="example" uuid="2bbe9d94-41c6-4eb7-848d-e95881cd53c4">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\liwenhao\lwh-example\lwh-sqlite-example\src\main\resources\lwhtarena.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\2018lwh\lwh-example\example.db</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="data-jpa" uuid="f1e18a6f-d5c8-4f72-8812-372eaa117635">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:identifier.sqlite</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>
