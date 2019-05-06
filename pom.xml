@@ -33,6 +33,7 @@
         <module>lwh-hibernate-search-jpa-example</module>
         <module>lwh-springboot-sqlite-pxe-example</module>
         <module>lwh-springboot-data-jpa-example</module>
+        <module>lwh-jwt-demo</module>
     </modules>
 
 
