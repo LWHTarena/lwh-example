@@ -34,6 +34,11 @@
         <module>lwh-springboot-sqlite-pxe-example</module>
         <module>lwh-springboot-data-jpa-example</module>
         <module>lwh-jwt-demo</module>
+        <module>lwh-sso-spring-session</module>
+        <module>lwh-sso-security</module>
+        <module>lwh-sso-restful-springmvc</module>
+        <module>lwh-sso-cross-domain</module>
+        <module>lwh-sso-jwt</module>
     </modules>
 
 
