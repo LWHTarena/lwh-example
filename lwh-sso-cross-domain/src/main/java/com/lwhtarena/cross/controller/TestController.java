@@ -1,0 +1,46 @@
+package com.lwhtarena.cross.controller;
+
+import com.lwhtarena.cross.common.utils.CookieUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.UUID;
+
+/**
+ * <p>
+ * <h2>简述：</h2>
+ * <ol></ol>
+ * <h2>功能描述：</h2>
+ * <ol></ol>
+ * <blockquote><pre></pre></blockquote>
+ * </p>
+ *
+ * @Author: liwh
+ * @Date :
+ * @Version: 版本
+ */
+@Controller
+public class TestController {
+
+    @RequestMapping("/test")
+    public String test(HttpServletRequest request, HttpServletResponse response){
+
+        String cookieName="custom_global_session_id";
+        String encodeString="UTF-8";
+
+        String cookieValue = CookieUtils.getCookieValue(request, cookieName, encodeString);
+
+        if(null == cookieValue || "".equals(cookieValue.trim())){
+            System.out.println("无cookie，生成新的cookie数据");
+            cookieValue = UUID.randomUUID().toString();
+        }
+
+        // 根据cookieValue访问数据存储，获取客户端数据。
+
+        CookieUtils.setCookie(request, response, cookieName, cookieValue, 0, encodeString);
+
+        return "/ok.jsp";
+    }
+}
