@@ -18,12 +18,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <hibernate.version>5.3.6.Final</hibernate.version>
         <hibernate.validator>6.0.12.Final</hibernate.validator>
         <c3p0.version>0.9.5.2</c3p0.version>
-        <spring.version>5.0.8.RELEASE</spring.version>
+        <spring.version>5.1.8.RELEASE</spring.version>
         <jstl.version>1.2.1</jstl.version>
         <tld.version>1.1.2</tld.version>
         <servlets.version>3.1.0</servlets.version>
@@ -34,7 +34,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
 

@@ -12,20 +12,21 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <spring-version>5.0.4.RELEASE</spring-version>
-        <spring-security-version>5.0.4.RELEASE</spring-security-version>
-    </properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-version>5.1.8.RELEASE</spring-version>
+    <spring-security-version>5.1.5.RELEASE</spring-security-version>
+</properties>
 
-    
-    <modules>
-        <module>lwh-spring-security-example</module>
-        <module>lwh-lucene-example</module>
-        <module>lwh-hibernate-search-example</module>
-        <module>lwh-zero-configuration-example</module>
-        <module>lwh-h2-example</module>
-        <module>lwh-springmvc5-hibernate5-example</module>
+
+<modules>
+<module>lwh-spring-security-example</module>
+<module>lwh-lucene-example</module>
+<module>lwh-hibernate-search-example</module>
+<!--零配置案例-->
+<module>lwh-zero-configuration-example</module>
+<module>lwh-h2-example</module>
+<module>lwh-springmvc5-hibernate5-example</module>
         <module>lwh-sqlite-example</module>
         <module>lwh-spring-mybatis</module>
         <module>lwh-spring-quartz-example</module>
