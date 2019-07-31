@@ -20,13 +20,13 @@
 
 
 <modules>
-<module>lwh-spring-security-example</module>
-<module>lwh-lucene-example</module>
-<module>lwh-hibernate-search-example</module>
-<!--零配置案例-->
-<module>lwh-zero-configuration-example</module>
-<module>lwh-h2-example</module>
-<module>lwh-springmvc5-hibernate5-example</module>
+        <module>lwh-spring-security-example</module>
+        <module>lwh-lucene-example</module>
+        <module>lwh-hibernate-search-example</module>
+        <!--零配置案例-->
+        <module>lwh-zero-configuration-example</module>
+        <module>lwh-h2-example</module>
+        <module>lwh-springmvc5-hibernate5-example</module>
         <module>lwh-sqlite-example</module>
         <module>lwh-spring-mybatis</module>
         <module>lwh-spring-quartz-example</module>
