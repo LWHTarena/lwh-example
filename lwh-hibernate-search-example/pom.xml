@@ -23,7 +23,7 @@
         <hibernate.version>5.3.5.Final</hibernate.version>
         <hibernate-search.version>5.10.3.Final</hibernate-search.version>
         <spring.version>5.1.8.RELEASE</spring.version>
-        <jackson.version>2.9.6</jackson.version>
+        <jackson.version>2.10.0</jackson.version>
 
         <jsp.version>2.2</jsp.version>
         <jstl.version>1.2</jstl.version>
