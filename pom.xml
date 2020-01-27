@@ -16,7 +16,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring-version>5.1.8.RELEASE</spring-version>
         <spring-security-version>5.1.5.RELEASE</spring-security-version>
-</properties>
+    </properties>
 
 
 <modules>
@@ -40,7 +40,37 @@
         <module>lwh-sso-restful-springmvc</module>
         <module>lwh-sso-cross-domain</module>
         <module>lwh-sso-jwt</module>
-    </modules>
+</modules>
+
+    <!-- 子POM无条件继承父POM的dependencies元素 -->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- 子POM的dependencies元素可以有选择的继承父POM的dependencyManagement元素  -->
+    <dependencyManagement>
+
+        <dependencies>
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.1-api</artifactId>
+                <version>1.0.2.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>2.0.9.RELEASE</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
 
 
 </project>
