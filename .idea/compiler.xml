@@ -2,25 +2,42 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="lwh-springboot-data-jpa-example" />
+        <module name="lwh-jwt-demo" />
         <module name="lwh-sqlite-example" />
         <module name="lwh-lucene-example" />
-        <module name="lwh-hibernate5-example" />
         <module name="lwh-zero-configuration-example" />
         <module name="lwh-springmvc5-hibernate5-example" />
-        <module name="lwh-spring-mybatis" />
         <module name="lwh-springboot-sqlite-pxe-example" />
-        <module name="lwh-jwt-demo" />
+        <module name="lwh-sso-restful-springmvc" />
+        <module name="lwh-springboot-data-jpa-example" />
+        <module name="lwh-sso-cross-domain" />
         <module name="lwh-spring-quartz-example" />
+        <module name="lwh-h2-example" />
         <module name="lwh-hibernate-search-jpa-example" />
         <module name="lwh-spring-security-example" />
-        <module name="lwh-h2-example" />
+        <module name="lwh-sso-jwt" />
+        <module name="eureka" />
+        <module name="lwh-sso-security" />
+        <module name="lwh-sso-spring-session" />
         <module name="lwh-hibernate-search-example" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="lwh-springcloud" target="1.8" />
+      <module name="lwh-springcloud-eureka" target="1.8" />
+      <module name="lwh-springcloud-eureka-client" target="1.8" />
+      <module name="lwh-springcloud-product" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lwh-springcloud" options="" />
+      <module name="lwh-springcloud-product" options="" />
+    </option>
   </component>
 </project>

@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>lwh-spring-mybatis</artifactId>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
     <name>lwh-spring-mybatis Maven Webapp</name>
     <!-- FIXME change it to the project's website -->

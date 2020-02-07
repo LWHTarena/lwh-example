@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>lwh-h2-example</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>lwh-h2-example Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
@@ -28,12 +28,13 @@
             <artifactId>h2</artifactId>
             <version>1.4.197</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring-security-version}</version>
-            <scope>compile</scope>
+            <version>5.2.3.RELEASE</version>
         </dependency>
+
     </dependencies>
 
     <build>

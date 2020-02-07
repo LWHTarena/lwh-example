@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>lwh-hibernate5-example</artifactId>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
     <name>lwh-hibernate5-example Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
