@@ -1,6 +1,8 @@
 # elasticsearch 使用
 
-## 低级别的client
+## 低级的client  
+
+客户通过客户端http来连接Elasticsearch集群（兼容性好）
 
 1、依赖
 ```xml
@@ -11,7 +13,7 @@
 </dependency>
 ```
 
-## 高级别的client
+## 高级的client
 
 1、依赖
 ```xml
