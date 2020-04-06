@@ -17,9 +17,9 @@
         <module name="api-gateway" />
         <module name="lwh-springmvc5-hibernate5-example" />
         <module name="product-client" />
-        <module name="eureka" />
         <module name="lwh-springboot-sqlite-pxe-example" />
         <module name="lwh-sso-restful-springmvc" />
+        <module name="lwh-hibernate-search-example" />
         <module name="order-server" />
         <module name="lwh-sso-cross-domain" />
         <module name="lwh-spring-quartz-example" />
@@ -33,7 +33,7 @@
         <module name="lwh-hibernate-search-jpa-example" />
         <module name="lwh-sso-spring-session" />
         <module name="order-common" />
-        <module name="lwh-hibernate-search-example" />
+        <module name="eureka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
