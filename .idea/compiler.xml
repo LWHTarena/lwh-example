@@ -10,13 +10,13 @@
         <module name="lwh-jwt-demo" />
         <module name="lwh-springboot-data-jpa-example" />
         <module name="lwh-sqlite-example" />
-        <module name="lwh-sso-security" />
         <module name="order-client" />
         <module name="product-common" />
         <module name="lwh-zero-configuration-example" />
+        <module name="api-gateway" />
         <module name="lwh-springmvc5-hibernate5-example" />
         <module name="product-client" />
-        <module name="eureka" />
+        <module name="lwh-elasticsearch-demo" />
         <module name="lwh-springboot-sqlite-pxe-example" />
         <module name="lwh-sso-restful-springmvc" />
         <module name="order-server" />
@@ -27,9 +27,9 @@
         <module name="lwh-spring-security-example" />
         <module name="lwh-sso-jwt" />
         <module name="product-server" />
-        <module name="lwh-elasticsearch-demo" />
+        <module name="eureka" />
         <module name="config" />
-        <module name="api-gateway" />
+        <module name="lwh-sso-security" />
         <module name="lwh-hibernate-search-jpa-example" />
         <module name="lwh-sso-spring-session" />
         <module name="order-common" />

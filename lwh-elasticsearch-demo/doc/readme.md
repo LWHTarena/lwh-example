@@ -23,3 +23,13 @@
     <version>7.6.2</version>
 </dependency>
 ```
+
+## Spring Data ElasticSearch 
+Spring Data项目对ElasticSearch做了支持，其目的就是简化对ElasticSearch的操作
+```xml
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-elasticsearch</artifactId>
+    <version>3.2.6.RELEASE</version>
+</dependency>
+```
