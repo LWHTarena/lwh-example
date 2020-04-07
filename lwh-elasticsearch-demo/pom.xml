@@ -22,6 +22,36 @@
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-elasticsearch</artifactId>
       <version>3.2.6.RELEASE</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>elasticsearch-rest-high-level-client</artifactId>
+          <groupId>org.elasticsearch.client</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>elasticsearch-core</artifactId>
+          <groupId>org.elasticsearch</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>elasticsearch-rest-client</artifactId>
+          <groupId>org.elasticsearch.client</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>rank-eval-client</artifactId>
+          <groupId>org.elasticsearch.plugin</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>parent-join-client</artifactId>
+          <groupId>org.elasticsearch.plugin</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>lang-mustache-client</artifactId>
+          <groupId>org.elasticsearch.plugin</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>elasticsearch</artifactId>
+          <groupId>org.elasticsearch</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
