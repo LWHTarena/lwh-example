@@ -40,7 +40,8 @@
         <module>lwh-sso-cross-domain</module>
         <module>lwh-sso-jwt</module>
         <module>lwh-springcloud-ordering</module>
-    <module>lwh-elasticsearch-demo</module>
+        <module>lwh-elasticsearch-demo</module>
+        <module>lwh-springboot-data-elasticsearch-example</module>
 </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->
