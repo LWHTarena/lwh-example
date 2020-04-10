@@ -1,0 +1,7 @@
+spring:
+    applcation:
+        name: elasticsearch
+    data:
+        elasticsearch:
+            cluster-name: liwh
+            cluster-nodes: 192.168.31.120:9200
