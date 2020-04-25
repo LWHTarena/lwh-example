@@ -1,7 +1,8 @@
 spring:
     applcation:
-        name: elasticsearch
+        name: liwh
     data:
         elasticsearch:
-            cluster-name: liwh
-            cluster-nodes: 192.168.31.120:9200
+            cluster-name: elasticsearch
+#            程序连接es的端口号是 9300
+            cluster-nodes: 192.168.31.120:9300

@@ -1,0 +1,10 @@
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/HibernateConfig.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/WebMvcConfig.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/common/SQLiteDialect.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/dao/UserDao.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/AppInitializer.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/service/impl/UserServiceImp.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/service/UserService.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/entity/User.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/controller/UserController.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-sqlite-example/src/main/java/com/lwhtarena/sqlite/dao/impl/UserDaoImp.java

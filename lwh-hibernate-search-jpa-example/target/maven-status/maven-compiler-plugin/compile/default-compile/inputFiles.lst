@@ -1,0 +1,10 @@
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/handler/EmployeeHandler.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/repository/DepartmentRepository.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/service/DepartmentService.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/repository/EmployeeRepository.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/service/EmployeeService.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/MvcConfig.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/entity/Department.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/entity/Employee.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/PersistenceJPAConfig.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-hibernate-search-jpa-example/src/main/java/com/lwhtarena/jpa/WebApplicationInitializer.java

@@ -10,33 +10,35 @@
         <module name="lwh-jwt-demo" />
         <module name="lwh-springboot-data-jpa-example" />
         <module name="lwh-sqlite-example" />
-        <module name="order-client" />
+        <module name="lwh-sso-security" />
+        <module name="lwh-elasticsearch-demo" />
         <module name="product-common" />
         <module name="lwh-zero-configuration-example" />
-        <module name="api-gateway" />
+        <module name="order-client" />
         <module name="lwh-springmvc5-hibernate5-example" />
         <module name="product-client" />
-        <module name="lwh-elasticsearch-demo" />
         <module name="lwh-springboot-sqlite-pxe-example" />
         <module name="lwh-sso-restful-springmvc" />
+        <module name="lwh-hibernate-search-example" />
         <module name="order-server" />
         <module name="lwh-sso-cross-domain" />
         <module name="lwh-spring-quartz-example" />
-        <module name="lwh-h2-example" />
         <module name="lwh-lucene-example" />
         <module name="lwh-spring-security-example" />
         <module name="lwh-sso-jwt" />
         <module name="product-server" />
-        <module name="eureka" />
+        <module name="lwh-h2-example" />
         <module name="config" />
-        <module name="lwh-sso-security" />
+        <module name="api-gateway" />
         <module name="lwh-hibernate-search-jpa-example" />
+        <module name="lwh-springboot-data-elasticsearch-example" />
         <module name="lwh-sso-spring-session" />
         <module name="order-common" />
-        <module name="lwh-hibernate-search-example" />
+        <module name="eureka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="lwh-spring-data-elasticsearch" target="1.7" />
       <module name="lwh-springcloud" target="1.8" />
       <module name="lwh-springcloud-eureka" target="1.8" />
       <module name="lwh-springcloud-eureka-client" target="1.8" />

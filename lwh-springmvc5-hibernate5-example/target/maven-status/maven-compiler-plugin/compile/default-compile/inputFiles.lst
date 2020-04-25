@@ -1,0 +1,9 @@
+/Users/liwh/IdeaProjects/lwh-example/lwh-springmvc5-hibernate5-example/src/main/java/com/lwhtarena/web/service/impl/UserServiceImp.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-springmvc5-hibernate5-example/src/main/java/com/lwhtarena/web/dao/UserDao.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-springmvc5-hibernate5-example/src/main/java/com/lwhtarena/web/AppInitializer.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-springmvc5-hibernate5-example/src/main/java/com/lwhtarena/web/WebMvcConfig.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-springmvc5-hibernate5-example/src/main/java/com/lwhtarena/web/dao/impl/UserDaoImp.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-springmvc5-hibernate5-example/src/main/java/com/lwhtarena/web/entity/User.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-springmvc5-hibernate5-example/src/main/java/com/lwhtarena/web/HibernateConfig.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-springmvc5-hibernate5-example/src/main/java/com/lwhtarena/web/controller/UserController.java
+/Users/liwh/IdeaProjects/lwh-example/lwh-springmvc5-hibernate5-example/src/main/java/com/lwhtarena/web/service/UserService.java

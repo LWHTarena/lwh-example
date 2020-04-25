@@ -71,3 +71,10 @@ Maven用户可以继承spring-boot-starter-parent项目，来获取最佳依赖�
     </dependencies>
 </dependencyManagement>
 ```
+
+## springboot-data-elasticsearch 的特征
+- 支持Spring的基于@Configuration的java配置方式，或者XML配置方式
+- 提供了用于操作ES的便捷工具类ElasticsearchTemplate。包括实现文档到POJO之间的自动智能映射。
+- 利用Spring的数据转换服务实现的功能丰富的对象映射
+- 基于注解的元数据映射方式，而且可扩展以支持更多不同的数据格式
+- 根据持久层接口自动生成对应实现方法，无需人工编写基本操作代码（类似mybatis，根据接口自动得到实现）。当然，也支持人工定制查询
