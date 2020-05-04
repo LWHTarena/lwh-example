@@ -13,14 +13,22 @@
     <packaging>pom</packaging>
     <description>
         spring cloud 搭建的外卖订单系统
+        父pom
+
     </description>
 
+    <!-- 统一管理jar包版本 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring-boot.version>2.2.4.RELEASE</spring-boot.version>
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <junit.version>4.12</junit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <lombok.version>1.18.12</lombok.version>
+        <mysql.version>8.0.20</mysql.version>
+        <druid.version>1.1.22</druid.version>
+        <spring-boot.version>2.2.1.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
     </properties>
 
     <modules>
@@ -30,8 +38,11 @@
         <module>config</module>
         <module>api-gateway</module>
     </modules>
+
+    <!-- 子模块继承之后，提供作用：锁定版本 + 子module不用写groupId和version -->
     <dependencyManagement>
         <dependencies>
+            <!--spring boot 2.2.1 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -40,13 +51,24 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- SpringCloud依赖，一定要放到dependencyManagement中，起到管理版本的作用即可 -->
+            <!--
+                SpringCloud依赖，一定要放到dependencyManagement中，起到管理版本的作用即可
+                spring cloud Hoxton.SR4
+            -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!--spring cloud alibaba 2.2.1.RELEASE-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.1.RELEASE</version>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
