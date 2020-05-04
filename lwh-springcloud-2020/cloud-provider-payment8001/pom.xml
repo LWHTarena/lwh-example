@@ -17,6 +17,13 @@
     <name>cloud-provider-payment8001</name>
 
     <dependencies>
+        <!--引入自定的jar-->
+        <dependency>
+            <groupId>com.lwhtarena</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
