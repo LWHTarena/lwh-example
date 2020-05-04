@@ -2,20 +2,22 @@ package com.lwhtarena.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @author liwh
- * @Title: OrderMain80
+ * @Title: PaymentMain8081
  * @Package com.lwhtarena.springcloud
- * @Description: 订单服务
+ * @Description: 主程序启动
  * @Version 1.0.0
- * @date 2020/5/4 10:15
+ * @date 2020/5/3 19:11
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class OrderMain80 {
+@EnableDiscoveryClient
+public class PaymentMain8082 {
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain80.class,args);
+        SpringApplication.run(PaymentMain8082.class,args);
     }
 }
