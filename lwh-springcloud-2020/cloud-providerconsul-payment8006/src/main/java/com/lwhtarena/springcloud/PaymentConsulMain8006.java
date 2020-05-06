@@ -6,16 +6,16 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author liwh
- * @Title: PayMentMain8004
+ * @Title: PaymentConsulMain8006
  * @Package com.lwhtarena.springcloud
- * @Description: zookeeper注册中心 服务提供者
+ * @Description:  服务提供者
  * @Version 1.0.0
- * @date 2020/5/5 13:06
+ * @date 2020/5/5 20:47
  */
 @SpringBootApplication
-@EnableDiscoveryClient //该注解用于使用consul 或 zookeeper作为注册中心时注册服务
-public class PaymentMain8004 {
+@EnableDiscoveryClient
+public class PaymentConsulMain8006 {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentMain8004.class,args);
+        SpringApplication.run(PaymentConsulMain8006.class,args);
     }
 }
