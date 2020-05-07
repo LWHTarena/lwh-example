@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author liwh
@@ -74,6 +75,22 @@ public class PaymentController {
 
     @GetMapping(value = "/payment/lb")
     public String getPaymentLB(){
+        return serverPort;
+    }
+
+    /**
+     * 服务提供方8001故意写休眠线程，模拟服务端处理需要3秒钟完成。
+     * 超时设置，故意设置超时演示出错情况
+     *
+     * @return
+     */
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTime(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return serverPort;
     }
 }

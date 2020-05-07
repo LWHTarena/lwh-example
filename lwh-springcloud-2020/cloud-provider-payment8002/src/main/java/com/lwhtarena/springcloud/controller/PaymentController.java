@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lwhtarena.springcloud.service.PaymentService;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author liwh
@@ -74,6 +75,20 @@ public class PaymentController {
 
     @GetMapping(value = "/payment/lb")
     public String getPaymentLB(){
+        return serverPort;
+    }
+
+    /**
+     * 服务提供方8001故意写暂停程序
+     * @return
+     */
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTime(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return serverPort;
     }
 }
