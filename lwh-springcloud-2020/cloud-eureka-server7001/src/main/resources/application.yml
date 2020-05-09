@@ -12,7 +12,7 @@ eureka:
       #单机就7001自己
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka #设置与Eureka server交互的地址查询服务和注册服务都需要依赖这个地址
       #集群指向其他Euraka
-      #defaultZone: http://eureka7002.com:7002/eureka #设置与Eureka server交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://eureka7002.com:7002/eureka #设置与Eureka server交互的地址查询服务和注册服务都需要依赖这个地址
 
       #单机就是7001自己
-        defaultZone: http://eureka7001.com:7001/eureka
+#        defaultZone: http://eureka7001.com:7001/eureka
