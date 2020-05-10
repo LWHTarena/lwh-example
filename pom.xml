@@ -42,7 +42,7 @@
         <module>lwh-springcloud-ordering</module>
         <module>lwh-elasticsearch-demo</module>
         <module>lwh-springboot-data-elasticsearch-example</module>
-    <module>lwh-springcloud-2020</module>
+        <module>lwh-springcloud-2020</module>
 </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->
