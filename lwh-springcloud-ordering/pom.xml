@@ -14,7 +14,6 @@
     <description>
         spring cloud 搭建的外卖订单系统
         父pom
-
     </description>
 
     <!-- 统一管理jar包版本 -->

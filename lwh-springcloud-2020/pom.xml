@@ -40,6 +40,9 @@
         <module>alibaba-consumer-nacos-order83</module>
         <module>alibaba-config-nacos-client3377</module>
         <module>alibaba-sentinel-service8401</module>
+        <module>alibaba-provider-payment9003</module>
+        <module>alibaba-provider-payment9004</module>
+        <module>alibaba-consumer-nacos-order84</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
@@ -61,7 +64,7 @@
     <!-- 子模块继承之后，提供作用：锁定版本 + 子module不用写groupId和version -->
     <dependencyManagement>
         <dependencies>
-            <!--spring boot 2.2.1 -->
+            <!--spring boot 2.2.5 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
