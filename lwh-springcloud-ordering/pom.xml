@@ -12,8 +12,8 @@
     <artifactId>lwh-springcloud-ordering</artifactId>
     <packaging>pom</packaging>
     <description>
-        spring cloud 搭建的外卖订单系统
-        父pom
+        spring cloud 搭建的外卖订单系统;
+        企业微信微服务点餐
     </description>
 
     <!-- 统一管理jar包版本 -->
@@ -26,7 +26,7 @@
         <lombok.version>1.18.12</lombok.version>
         <mysql.version>8.0.20</mysql.version>
         <druid.version>1.1.22</druid.version>
-        <spring-boot.version>2.2.1.RELEASE</spring-boot.version>
+        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
     </properties>
 
