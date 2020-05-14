@@ -29,3 +29,5 @@ logging:
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml
+seata:
+  use-jdk-proxy: false # 默认已开启数据源自动代理,如需关闭；默认是开启true
