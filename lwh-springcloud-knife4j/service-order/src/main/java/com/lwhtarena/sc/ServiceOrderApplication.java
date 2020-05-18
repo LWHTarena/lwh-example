@@ -1,7 +1,6 @@
 package com.lwhtarena.sc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -21,13 +20,15 @@ import java.net.UnknownHostException;
  */
 @EnableEurekaClient
 @SpringBootApplication
+@Slf4j
 public class ServiceOrderApplication {
-    static Logger logger= LoggerFactory.getLogger(ServiceOrderApplication.class);
+//    static Logger logger= LoggerFactory.getLogger(ServiceOrderApplication.class);
 
     public static void main(String[] args) throws UnknownHostException {
         ConfigurableApplicationContext application= SpringApplication.run(ServiceOrderApplication.class, args);
         Environment env = application.getEnvironment();
-        logger.info("\n----------------------------------------------------------\n\t" +
+//        logger.info("\n----------------------------------------------------------\n\t" +
+        log.info("\n----------------------------------------------------------\n\t" +
                         "Application '{}' is running! Access URLs:\n\t" +
                         "Local: \t\thttp://localhost:{}\n\t" +
                         "External: \thttp://{}:{}\n\t"+

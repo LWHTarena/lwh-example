@@ -15,10 +15,9 @@ import java.util.Random;
  * @Version 1.0.0
  * @date 2020/5/17 23:10
  */
-
-@Getter
-@Setter
 @ApiModel(value = "订单模块")
+@Data
+@AllArgsConstructor
 public class Order {
     @ApiModelProperty(value = "订单号")
     private String orderNo;

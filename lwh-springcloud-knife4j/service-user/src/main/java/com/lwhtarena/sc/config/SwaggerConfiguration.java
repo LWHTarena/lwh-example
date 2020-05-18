@@ -46,8 +46,8 @@ public class SwaggerConfiguration {
 
     private ApiInfo groupApiInfo(){
         return new ApiInfoBuilder()
-                .title("swagger-bootstrap-ui很棒~~~！！！")
-                .description("<div style='font-size:14px;color:red;'>swagger-bootstrap-ui-demo RESTful APIs</div>")
+                .title("客户服务！！！")
+                .description("<div style='font-size:14px;color:red;'>客户服务 RESTful APIs</div>")
                 .termsOfServiceUrl("http://www.group.com/")
                 .contact("group@qq.com")
                 .version("1.0")

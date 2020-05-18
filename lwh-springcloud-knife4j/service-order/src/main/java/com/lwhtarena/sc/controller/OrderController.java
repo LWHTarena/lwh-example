@@ -19,7 +19,7 @@ import java.util.List;
  */
 @Api(tags = "订单模块")
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/order")
 public class OrderController {
 
     @ApiOperation(value = "查询订单列表")

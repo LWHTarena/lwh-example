@@ -37,6 +37,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(groupApiInfo())
                 .select()
+                /**对所有api进行监控**/
                 .apis(RequestHandlerSelectors.basePackage("com.lwhtarena.sc.controller"))
                 .paths(PathSelectors.any())
 
@@ -45,8 +46,8 @@ public class SwaggerConfiguration {
 
     private ApiInfo groupApiInfo(){
         return new ApiInfoBuilder()
-                .title("swagger-bootstrap-ui很棒~~~！！！")
-                .description("<div style='font-size:14px;color:red;'>swagger-bootstrap-ui-demo RESTful APIs</div>")
+                .title("订单服务！！！")
+                .description("<div style='font-size:14px;color:red;'>订单服务 RESTful APIs</div>")
                 .termsOfServiceUrl("http://www.group.com/")
                 .contact("group@qq.com")
                 .version("1.0")
