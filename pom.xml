@@ -18,7 +18,7 @@
         <spring-security-version>5.2.2.RELEASE</spring-security-version>
     </properties>
 
-<modules>
+    <modules>
         <module>lwh-spring-security-example</module>
         <module>lwh-lucene-example</module>
         <module>lwh-hibernate-search-example</module>
@@ -44,7 +44,8 @@
         <module>lwh-springboot-data-elasticsearch-example</module>
         <module>lwh-springcloud-2020</module>
         <module>lwh-springcloud-knife4j</module>
-</modules>
+        <module>lwh-netty</module>
+    </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->
     <dependencies>
@@ -73,7 +74,6 @@
 
         </dependencies>
     </dependencyManagement>
-
 
 
 </project>
