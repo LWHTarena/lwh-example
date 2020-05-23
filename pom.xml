@@ -47,6 +47,7 @@
         <module>lwh-netty</module>
         <module>lwh-security2020</module>
         <module>lwh-spring-annotation</module>
+        <module>lwh-springboot2.x</module>
     </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->
