@@ -1,0 +1,14 @@
+server:
+  port: 8080
+#  servlet:
+#    context-path: /crud
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  mvc:
+    format:
+      date: yyyy-MM-dd
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n.login
