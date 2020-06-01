@@ -54,7 +54,7 @@ public class GroupChatServer {
                             /**将该sc注册到selector**/
                             sc.register(selector,SelectionKey.OP_READ);
 
-                            log.info("{}上线",sc.getRemoteAddress());
+                            log.info("服务器端监听到{}上线",sc.getRemoteAddress());
                         }
 
                         /**通发送read事件，即通道是可读的状态**/
@@ -97,6 +97,9 @@ public class GroupChatServer {
         }catch (Exception e){
             try {
                 log.info("{}离线了",socketChannel.getRemoteAddress());
+                /**取消注册**/
+                key.cancel();
+                socketChannel.close();
             }catch (Exception e1){
                 e1.printStackTrace();
             }
