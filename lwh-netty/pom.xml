@@ -16,6 +16,10 @@
         <netty.version>4.1.50.Final</netty.version>
         <lombok.version>1.18.12</lombok.version>
         <log4j.version>2.13.3</log4j.version>
+        <!--protobuf 版本号-->
+        <protobuf.version>3.12.2</protobuf.version>
+        <!--grpc版本号-->
+        <grpc.version>1.30.0</grpc.version>
     </properties>
 
     <dependencies>
@@ -35,6 +39,18 @@
             <artifactId>hutool-all</artifactId>
             <version>5.3.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.12.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-all</artifactId>
+            <version>1.29.0</version>
+        </dependency>
+
 
         <!--添加以下slf4j和log4j2的依赖.-->
         <!--slf4j核心包-->
@@ -83,6 +99,49 @@
         </dependency>
 
     </dependencies>
+
+
+    <build>
+        <extensions>
+            <!--引入操作系统os设置的属性插件,否则${os.detected.classifier} 操作系统版本会找不到 -->
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.6.2</version>
+            </extension>
+        </extensions>
+
+        <plugins>
+            <!--添加编译proto文件的编译程序和对应的编译插件-->
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <configuration>
+                    <!--     指定代码生成到 src 下-->
+                    <!--配置<plugin>建议不要指定<outputDirectory>，用默认的就可以。一不留神把代码覆盖掉，就恭喜了。-->
+<!--                    <outputDirectory>${basedir}/src/main/java/com/lwhtarena/netty/codec</outputDirectory>-->
+                    <protoSourceRoot>${basedir}/src/main/proto</protoSourceRoot><!--默认的proto文件路径-->
+                    <!--Protobuf compiler artifact specification, in groupId:artifactId:version[:type[:classifier]] format.
+                    When this parameter is set, the plugin attempts to resolve the specified artifact as protoc executable.-->
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
+                    <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
+
+                    <!-- 设置是否在生成java文件之前清空outputDirectory的文件，默认值为true，设置为false时也会覆盖同名文件 -->
+                    <clearOutputDirectory>false</clearOutputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compile-custom</goal> <!--按照指定的插件进行编译，即按照GRPC协议编译protob文件-->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
