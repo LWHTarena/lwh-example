@@ -35,7 +35,7 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
                     .setStudent(MyDataInfo.Student.newBuilder().setId(18).setName("玉麒麟 卢俊义").build()).build();
         }else{
             myMessage =MyDataInfo.MyMessage.newBuilder()
-                    .setDataType(MyDataInfo.MyMessage.DataType.Student)
+                    .setDataType(MyDataInfo.MyMessage.DataType.Worker)
                     .setWorker(MyDataInfo.Worker.newBuilder().setAge(26).setName("老王").build()).build();
 
         }
