@@ -18,7 +18,7 @@ import io.netty.handler.codec.protobuf.ProtobufDecoder;
 public class NettyServer {
     public static void main(String[] args) {
         EventLoopGroup bossGroup =new NioEventLoopGroup();
-        NioEventLoopGroup workerGroup = new NioEventLoopGroup();
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup,workerGroup)

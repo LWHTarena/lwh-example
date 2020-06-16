@@ -1,4 +1,4 @@
-package com.lwhtarena.netty.tcp;
+package com.lwhtarena.netty.protocoltcp;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -9,11 +9,11 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  * @author liwh
  * @Title: TCPServer
- * @Package com.lwhtarena.netty.tcp
- * @Description: tcp 的粘包拆包
- *    粘包拆包问题是处于网络比较底层的问题，在数据链路层、网络层以及传输层都有可能发生。
- * 我们日常的网络应用开发大都在传输层进行，由于UDP有消息保护边界，不会发生粘包拆包问题，
- * 因此粘包拆包问题只发生在TCP协议中。
+ * @Package com.lwhtarena.netty.protocoltcp
+ * @Description: tcp 的粘包拆包 解决方案
+ *  1、使用自定义协议 + 编解码器 来解决
+ *  2、关键就是要解决服务器端每次读取数据长度的问题，这个问题
+ * 解决，就不会出现服务器多读或少读的问题，从而避免的TCP粘包、拆包
  *
  * @Version 1.0.0
  * @date 2020/6/15 16:11
@@ -27,7 +27,7 @@ public class TCPServer {
             serverBootstrap.group(bossGroup, workGroup)
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new TcpServerInitializer());
-            ChannelFuture channelFuture = serverBootstrap.bind(7000).sync();
+            ChannelFuture channelFuture = serverBootstrap.bind(7008).sync();
             channelFuture.channel().closeFuture().sync();
         }catch (Exception e){
             e.printStackTrace();

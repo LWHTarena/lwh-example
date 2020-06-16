@@ -1,4 +1,4 @@
-package com.lwhtarena.netty.tcp;
+package com.lwhtarena.netty.protocoltcp;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -9,7 +9,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 /**
  * @author liwh
  * @Title: TCPClient
- * @Package com.lwhtarena.netty.tcp
+ * @Package com.lwhtarena.netty.protocoltcp
  * @Description:
  * @Version 1.0.0
  * @date 2020/6/15 16:30
@@ -22,7 +22,7 @@ public class TCPClient {
             bootstrap.group(workGroup)
                     .channel(NioSocketChannel.class)
                     .handler(new TcpClinetInitialLizer());
-            ChannelFuture future = bootstrap.connect("localhost", 7000).sync();
+            ChannelFuture future = bootstrap.connect("localhost", 7008).sync();
             future.channel().closeFuture().sync();
         }catch (Exception e){
             e.printStackTrace();

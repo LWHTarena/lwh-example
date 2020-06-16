@@ -31,7 +31,7 @@ public class GroupChatServer {
          * 创建两个线程组
          */
         EventLoopGroup bossgroup = new NioEventLoopGroup();
-        NioEventLoopGroup workergroup = new NioEventLoopGroup();
+        EventLoopGroup workergroup = new NioEventLoopGroup();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossgroup, workergroup)

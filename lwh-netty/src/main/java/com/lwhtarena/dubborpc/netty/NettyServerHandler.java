@@ -1,5 +1,6 @@
 package com.lwhtarena.dubborpc.netty;
 
+import com.lwhtarena.dubborpc.custom.ClientBootstrap;
 import com.lwhtarena.dubborpc.provider.HelloServiceImpl;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -20,7 +21,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
         /**
          * 客户端在调用服务的api时，我们需要定义一个协议
          */
-        if(msg.toString().startsWith("HelloService#hello#")){
+        if(msg.toString().startsWith(ClientBootstrap.providerName)){
             String result = new HelloServiceImpl().hello(msg.toString().substring(msg.toString().lastIndexOf("#") + 1));
             ctx.writeAndFlush(result);
         }
@@ -29,6 +30,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        cause.printStackTrace();
         ctx.close();
     }
 }

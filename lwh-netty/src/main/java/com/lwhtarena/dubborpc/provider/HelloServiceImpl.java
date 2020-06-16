@@ -12,6 +12,8 @@ import com.lwhtarena.dubborpc.publicInterface.HelloService;
  */
 public class HelloServiceImpl implements HelloService {
 
+    private static int count =0;
+
     /**
      * 当有消费方调用方法时，就返回一个结果
      * @param msg
@@ -21,7 +23,7 @@ public class HelloServiceImpl implements HelloService {
     public String hello(String msg) {
         System.out.println("收到客户端消息="+msg);
         if(msg !=null){
-            return "您好，客户端，我已经收到你的消息["+msg+"]";
+            return "您好，客户端，我已经收到你的消息["+msg+"] 第"+(++count)+"次";
         }else{
             return "您好，客户端，我已经收到你的消息";
         }

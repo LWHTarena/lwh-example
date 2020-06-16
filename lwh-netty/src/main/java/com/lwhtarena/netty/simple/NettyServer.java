@@ -31,7 +31,7 @@ public class NettyServer {
          * 两个线程组都是无线循环
          */
         EventLoopGroup bossGroup =new NioEventLoopGroup();
-        NioEventLoopGroup workerGroup =new NioEventLoopGroup();
+        EventLoopGroup workerGroup =new NioEventLoopGroup();
 
 
         try {

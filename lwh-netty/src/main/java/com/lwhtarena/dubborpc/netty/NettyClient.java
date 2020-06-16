@@ -4,6 +4,7 @@ import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.ChannelPipeline;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -30,11 +31,15 @@ public class NettyClient {
     private static ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
     private static NettyClientHandler client;
+    private int count =0;
 
     /**使用代理对象，获取一个代理对象**/
-    public Object getBean(final Class<?> serverClass,final String providerName){
-        return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),new Class<?>[]{serverClass},(proxy,method,args) ->{
-            if(client ==null){
+    public Object getBean(final Class<?> serviceClass,final String providerName){
+        return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
+                new Class<?>[]{serviceClass},(proxy,method,args) ->{
+
+            System.out.println("(proxy, method, args) 进入...." + (++count) + " 次");
+            if(client == null){
                 initClient();
             }
 
@@ -51,27 +56,27 @@ public class NettyClient {
      * 初始化客户端
      */
     private static void initClient(){
-        client =new NettyClientHandler();
-        NioEventLoopGroup group = new NioEventLoopGroup();
-        Bootstrap bootstrap = new Bootstrap();
-        bootstrap.group(group)
-                .channel(NioSocketChannel.class)
-                .option(ChannelOption.TCP_NODELAY,true)
-                .handler(new ChannelInitializer<SocketChannel>() {
-                    @Override
-                    protected void initChannel(SocketChannel sc) throws Exception {
-                        ChannelPipeline pipeline = sc.pipeline();
-                        pipeline.addLast(new StringDecoder());
-                        pipeline.addLast(new StringEncoder());
-                        pipeline.addLast(client);
-                    }
-                });
+        /**创建EventLoopGroup**/
+        EventLoopGroup workGroup = new NioEventLoopGroup();
         try {
-            bootstrap.connect("127.0.0.1",7000).sync();
+            client =new NettyClientHandler();
+
+            Bootstrap bootstrap = new Bootstrap();
+            bootstrap.group(workGroup)
+                    .channel(NioSocketChannel.class)
+                    .option(ChannelOption.TCP_NODELAY,true)
+                    .handler(new ChannelInitializer<SocketChannel>() {
+                        @Override
+                        protected void initChannel(SocketChannel sc) throws Exception {
+                            ChannelPipeline pipeline = sc.pipeline();
+                            pipeline.addLast(new StringDecoder());
+                            pipeline.addLast(new StringEncoder());
+                            pipeline.addLast(client);
+                        }
+                    });
+            bootstrap.connect("127.0.0.1", 7000).sync();
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            group.shutdownGracefully();
         }
     }
 }

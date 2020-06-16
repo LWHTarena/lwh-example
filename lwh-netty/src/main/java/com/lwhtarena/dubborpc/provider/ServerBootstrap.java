@@ -12,7 +12,6 @@ import com.lwhtarena.dubborpc.netty.NettyServer;
  */
 public class ServerBootstrap {
     public static void main(String[] args) {
-        //todo
         NettyServer.starServer("127.0.0.1",7000);
     }
 }

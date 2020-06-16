@@ -26,7 +26,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
 public class WebSocketServer {
     public static void main(String[] args) {
         EventLoopGroup bossGroup =new NioEventLoopGroup();
-        NioEventLoopGroup workGroup = new NioEventLoopGroup();
+        EventLoopGroup workGroup = new NioEventLoopGroup();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup, workGroup)

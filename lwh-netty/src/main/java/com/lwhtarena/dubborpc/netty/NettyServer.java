@@ -31,8 +31,8 @@ public class NettyServer {
      * @param port
      */
     private static void starServer0(String hostname,int port){
-        EventLoopGroup bossGroup =new NioEventLoopGroup();
-        NioEventLoopGroup workGroup = new NioEventLoopGroup();
+        EventLoopGroup bossGroup =new NioEventLoopGroup(1);
+        EventLoopGroup workGroup = new NioEventLoopGroup();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup, workGroup)
@@ -47,7 +47,7 @@ public class NettyServer {
                             pipeline.addLast(new NettyServerHandler());
                         }
                     });
-            ChannelFuture channelFuture = serverBootstrap.bind(port).sync();
+            ChannelFuture channelFuture = serverBootstrap.bind(hostname,port).sync();
             System.out.println("服务提供方开始，提供服务~~~");
             channelFuture.channel().closeFuture().sync();
         }catch (Exception e){
