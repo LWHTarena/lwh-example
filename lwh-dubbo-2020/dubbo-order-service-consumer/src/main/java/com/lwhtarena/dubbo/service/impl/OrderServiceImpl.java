@@ -26,10 +26,8 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-    //@Autowired
-    @DubboReference(loadbalance="random",timeout=1000)
+    @DubboReference(loadbalance="random",timeout=1000,version = "1.0.0")
             UserService userService;
-
     @HystrixCommand(fallbackMethod="hello")
     @Override
     public List<UserAddress> initOrder(String userId) {

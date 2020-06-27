@@ -4,7 +4,7 @@ import com.lwhtarena.dubbo.bean.UserAddress;
 import com.lwhtarena.dubbo.service.UserService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.apache.dubbo.config.annotation.DubboService;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,8 +17,8 @@ import java.util.List;
  * @Version 1.0.0
  * @date 2020/6/26 07:29
  */
-@DubboService//暴露服务
-@Service
+@DubboService(version = "1.0.0")//暴露服务
+@Component
 public class UserServiceImpl implements UserService {
 
     @HystrixCommand

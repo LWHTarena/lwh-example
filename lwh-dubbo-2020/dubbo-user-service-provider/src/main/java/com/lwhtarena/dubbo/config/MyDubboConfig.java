@@ -3,7 +3,6 @@ package com.lwhtarena.dubbo.config;
 import com.lwhtarena.dubbo.service.UserService;
 import org.apache.dubbo.config.*;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
  * @Version 1.0.0
  * @date 2020/6/26 07:31
  */
-@Configuration
+//@Configuration
 public class MyDubboConfig {
 
     @Bean
@@ -40,15 +39,14 @@ public class MyDubboConfig {
     public ProtocolConfig protocolConfig() {
         ProtocolConfig protocolConfig = new ProtocolConfig();
         protocolConfig.setName("dubbo");
-        protocolConfig.setPort(20882);
+        protocolConfig.setPort(20881);
         return protocolConfig;
     }
 
     /**
-     *<dubbo:service interface="com.atguigu.gmall.service.UserService"
-     ref="userServiceImpl01" timeout="1000" version="1.0.0">
-     <dubbo:method name="getUserAddressList" timeout="1000"></dubbo:method>
-     </dubbo:service>
+     *<dubbo:service interface="com.lwhtarena.dubbo.service.UserService" ref="userServiceImpl01" timeout="1000" version="1.0.0">
+     *      <dubbo:method name="getUserAddressList" timeout="1000"></dubbo:method>
+     *</dubbo:service>
      */
     @Bean
     public ServiceConfig<UserService> userServiceConfig(UserService userService){
