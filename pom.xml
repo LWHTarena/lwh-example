@@ -50,6 +50,7 @@
         <module>lwh-springboot2.x</module>
         <module>lwh-juc</module>
         <module>lwh-dubbo-2020</module>
+        <module>lwh-springcloud-2018</module>
     </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->

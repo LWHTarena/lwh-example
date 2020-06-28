@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.lwhtarena.springcloud.alibaba.dao.OrderDao">
+<mapper namespace="com.lwhtarena.com.lwhtarena.com.lwhtarena.springcloud.alibaba.dao.OrderDao">
 
     <resultMap id="BaseResultMap" type="com.lwhtarena.springcloud.alibaba.domain.Order">
         <id column="id" property="id" jdbcType="BIGINT"/>

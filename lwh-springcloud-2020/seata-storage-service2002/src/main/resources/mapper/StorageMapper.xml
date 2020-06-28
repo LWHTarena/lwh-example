@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 
-<mapper namespace="com.lwhtarena.springcloud.alibaba.dao.StorageDao">
+<mapper namespace="com.lwhtarena.com.lwhtarena.com.lwhtarena.springcloud.alibaba.dao.StorageDao">
 
     <resultMap id="BaseResultMap" type="com.lwhtarena.springcloud.alibaba.domain.Storage">
         <id column="id" property="id" jdbcType="BIGINT"/>
