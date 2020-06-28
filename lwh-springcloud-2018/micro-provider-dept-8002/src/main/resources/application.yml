@@ -9,7 +9,7 @@ mybatis:
 
 spring:
   application:
-    name: micro-provider-dept-8002
+    name: micro-provider-dept
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
@@ -32,7 +32,7 @@ eureka:
     prefer-ip-address: true     #访问路径可以显示IP地址
 
 info:
-  app.name: micro-provider-dept-8002
+  app.name: micro-cloud
   company.name: www.lwhtarena.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$

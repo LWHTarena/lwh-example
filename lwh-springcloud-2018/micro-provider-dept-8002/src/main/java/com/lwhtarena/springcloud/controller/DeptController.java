@@ -48,7 +48,7 @@ public class DeptController {
         List<String> list = client.getServices();
         System.out.println("**********" + list);
 
-        List<ServiceInstance> srvList = client.getInstances("MICRO-PROVIDER-DEPT-8001");
+        List<ServiceInstance> srvList = client.getInstances("MICRO-PROVIDER-DEPT");
         for (ServiceInstance element : srvList) {
             System.out.println(element.getServiceId() + "\t" + element.getHost() + "\t" + element.getPort() + "\t"
                     + element.getUri());

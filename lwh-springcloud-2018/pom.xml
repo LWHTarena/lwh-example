@@ -19,6 +19,15 @@
         <module>micro-provider-dept-8001</module>
         <module>micro-provider-dept-8002</module>
         <module>micro-provider-dept-8003</module>
+        <module>micro-consumer-dept-80</module>
+        <module>micro-consumer-dept-feign</module>
+        <module>micro-consumer-hystrix-dashboard</module>
+        <module>micro-provider-dept-hystrix-8001</module>
+        <module>micro-zuul-gateway-9527</module>
+        <module>micro-config-3344</module>
+        <module>micro-config-client-3355</module>
+        <module>micro-config-dept-client-8001</module>
+        <module>micro-config-eureka-client-7001</module>
     </modules>
     <packaging>pom</packaging>
 
