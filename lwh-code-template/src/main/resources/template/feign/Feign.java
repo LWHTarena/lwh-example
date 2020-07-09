@@ -4,9 +4,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /****
- * @Author:shenkunlin
+ * @Author:liwh
  * @Description:
- * @Date 2019/6/18 13:58
+ * @Date 2020/07/09 0:18
  *****/
 @FeignClient(name="${serviceName}")
 @RequestMapping("/${table}")
@@ -37,7 +37,7 @@ public interface ${Table}Feign {
      * @return
      */
     @PostMapping(value = "/search" )
-    Result<List<${Table}>> findList(@RequestBody(required = false) ${Table} ${table});
+            Result<List<${Table}>> findList(@RequestBody(required = false) ${Table} ${table});
 
     /***
      * 根据ID删除品牌数据
@@ -70,12 +70,12 @@ public interface ${Table}Feign {
      * @return
      */
     @GetMapping("/{id}")
-    Result<${Table}> findById(@PathVariable ${keyType} id);
+            Result<${Table}> findById(@PathVariable ${keyType} id);
 
     /***
      * 查询${Table}全部数据
      * @return
      */
     @GetMapping
-    Result<List<${Table}>> findAll();
+            Result<List<${Table}>> findAll();
 }

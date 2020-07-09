@@ -3,9 +3,9 @@ import ${package_pojo}.${Table};
 import com.github.pagehelper.PageInfo;
 import java.util.List;
 /****
- * @Author:shenkunlin
+ * @Author:liwh
  * @Description:${Table}业务层接口
- * @Date 2019/6/14 0:16
+ * @Date 2020/07/09 0:18
  *****/
 public interface ${Table}Service {
 
@@ -56,7 +56,7 @@ public interface ${Table}Service {
      * @param id
      * @return
      */
-     ${Table} findById(${keyType} id);
+    ${Table} findById(${keyType} id);
 
     /***
      * 查询所有${Table}

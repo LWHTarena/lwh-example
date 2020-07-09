@@ -51,6 +51,7 @@
         <module>lwh-juc</module>
         <module>lwh-dubbo-2020</module>
         <module>lwh-springcloud-2018</module>
+        <module>lwh-code-template</module>
     </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->

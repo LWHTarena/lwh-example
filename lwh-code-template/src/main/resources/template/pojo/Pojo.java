@@ -9,9 +9,9 @@ import java.io.Serializable;
 import ${set};
 </#list>
 /****
- * @Author:shenkunlin
+ * @Author:liwh
  * @Description:${Table}构建
- * @Date 2019/6/14 19:13
+ * @Date 2020/07/09 0:18
  *****/
 <#if swagger==true>
 @ApiModel(description = "${Table}",value = "${Table}")
@@ -20,31 +20,31 @@ import ${set};
 public class ${Table} implements Serializable{
 
 <#list models as model>
-	<#if swagger==true>
-	@ApiModelProperty(value = "${model.desc!""}",required = false)
-	</#if>
-	<#if model.id==true>
-	@Id
-	<#if model.identity=='YES'>
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	</#if>
-	</#if>
-    @Column(name = "${model.column}")
-	private ${model.simpleType} ${model.name};//${model.desc!""}
+<#if swagger==true>
+@ApiModelProperty(value = "${model.desc!""}",required = false)
+</#if>
+<#if model.id==true>
+@Id
+<#if model.identity=='YES'>
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+</#if>
+</#if>
+@Column(name = "${model.column}")
+private ${model.simpleType} ${model.name};//${model.desc!""}
 
 </#list>
 
 
 <#list models as model>
-	//get方法
-	public ${model.simpleType} get${model.upperName}() {
+//get方法
+public ${model.simpleType} get${model.upperName}() {
 		return ${model.name};
-	}
+}
 
-	//set方法
-	public void set${model.upperName}(${model.simpleType} ${model.name}) {
+//set方法
+public void set${model.upperName}(${model.simpleType} ${model.name}) {
 		this.${model.name} = ${model.name};
-	}
+		}
 </#list>
 
 

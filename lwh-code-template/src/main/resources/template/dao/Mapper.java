@@ -3,9 +3,9 @@ import ${package_pojo}.${Table};
 import tk.mybatis.mapper.common.Mapper;
 
 /****
- * @Author:shenkunlin
+ * @Author:liwh
  * @Description:${Table}的Dao
- * @Date 2019/6/14 0:12
+ * @Date 2020/07/09 0:18
  *****/
 public interface ${Table}Mapper extends Mapper<${Table}> {
 }
