@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 2020/5/21 20:05
  */
 @Api(value = "helloword",tags = "helloword")
-//@ApiSupport(author = "xiaoymin@foxmail.com",order = 284)
 @Controller
 public class MainController {
 

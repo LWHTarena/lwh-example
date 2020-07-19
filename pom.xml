@@ -19,7 +19,6 @@
     </properties>
 
     <modules>
-        <module>lwh-spring-security-example</module>
         <module>lwh-lucene-example</module>
         <module>lwh-hibernate-search-example</module>
         <!--零配置案例-->
@@ -52,6 +51,7 @@
         <module>lwh-dubbo-2020</module>
         <module>lwh-springcloud-2018</module>
         <module>lwh-code-template</module>
+        <module>lwh-thymeleaf</module>
     </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->
