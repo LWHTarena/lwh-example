@@ -16,9 +16,13 @@
         实现用户名密码登录，手机验证码登录，社交账号登录，基于jwt的sso，集群session管理等功能。
     </description>
     <modules>
+        <!--app相关特定代码-->
         <module>lwh-sec-app</module>
+        <!--浏览器安全特定代码-->
         <module>lwh-sec-browser</module>
+        <!--核心业务逻辑-->
         <module>lwh-sec-core</module>
+        <!--样例程序-->
         <module>lwh-sec-demo</module>
         <module>lwh-sec-authorize</module>
         <module>lwh-sso-demo</module>

@@ -14,9 +14,6 @@ import org.hibernate.boot.spi.MetadataBuildingContext;
  */
 public class ImoocImplicitNamingStrategy extends ImplicitNamingStrategyJpaCompliantImpl {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 769122522217805485L;
 
     @Override
