@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lwh-example</artifactId>
+        <groupId>com.lwhtarena</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>lwh-security2019</artifactId>
+    <packaging>pom</packaging>
+    <description>
+        集成 spring securit, spring security oauth 和 spring social，
+        实现用户名密码登录，手机验证码登录，社交账号登录，基于jwt的sso，集群session管理等功能。
+    </description>
+    <modules>
+        <module>lwh-sec-app</module>
+        <module>lwh-sec-browser</module>
+        <module>lwh-sec-core</module>
+        <module>lwh-sec-demo</module>
+        <module>lwh-sec-authorize</module>
+        <module>lwh-sso-demo</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <springboot.version>2.3.1.RELEASE</springboot.version>
+        <springcloud.version>Dalston.SR2</springcloud.version>
+        <knife4j.version>2.0.2</knife4j.version>
+        <lombok.version>1.18.12</lombok.version>
+        <spring-version>5.2.7.RELEASE</spring-version>
+        <mysql.version>8.0.19</mysql.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!--保证版本兼容-->
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>Brussels-SR4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
