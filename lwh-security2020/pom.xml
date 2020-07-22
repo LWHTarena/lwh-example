@@ -12,9 +12,10 @@
     <artifactId>lwh-security2020</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>security-helloword</module>
         <module>security-demo01</module>
         <module>security-demo02</module>
+        <module>oauth2-password</module>
+        <module>oauth2-jwt</module>
     </modules>
 
     <properties>

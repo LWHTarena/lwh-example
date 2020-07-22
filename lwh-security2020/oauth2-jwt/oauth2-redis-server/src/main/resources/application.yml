@@ -1,0 +1,9 @@
+server:
+  port: 9401
+spring:
+  application:
+    name: oauth2-jwt-service
+  redis: #redis相关配置
+    host: localhost
+    port: 6379
+    password: tarena #有密码时设置
