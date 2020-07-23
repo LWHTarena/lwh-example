@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lwh-security2020</artifactId>
+        <groupId>com.lwhtarena</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>oauth2-client</artifactId>
+    <packaging>pom</packaging>
+    <description>
+        单点登录（Single Sign On）指的是当有多个系统需要登录时，
+        用户只需登录一个系统，就可以访问其他需要登录的系统而无需登录。
+    </description>
+    <modules>
+        <module>oauth2-client-sso</module>
+    </modules>
+
+
+</project>

@@ -16,6 +16,8 @@
         <module>security-demo02</module>
         <module>oauth2-password</module>
         <module>oauth2-jwt</module>
+        <module>oauth2-client</module>
+        <module>security-oauth2</module>
     </modules>
 
     <properties>
@@ -47,6 +49,14 @@
                 <scope>import</scope>
             </dependency>
 
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- ... 使用不带Spring Boot的Spring Security时，首选方法是使用Spring Security的BOM，
             以确保在整个项目中使用一致的Spring Security版本。 ... -->
 <!--            <dependency>-->
@@ -69,7 +79,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>${artifactId}</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
