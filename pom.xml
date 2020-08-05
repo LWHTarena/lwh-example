@@ -53,6 +53,7 @@
         <module>lwh-code-template</module>
         <module>lwh-thymeleaf</module>
         <module>lwh-security2019</module>
+        <module>lwh-redis2020</module>
     </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->
