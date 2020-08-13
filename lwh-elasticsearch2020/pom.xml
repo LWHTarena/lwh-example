@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.lwhtarena</groupId>
-  <artifactId>lwh-elasticsearch-demo</artifactId>
+  <artifactId>lwh-elasticsearch2020</artifactId>
   <version>1.0.0</version>
 
-  <name>lwh-elasticsearch-demo</name>
-  <description>elastic search demo </description>
+  <name>lwh-elasticsearch2020</name>
+  <description>elasticsearch2020</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

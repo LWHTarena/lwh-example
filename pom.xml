@@ -19,7 +19,7 @@
     </properties>
 
     <modules>
-        <module>lwh-lucene-example</module>
+        <module>lwh-lucene2020</module>
         <module>lwh-hibernate-search-example</module>
         <!--零配置案例-->
         <module>lwh-zero-configuration-example</module>
@@ -39,8 +39,8 @@
         <module>lwh-sso-cross-domain</module>
         <module>lwh-sso-jwt</module>
         <module>lwh-springcloud-ordering</module>
-        <module>lwh-elasticsearch-demo</module>
-        <module>lwh-springboot-data-elasticsearch-example</module>
+        <module>lwh-elasticsearch2020</module>
+        <module>lwh-springboot-data-elasticsearch2020</module>
         <module>lwh-springcloud-2020</module>
         <module>lwh-springcloud-knife4j</module>
         <module>lwh-netty</module>
@@ -54,6 +54,7 @@
         <module>lwh-thymeleaf</module>
         <module>lwh-security2019</module>
         <module>lwh-redis2020</module>
+        <module>lwh-seckill</module>
     </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->

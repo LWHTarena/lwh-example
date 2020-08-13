@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>lwh-lucene-example</artifactId>
+    <artifactId>lwh-lucene2020</artifactId>
 
-    <name>lwh-lucene-example</name>
+    <name>lwh-lucene2020</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

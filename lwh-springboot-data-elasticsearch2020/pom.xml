@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.lwhtarena</groupId>
-  <artifactId>lwh-springboot-data-elasticsearch-example</artifactId>
+  <artifactId>lwh-springboot-data-elasticsearch2020</artifactId>
   <version>1.0.0</version>
 
-  <name>lwh-springboot-data-elasticsearch-example</name>
+  <name>lwh-springboot-data-elasticsearch2020</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
