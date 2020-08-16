@@ -55,6 +55,7 @@
         <module>lwh-security2019</module>
         <module>lwh-redis2020</module>
         <module>lwh-seckill</module>
+        <module>lwh-kafka2020</module>
     </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->

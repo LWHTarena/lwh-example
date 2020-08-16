@@ -1,0 +1,22 @@
+server:
+  port: 443
+  ssl:
+    key-store: 3702162_wechat.coding-jiangzh.com.pfx
+    key-store-password: 49Jk65Pi
+
+template:
+  templates:
+    - {"templateId":"1","templateFilePath":"/Users/liwh/IdeaProjects/lwh-example/lwh-kafka2020/lwh-kafka2020-study/src/main/resources/template/template.json","active": true}
+    - {"templateId":"2","templateFilePath":"/Users/liwh/IdeaProjects/lwh-example/lwh-kafka2020/lwh-kafka2020-study/src/main/resources/template/template.json","active": false}
+  template-result-type: 0  # 0-文件获取 1-数据库获取 2-ES
+  template-result-file-path: "/Users/liwh/IdeaProjects/lwh-example/lwh-kafka2020/lwh-kafka2020-study/src/main/resources/template/templateResult.json"
+
+#wechat:
+#  kafka:
+#    bootstrap_servers: "192.168.1.8:9092"
+#    acks_config: "all"
+#    partitioner_class: "com.lwhtarena.kafka.producer.SamplePartition"
+
+
+logging:
+  config: classpath:logback.xml
