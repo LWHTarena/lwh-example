@@ -13,7 +13,7 @@ import org.springframework.data.elasticsearch.annotations.Field;
  * @Package com.lwhtarena.elasticsearch.entity
  * @Description: 用户对象
  * @Version 1.0.0
- * @date 2020/4/7 23:18
+ * @date 2020/8/22 16:54
  */
 @Data
 @AllArgsConstructor
@@ -28,5 +28,4 @@ public class User {
     private Integer age;
     @Field
     private String hobby;
-
 }

@@ -7,14 +7,23 @@
   <groupId>com.lwhtarena</groupId>
   <artifactId>lwh-elasticsearch2020</artifactId>
   <version>1.0.0</version>
+  <packaging>pom</packaging>
 
   <name>lwh-elasticsearch2020</name>
   <description>elasticsearch2020</description>
+
+  <modules>
+    <module>lwh-es-api</module>
+    <module>lwh-es-rest-client</module>
+  </modules>
+
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
+    <elasticsearch.version>7.9.0</elasticsearch.version>
   </properties>
 
   <dependencies>
@@ -24,69 +33,34 @@
       <version>1.18.12</version>
       <scope>provided</scope>
     </dependency>
+
     <dependency>
       <groupId>org.elasticsearch</groupId>
       <artifactId>elasticsearch</artifactId>
-      <version>7.6.2</version>
+      <version>${elasticsearch.version}</version>
     </dependency>
     <!--  这种写法已经不建议使用  -->
     <dependency>
       <groupId>org.elasticsearch.client</groupId>
       <artifactId>transport</artifactId>
-      <version>7.6.2</version>
+      <version>${elasticsearch.version}</version>
     </dependency>
     <dependency>
       <groupId>org.elasticsearch.client</groupId>
       <artifactId>elasticsearch-rest-client</artifactId>
-      <version>7.6.2</version>
+      <version>${elasticsearch.version}</version>
     </dependency>
     <dependency>
       <groupId>org.elasticsearch.client</groupId>
       <artifactId>elasticsearch-rest-high-level-client</artifactId>
-      <version>7.6.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.data</groupId>
-      <artifactId>spring-data-elasticsearch</artifactId>
-      <version>3.2.6.RELEASE</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-      <version>2.10.3</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.10.3</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-      <version>2.10.3</version>
-    </dependency>
-    <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter</artifactId>
-        <version>RELEASE</version>
-        <scope>compile</scope>
+      <version>${elasticsearch.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-autoconfigure</artifactId>
-      <version>2.2.6.RELEASE</version>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <version>2.2.6.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-
   </dependencies>
   <dependencyManagement>
     <dependencies>
@@ -98,7 +72,7 @@
         <!-- Import dependency management from Spring Boot -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.2.6.RELEASE</version>
+        <version>${spring-boot.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

@@ -9,7 +9,7 @@
 <dependency>
     <groupId>org.elasticsearch.client</groupId>
     <artifactId>elasticsearch-rest-client</artifactId>
-    <version>7.6.2</version>
+    <version>7.9.0</version>
 </dependency>
 ```
 
@@ -20,7 +20,7 @@
 <dependency>
     <groupId>org.elasticsearch.client</groupId>
     <artifactId>elasticsearch-rest-high-level-client</artifactId>
-    <version>7.6.2</version>
+    <version>7.9.0</version>
 </dependency>
 ```
 
