@@ -57,6 +57,8 @@
         <module>lwh-seckill</module>
         <module>lwh-kafka2020</module>
         <module>lwh-rocketmq2020</module>
+        <module>lwh-Mybatis-Spring-2020</module>
+        <module>lwh-rpc-2020</module>
     </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->
