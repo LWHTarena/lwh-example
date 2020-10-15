@@ -25,8 +25,10 @@ public class NettyClient {
          */
         Bootstrap bootstrap =new Bootstrap();
         try {
-            bootstrap.group(eventLoopGroup) //设置线程组
-                    .channel(NioSocketChannel.class) //设置客户端通道的实现类
+            /*设置线程组*/
+            bootstrap.group(eventLoopGroup)
+                    /*设置客户端通道的实现类*/
+                    .channel(NioSocketChannel.class)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel sc) throws Exception {
