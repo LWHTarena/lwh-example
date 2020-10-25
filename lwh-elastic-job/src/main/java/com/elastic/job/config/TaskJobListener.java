@@ -1,0 +1,33 @@
+package com.elastic.job.config;
+
+import com.dangdang.ddframe.job.executor.ShardingContexts;
+import com.dangdang.ddframe.job.lite.api.listener.ElasticJobListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+/**
+ * @author liwh
+ * @Title: TaskJobListener
+ * @Package com.elastic.job.config
+ * @Description:
+ * @Version 1.0.0
+ * @date 2020/10/25 23:31
+ */
+@Component
+public class TaskJobListener implements ElasticJobListener {
+    private static final Logger LOG = LoggerFactory.getLogger(TaskJobListener.class);
+
+    private long beginTime = 0;
+
+    @Override
+    public void beforeJobExecuted(ShardingContexts shardingContexts) {
+        beginTime = System.currentTimeMillis();
+        LOG.info(shardingContexts.getJobName()+"===>开始...");
+    }
+
+    @Override
+    public void afterJobExecuted(ShardingContexts shardingContexts) {
+        long endTime = System.currentTimeMillis();
+        LOG.info(shardingContexts.getJobName()+"===>结束...[耗时："+(endTime - beginTime)+"]");
+    }
+}

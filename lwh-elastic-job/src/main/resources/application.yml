@@ -1,0 +1,13 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 7020
+  connection-timeout: 5000ms
+
+spring:
+  application:
+    name: ware20-elastic-job
+  profiles:
+    active: dev

@@ -10,6 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>lwh-rabbitmq2020</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>lwh-rabbitmq-java-client</module>
+        <module>lwh-rabbitmq-springboot</module>
+        <module>lwh-rabbitmq-springcloud</module>
+        <module>lwh-rabbitmq-spring</module>
+    </modules>
 
     <properties>
         <!-- 项目源码及编译输出的编码 -->
