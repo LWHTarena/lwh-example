@@ -1,0 +1,9 @@
+2020-10-28 01:45:02 [com.xxl.job.core.thread.JobThread#run]-[124]-[Thread-28] <br>----------- xxl-job job execute start -----------<br>----------- Param:
+2020-10-28 01:45:02 [com.lwhtarena.job.executor.service.SampleXxlJob#demoJobHandler]-[58]-[Thread-28] XXL-JOB, Hello World.
+2020-10-28 01:45:02 [com.lwhtarena.job.executor.service.SampleXxlJob#demoJobHandler]-[62]-[Thread-28] beat at:0
+2020-10-28 01:45:04 [com.lwhtarena.job.executor.service.SampleXxlJob#demoJobHandler]-[62]-[Thread-28] beat at:1
+2020-10-28 01:45:06 [com.lwhtarena.job.executor.service.SampleXxlJob#demoJobHandler]-[62]-[Thread-28] beat at:2
+2020-10-28 01:45:08 [com.lwhtarena.job.executor.service.SampleXxlJob#demoJobHandler]-[62]-[Thread-28] beat at:3
+2020-10-28 01:45:10 [com.lwhtarena.job.executor.service.SampleXxlJob#demoJobHandler]-[62]-[Thread-28] beat at:4
+2020-10-28 01:45:12 [com.xxl.job.core.thread.JobThread#run]-[164]-[Thread-28] <br>----------- xxl-job job execute end(finish) -----------<br>----------- ReturnT:ReturnT [code=200, msg=null, content=null]
+2020-10-28 01:45:12 [com.xxl.job.core.thread.TriggerCallbackThread#callbackLog]-[191]-[xxl-job, executor TriggerCallbackThread] <br>----------- xxl-job job callback finish.
