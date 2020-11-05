@@ -15,6 +15,7 @@
   <modules>
     <module>lwh-es-api</module>
     <module>lwh-es-rest-client</module>
+      <module>lwh-es-data-search</module>
   </modules>
 
 
