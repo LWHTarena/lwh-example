@@ -26,7 +26,7 @@ package com.lwhtarena.juc.Volatile;
  *     }
  * }
  *
- * // 解决方式二: 使用 volatile 关键字
+ * // 解决方式二: 使用 volatile 关键字修饰
  * public class TestVolatile{
  *     public static void main(String[] args){
  *         ThreadDemo td = new ThreadDemo();

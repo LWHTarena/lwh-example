@@ -4,7 +4,7 @@ package com.lwhtarena.juc.CompareAndSwap;
  * @author liwh
  * @Title: TestCompareAndSwap
  * @Package com.lwhtarena.juc.CompareAndSwap
- * @Description:
+ * @Description:模拟cas算法
  * @Version 1.0.0
  * @date 2020/6/21 17:13
  */

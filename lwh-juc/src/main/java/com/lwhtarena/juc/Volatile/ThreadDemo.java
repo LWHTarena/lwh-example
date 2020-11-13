@@ -10,7 +10,7 @@ package com.lwhtarena.juc.Volatile;
  */
 public class ThreadDemo implements Runnable{
     private boolean flag = false;
-    /**使用volatile关键字解决问题**/
+    /**使用volatile关键字解决问题--解决内存不可见性**/
 //    private volatile boolean flag = false;
 
     @Override
