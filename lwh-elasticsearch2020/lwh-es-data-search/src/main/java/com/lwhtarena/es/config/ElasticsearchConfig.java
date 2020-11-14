@@ -7,7 +7,6 @@ import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
@@ -23,8 +22,8 @@ import java.net.InetAddress;
  * @date 2020/11/5 23:45
  */
 @Slf4j
-@Configuration
-@EnableElasticsearchRepositories(basePackages = "com.lwhtarena.cg.service")
+//@Configuration
+@EnableElasticsearchRepositories(basePackages = "com.lwhtarena.es.service")
 public class ElasticsearchConfig {
 
     @Value("${elasticsearch.host}")
