@@ -1,27 +1,23 @@
-package com.lwhtarena.es;
+package com.lwhtarena.es.rest;
 
-import java.util.Arrays;
+import com.lwhtarena.es.Conference;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
+import org.springframework.data.elasticsearch.core.geo.GeoPoint;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.Arrays;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
-import org.springframework.data.elasticsearch.core.geo.GeoPoint;
-import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
-
-/**
- * @author Artur Konczak
- * @author Oliver Gierke
- * @author Christoph Strobl
- */
 @SpringBootApplication
 class ApplicationConfiguration {
 
-	@Autowired ElasticsearchOperations elasticsearchOperations;
-	@Autowired ConferenceRepository repository;
+	@Autowired
+	ElasticsearchOperations elasticsearchOperations;
+
+	@Autowired
+	ConferenceRepository repository;
 
 	@PreDestroy
 	public void deleteIndex() {

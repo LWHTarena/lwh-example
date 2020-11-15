@@ -1,10 +1,8 @@
-package com.lwhtarena.es;
+package com.lwhtarena.es.rest;
 
+import com.lwhtarena.es.Conference;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-/**
- * @author Christoph Strobl
- */
 interface ConferenceRepository extends ElasticsearchRepository<Conference, String> {
 
 }

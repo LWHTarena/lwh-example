@@ -1,5 +1,8 @@
-package com.lwhtarena.es;
+package com.lwhtarena.es.rest;
 
+import com.lwhtarena.es.Conference;
+import com.lwhtarena.es.ElasticsearchAvailable;
+import com.lwhtarena.es.SkuInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.Operator;
@@ -67,6 +70,7 @@ public class ElasticsearchOperationsTest {
         assertThat(result).hasSize(3);
 
         for (SearchHit<Conference> conference : result) {
+            System.out.println(conference.getContent().toString());
             assertThat(conference.getContent().getKeywords()).contains(expectedWord);
             assertThat(format.parse(conference.getContent().getDate())).isAfter(format.parse(expectedDate));
         }

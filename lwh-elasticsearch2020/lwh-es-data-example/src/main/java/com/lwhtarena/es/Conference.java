@@ -1,16 +1,15 @@
 package com.lwhtarena.es;
 
-import static org.springframework.data.elasticsearch.annotations.FieldType.*;
-
 import lombok.Builder;
 import lombok.Data;
-
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.core.geo.GeoPoint;
+
+import java.util.List;
+
+import static org.springframework.data.elasticsearch.annotations.FieldType.Date;
 
 /**
  * @author Artur Konczak
