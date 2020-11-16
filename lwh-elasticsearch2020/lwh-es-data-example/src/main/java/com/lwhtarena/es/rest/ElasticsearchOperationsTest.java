@@ -172,9 +172,9 @@ public class ElasticsearchOperationsTest {
 //        resultMap.put("total",resultInfo.getTotalElements());
         resultMap.put("total",searchHits.getTotalHits());
         //总页数
-        resultMap.put("totalPages",searchHits.getTotalHitsRelation());
+        resultMap.put("totalPages",searchHits.getTotalHits());
         //数据集合
-        resultMap.put("rows",searchHits.get());
+        resultMap.put("rows",searchHits.getSearchHits());
 
         //封装品牌的分组结果
         ParsedStringTerms brandTerms = (ParsedStringTerms) aggregationMap.get(skuBrand);
