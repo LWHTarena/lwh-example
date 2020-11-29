@@ -40,7 +40,6 @@
         <module>lwh-sso-jwt</module>
         <module>lwh-springcloud-ordering</module>
         <module>lwh-elasticsearch2020</module>
-        <module>lwh-springboot-data-elasticsearch2020</module>
         <module>lwh-springcloud-2020</module>
         <module>lwh-springcloud-knife4j</module>
         <module>lwh-netty</module>
