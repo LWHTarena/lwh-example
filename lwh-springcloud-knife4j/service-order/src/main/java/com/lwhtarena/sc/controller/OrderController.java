@@ -19,8 +19,9 @@ import java.util.List;
  */
 @Api(tags = "订单模块")
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/user")
 public class OrderController {
+
 
     @ApiOperation(value = "查询订单列表")
     @PostMapping(value = "/list")
@@ -39,5 +40,4 @@ public class OrderController {
 
         return userRest;
     }
-
 }

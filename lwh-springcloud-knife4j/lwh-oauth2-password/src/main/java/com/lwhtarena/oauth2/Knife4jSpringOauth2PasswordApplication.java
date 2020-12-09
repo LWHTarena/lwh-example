@@ -1,10 +1,9 @@
-package com.lwhtarena.sc;
+package com.lwhtarena.oauth2;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
@@ -13,27 +12,28 @@ import java.net.UnknownHostException;
 
 /**
  * @author liwh
- * @Title: ServiceServerApplication
- * @Package com.lwhtarena.sc
+ * @Title: Knife4jSpringOauth2PasswordApplication
+ * @Package com.lwhtarena.oauth2
  * @Description:
  * @Version 1.0.0
- * @date 2020/5/17 22:55
+ * @date 2020/12/6 11:08
  */
-@EnableEurekaServer
 @SpringBootApplication
-public class ServiceServerApplication {
-
-    static Logger logger= LoggerFactory.getLogger(ServiceServerApplication.class);
+public class Knife4jSpringOauth2PasswordApplication {
+    static Logger logger= LoggerFactory.getLogger(Knife4jSpringOauth2PasswordApplication.class);
 
     public static void main(String[] args) throws UnknownHostException {
-        ConfigurableApplicationContext application=SpringApplication.run(ServiceServerApplication.class, args);
+        ConfigurableApplicationContext application= SpringApplication.run(Knife4jSpringOauth2PasswordApplication.class, args);
         Environment env = application.getEnvironment();
         logger.info("\n----------------------------------------------------------\n\t" +
                         "Application '{}' is running! Access URLs:\n\t" +
-                        "Local: \t\thttp://localhost:{}\n\t" +
+                        "Local: \t\thttp://localhost:{}/doc.html\n\t" +
                         "External: \thttp://{}:{}\n\t"+
+                        "Doc: \thttp://{}:{}/doc.html\n"+
                         "----------------------------------------------------------",
                 env.getProperty("spring.application.name"),
+                env.getProperty("server.port"),
+                InetAddress.getLocalHost().getHostAddress(),
                 env.getProperty("server.port"),
                 InetAddress.getLocalHost().getHostAddress(),
                 env.getProperty("server.port"));

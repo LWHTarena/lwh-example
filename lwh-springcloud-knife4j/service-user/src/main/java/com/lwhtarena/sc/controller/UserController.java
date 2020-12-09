@@ -1,6 +1,6 @@
 package com.lwhtarena.sc.controller;
 
-import com.google.common.collect.Lists;
+import cn.hutool.core.collection.CollectionUtil;
 import com.lwhtarena.sc.common.Rest;
 import com.lwhtarena.sc.model.User;
 import io.swagger.annotations.Api;
@@ -21,11 +21,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
+
     @ApiOperation(value = "查询用户列表")
     @PostMapping(value = "/list")
     public Rest<List<User>> list(){
         Rest<List<User>> rest=new Rest<>();
-        List<User> list= Lists.newArrayList(new User("user1","Java开发工程师","公司2")
+        List<User> list= CollectionUtil.newArrayList(new User("user1","Java开发工程师","公司2")
                 ,new User("user2","C开发工程师","公司1")
                 ,new User("user3","JavaScript工程师","公司3")
                 ,new User("user4","Ui工程师","公司4")
@@ -43,3 +45,4 @@ public class UserController {
         return userRest;
     }
 }
+

@@ -18,6 +18,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 public class ServiceDocApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ServiceDocApplication.class,args);
+        SpringApplication.run(ServiceDocApplication.class, args);
     }
 }

@@ -36,3 +36,12 @@ response：抛出异常的类
 （这种一般用在post创建的时候，使用@RequestBody这样的场景，
 请求参数无法使用@ApiImplicitParam注解进行描述的时候）
 ### 6、@ApiModelProperty：用在属性上，描述响应类的属性
+
+
+```shell script
+|-knife4j-spring-cloud-gateway
+|-----service-doc	//文档聚合中心,是所有微服务文档的出口
+|-----service-order //订单服务,包含所有与订单业务模块相关的接口
+|-----service-server //eureka 注册中心
+|-----service-user //用户服务,包含所有的用户接口
+```

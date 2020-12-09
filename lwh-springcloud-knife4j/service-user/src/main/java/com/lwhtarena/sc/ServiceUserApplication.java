@@ -23,10 +23,11 @@ import java.net.UnknownHostException;
 @EnableEurekaClient
 @SpringBootApplication
 public class ServiceUserApplication {
+
     static Logger logger= LoggerFactory.getLogger(ServiceUserApplication.class);
 
     public static void main(String[] args) throws UnknownHostException {
-        ConfigurableApplicationContext application= SpringApplication.run(ServiceUserApplication.class, args);
+        ConfigurableApplicationContext application=SpringApplication.run(ServiceUserApplication.class, args);
         Environment env = application.getEnvironment();
         logger.info("\n----------------------------------------------------------\n\t" +
                         "Application '{}' is running! Access URLs:\n\t" +

@@ -2,8 +2,6 @@ package com.lwhtarena.sc.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 import java.util.Random;
 
@@ -16,9 +14,8 @@ import java.util.Random;
  * @date 2020/5/17 23:23
  */
 @ApiModel(value = "用户")
-@Data
-@AllArgsConstructor
 public class User {
+
     @ApiModelProperty(value = "姓名")
     private String name;
 
@@ -36,5 +33,37 @@ public class User {
         this.worker = worker;
         this.company = company;
         this.age=new Random().nextInt(100);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getWorker() {
+        return worker;
+    }
+
+    public void setWorker(String worker) {
+        this.worker = worker;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 }

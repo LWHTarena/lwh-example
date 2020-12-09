@@ -23,9 +23,10 @@ import java.util.List;
  */
 @Slf4j
 @Component
-@Primary //代表是Swagger主 配置
+@Primary
 @AllArgsConstructor
 public class SwaggerResourceConfig implements SwaggerResourcesProvider {
+
     private final RouteLocator routeLocator;
     private final GatewayProperties gatewayProperties;
 

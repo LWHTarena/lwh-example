@@ -1,7 +1,6 @@
 package com.lwhtarena.sc.config;
 
-import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
-import com.google.common.collect.Lists;
+import com.github.xiaoymin.knife4j.core.util.CollectionUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -14,7 +13,7 @@ import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 import java.util.List;
 
@@ -27,29 +26,28 @@ import java.util.List;
  * @date 2020/5/17 23:04
  */
 @Configuration
-@EnableSwagger2
-@EnableKnife4j
+@EnableSwagger2WebMvc
 @Import(BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfiguration {
+
     @Bean(value = "orderApi")
     @Order(value = 1)
     public Docket groupRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(groupApiInfo())
                 .select()
-                /**对所有api进行监控**/
-                .apis(RequestHandlerSelectors.basePackage("com.lwhtarena.sc.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.xiaominfo.swagger.service.order.controller"))
                 .paths(PathSelectors.any())
 
-                .build().securityContexts(Lists.newArrayList(securityContext(),securityContext1())).securitySchemes(Lists.<SecurityScheme>newArrayList(apiKey(),apiKey1()));
+                .build().securityContexts(CollectionUtils.newArrayList(securityContext(),securityContext1())).securitySchemes(CollectionUtils.<SecurityScheme>newArrayList(apiKey(),apiKey1()));
     }
 
     private ApiInfo groupApiInfo(){
         return new ApiInfoBuilder()
-                .title("订单服务！！！")
-                .description("<div style='font-size:14px;color:red;'>订单服务 RESTful APIs</div>")
+                .title("swagger-bootstrap-ui很棒~~~！！！")
+                .description("<div style='font-size:14px;color:red;'>swagger-bootstrap-ui-demo RESTful APIs</div>")
                 .termsOfServiceUrl("http://www.group.com/")
-                .contact("group@qq.com")
+                .contact(new Contact("lwh", "127.0.0.1", "lwh@163.com.cn"))
                 .version("1.0")
                 .build();
     }
@@ -80,12 +78,12 @@ public class SwaggerConfiguration {
         AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;
-        return Lists.newArrayList(new SecurityReference("BearerToken", authorizationScopes));
+        return CollectionUtils.newArrayList(new SecurityReference("BearerToken", authorizationScopes));
     }
     List<SecurityReference> defaultAuth1() {
         AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;
-        return Lists.newArrayList(new SecurityReference("BearerToken1", authorizationScopes));
+        return CollectionUtils.newArrayList(new SecurityReference("BearerToken1", authorizationScopes));
     }
 }
