@@ -6,12 +6,26 @@
     <file type="web" url="file://$PROJECT_DIR$/lwh-hibernate-search-example" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-hibernate-search-jpa-example" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-hibernate5-example" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-redis2020/lwh-redis2020-study01" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-redis2020/lwh-redis2020-study02" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-redis2020/lwh-redis2020-study03" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-redis2020/lwh-redis2020-study04" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-redis2020/lwh-redis2020-study05" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-redis2020/lwh-redis2020-study06" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-seckill" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-spring-annotation/spring-mvc" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-spring-annotation/spring-servlet" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-spring-mybatis" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-spring-quartz-example" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-spring-security-example" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-springboot-sqlite-pxe-example" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-springmvc5-hibernate5-example" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-sqlite-example" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-sso-cross-domain" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-sso-jwt" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-sso-restful-springmvc" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-sso-security" />
+    <file type="web" url="file://$PROJECT_DIR$/lwh-sso-spring-session" />
     <file type="web" url="file://$PROJECT_DIR$/lwh-zero-configuration-example" />
     <type id="Spring" />
   </component>
@@ -24,10 +38,16 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/lwh-springcloud/lwh-springcloud-product/pom.xml" />
         <option value="$PROJECT_DIR$/lwh-springcloud-ordering/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/lwh-elasticsearch2020/lwh-es-data-example/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/lwh-springboot-data-elasticsearch2020/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

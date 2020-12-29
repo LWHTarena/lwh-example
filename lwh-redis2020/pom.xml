@@ -35,5 +35,18 @@
         <jedis.version>2.9.2</jedis.version>
     </properties>
 
+    <build>
+        <finalName>lwh-redis2020</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -17,6 +17,14 @@ import redis.clients.jedis.JedisPoolConfig;
 @Configuration
 public class AppConfig {
 
+    String IP ="192.168.0.115";
+
+    int PORT =6379;
+
+    String PASSSWAORD ="tarena";
+
+    int TIMEOUT =2000;
+
     /**
      * 创建对象，spring托管 <bean ...
      * @return
@@ -29,9 +37,8 @@ public class AppConfig {
         config.setMaxWaitMillis(1000);
         config.setTestOnBorrow(true);
         config.setTestOnReturn(true);
-        int timeOut = 2000;
 
-        JedisPool jedisPool = new JedisPool(config,"192.168.1.8", 16379,timeOut,"tarena");
+        JedisPool jedisPool = new JedisPool(config,IP, PORT,TIMEOUT,PASSSWAORD);
         return jedisPool;
     }
 
