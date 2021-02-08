@@ -18,6 +18,7 @@
         <module>lwh-redis2020-study04</module>
         <module>lwh-redis2020-study05</module>
         <module>lwh-redis2020-study06</module>
+        <module>lwh-redis2021-study01</module>
     </modules>
 
     <properties>

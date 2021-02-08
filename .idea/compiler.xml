@@ -122,6 +122,7 @@
         <module name="micro-api" />
         <module name="lwh-sso-restful-springmvc" />
         <module name="micro-oauth2-gateway" />
+        <module name="lwh-redis2021-study01" />
         <module name="micro-eureka-7003" />
         <module name="micro-eureka-7002" />
         <module name="micro-eureka-7001" />
