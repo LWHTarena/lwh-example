@@ -159,6 +159,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eureka" options="" />
+      <module name="lwh-springboot-sqlite-pxe-example" options="-bootclasspath /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/jre/lib/rt.jar" />
       <module name="lwh-springcloud" options="" />
       <module name="lwh-springcloud-product" options="" />
     </option>
