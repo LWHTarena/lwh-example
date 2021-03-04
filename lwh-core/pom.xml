@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lwh-example</artifactId>
+        <groupId>com.lwhtarena</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>lwh-core</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>01基础</module>
+        <module>02内部类</module>
+        <module>03数组</module>
+        <module>04集合</module>
+        <module>05泛型</module>
+        <module>06迭代器</module>
+        <module>07IO流</module>
+        <module>08线程</module>
+        <module><![CDATA[09枚举&注解]]></module>
+        <module>10反射</module>
+        <module>11GoogleGuava</module>
+        <module>12数据库</module>
+        <module>14设计模式</module>
+        <module>15测试工具</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!--junit-jupiter的聚合包 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.7.1</version>
+        </dependency>
+        <!-- 此包用与兼容老版本(可选) -->
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.7.1</version>
+        </dependency>
+    </dependencies>
+
+</project>

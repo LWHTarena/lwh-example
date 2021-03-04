@@ -5,7 +5,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author 狂神说Java 24736743@qq.com
  * A 执行完调用B，B执行完调用C，C执行完调用A
  */
 public class C {

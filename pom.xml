@@ -62,6 +62,8 @@
         <module>lwh-elastic-job</module>
         <module>lwh-xxl-job</module>
         <module>lwh-seata2020</module>
+        <module>lwh-core</module>
+        <module>lwh-core/untitled</module>
     </modules>
 
     <!-- 子POM无条件继承父POM的dependencies元素 -->

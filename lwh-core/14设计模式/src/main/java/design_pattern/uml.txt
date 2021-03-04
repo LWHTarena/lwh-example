@@ -1,0 +1,14 @@
+>>> power designer
+
+概念数据模型 (CDM)
+物理数据模型 (PDM)
+面向对象模型 (OOM)
+业务程序模型 (BPM)
+
+UML扩展机制由三部分组成：构造型（stereotype）、标记值（tagged value）和约束（constraint）。
+
+generalization 概括，继承
+association 联合
+realization 实现
+dependency 依赖
+composition 聚合
