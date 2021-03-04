@@ -1,4 +1,4 @@
-package com.lwhtarena.数据库;
+package com.lwhtarena.jdbc;
 
 import java.sql.*;
 

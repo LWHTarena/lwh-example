@@ -1,11 +1,11 @@
-package com.lwhtarena.数据库;
+package com.lwhtarena.jdbc;
 
 import java.sql.*;
 
 /**
  * 用JDBC查询学生成绩单，把主要代码写出来（考试概率极大）--mysql演示
  * @author lwh
- * @folder com.lwhtarena.数据库
+ * @folder com.lwhtarena.jdbc
  * @date 2016/10/9.
  * @版权 Copyright (c) 2016 lwhtarena.com. All Rights Reserved.
  */
