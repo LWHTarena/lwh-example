@@ -26,6 +26,7 @@
         <module>12数据库</module>
         <module>14设计模式</module>
         <module>15测试工具</module>
+        <module>13Mybatis</module>
     </modules>
 
     <properties>
