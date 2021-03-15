@@ -3,7 +3,7 @@ nacos-namespace: fa54e919-ec83-4400-9379-f6cca7ed5c15
 nacos-group: SEATA_GROUP
 
 server:
-  port: 8081
+  port: 18081
   servlet:
     context-path: /account
 spring:

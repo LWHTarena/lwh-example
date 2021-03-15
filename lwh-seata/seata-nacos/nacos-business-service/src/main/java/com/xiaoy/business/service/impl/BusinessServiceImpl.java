@@ -21,6 +21,14 @@ public class BusinessServiceImpl implements BusinessService {
     @Autowired
     private StorageFeign storageFeign;
 
+    /***
+     * 描述 业务入口 分布式事务
+     * @param orderVo
+     * @return  
+     * @author liwh
+     * @date 2021/3/15 23:34
+     * @version 1.0
+     **/
     @Override
     @GlobalTransactional
     public boolean business(OrderVo orderVo) {

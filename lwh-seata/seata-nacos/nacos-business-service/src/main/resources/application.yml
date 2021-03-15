@@ -3,7 +3,7 @@ nacos-namespace: fa54e919-ec83-4400-9379-f6cca7ed5c15
 nacos-group: SEATA_GROUP
 
 server:
-  port: 8080
+  port: 18080
   servlet:
     context-path: /business
 spring:
@@ -70,9 +70,9 @@ seata:
       # nacos 的ip和端口
       server-addr: ${nacos-server-addr}
       # 与上面的命名空间相同
-      namespace: seata-dev
+      namespace: ${nacos-namespace}
       # 读取的配置分组
-      group: SEATA_GROUP
+      group: ${nacos-group}
       username: nacos
       password: nacos
       cluster: seata-server-cluster

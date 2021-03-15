@@ -12,7 +12,9 @@ transport.threadFactory.clientWorkerThreadPrefix=NettyClientWorkerThread
 transport.threadFactory.bossThreadSize=1
 transport.threadFactory.workerThreadSize=default
 transport.shutdown.wait=3
+# 这里的配置 springcloud代码客户端配置要一致
 service.vgroupMapping.my_test_tx_group=seata-server-cluster
+# 这里仅注册中心为file时使用 此时无用 我们注册中心是nacos
 service.seata-server-cluster.grouplist=192.168.56.15:8091
 service.enableDegrade=false
 service.disableGlobalTransaction=false
@@ -40,6 +42,7 @@ store.file.flushDiskMode=async
 store.file.sessionReloadReadSize=100
 store.db.datasource=druid
 store.db.dbType=mysql
+#数据库驱动 我是8.0 mysql
 store.db.driverClassName=com.mysql.cj.jdbc.Driver
 store.db.url=jdbc:mysql://192.168.56.15:3306/seata?useUnicode=true
 store.db.user=root
