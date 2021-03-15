@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-mvc" />
         <module name="alibaba-sentinel-service8401" />
+        <module name="rkmq-demo" />
         <module name="lwh-sec-authorize" />
         <module name="cloud-consumer-feign-hystrix-order80" />
         <module name="product-common" />
@@ -16,23 +17,30 @@
         <module name="cloud-stream-rabbitmq-consumer8802" />
         <module name="cloud-stream-rabbitmq-consumer8803" />
         <module name="lwh-code-template" />
+        <module name="08线程" />
         <module name="lwh-springmvc5-hibernate5-example" />
+        <module name="13Mybatis" />
         <module name="lwh-kafka2020-study" />
         <module name="oauth2-jwt-server" />
+        <module name="10反射" />
         <module name="lwh-rabbitmq-springboot" />
         <module name="lwh-sso-client1" />
+        <module name="11GoogleGuava" />
         <module name="lwh-sso-client2" />
         <module name="cloud-config-client-3366" />
         <module name="lwh-rabbitmq-spring" />
+        <module name="seata-order-service" />
         <module name="lwh-springboot-data-jpa-example" />
         <module name="micro-consumer-dept-feign" />
         <module name="lwh-spring-security-example" />
         <module name="micro-consumer-hystrix-dashboard" />
+        <module name="09枚举&amp;注解" />
+        <module name="04集合" />
+        <module name="06迭代器" />
         <module name="product-client" />
         <module name="lwh-lucene-example" />
         <module name="lwh-h2-example" />
         <module name="seata-account-service2003" />
-        <module name="seata-order" />
         <module name="cloud-config-client-3355" />
         <module name="lwh-jwt-demo" />
         <module name="lwh-sec-app" />
@@ -48,16 +56,16 @@
         <module name="lwh-springboot-data-elasticsearch-example" />
         <module name="lwh-sso-spring-session" />
         <module name="cloud-consumer-feign-order80" />
+        <module name="类加载过程" />
         <module name="cloud-providerconsul-payment8006" />
         <module name="cloud-provider-payment8002" />
         <module name="cloud-provider-payment8004" />
         <module name="security-demo01" />
         <module name="security-demo02" />
         <module name="cloud-provider-payment8001" />
-        <module name="seata-pay" />
         <module name="cloud-providor-hystrix-payment8001" />
+        <module name="02内部类" />
         <module name="lwh-sso-security" />
-        <module name="lwh-rocketmq2020" />
         <module name="dubbo-interface" />
         <module name="boot-helloworld" />
         <module name="alibaba-provider-payment9002" />
@@ -67,6 +75,7 @@
         <module name="order-client" />
         <module name="alibaba-provider-payment9001" />
         <module name="config" />
+        <module name="seata-account-service" />
         <module name="lwh-redis2020-study06" />
         <module name="lwh-redis2020-study05" />
         <module name="lwh-hibernate-search-example" />
@@ -80,17 +89,21 @@
         <module name="lwh-es-api" />
         <module name="lwh-redis2020-study03" />
         <module name="service-order" />
+        <module name="14设计模式" />
         <module name="lwh-hibernate-search-jpa-example" />
+        <module name="15测试工具" />
         <module name="cloud-config-center-3344" />
         <module name="oauth2-password-server" />
         <module name="user-service-provider" />
+        <module name="nacos-account-service" />
         <module name="alibaba-config-nacos-client3377" />
         <module name="lwh-thymeleaf" />
         <module name="lwh-sec-core" />
         <module name="service-server" />
+        <module name="nacos-order-service" />
+        <module name="nacos-storage-service" />
         <module name="lwh-sso-jwt" />
         <module name="cloud-api-commons" />
-        <module name="seata-commmon" />
         <module name="lwh-springboot-sqlite-pxe-example" />
         <module name="micro-consumer-dept-80" />
         <module name="product-server" />
@@ -100,31 +113,37 @@
         <module name="micro-config-client-3355" />
         <module name="micro-oauth2-api" />
         <module name="micro-provider-dept-hystrix-8001" />
+        <module name="03数组" />
         <module name="lwh-sqlite-example" />
         <module name="cloud-gateway-gateway9527" />
         <module name="api-gateway" />
         <module name="order-service-consumer" />
         <module name="micro-config-eureka-client-7001" />
         <module name="boot-web-restfulcrud" />
-        <module name="seata-storage" />
         <module name="lwh-es-data-search" />
         <module name="order-common" />
+        <module name="seata-eureka-server" />
         <module name="lwh-sec-browser" />
         <module name="cloud-eureka-server7001" />
+        <module name="12数据库" />
         <module name="cloud-eureka-server7002" />
         <module name="micro-zuul-gateway-9527" />
         <module name="lwh-zero-configuration-example" />
+        <module name="07IO流" />
         <module name="lwh-elasticsearch-demo" />
         <module name="cloud-stream-rabbitmq-provider8801" />
         <module name="micro-provider-dept-8003" />
         <module name="micro-provider-dept-8001" />
+        <module name="seata-storage-service" />
         <module name="micro-provider-dept-8002" />
         <module name="micro-api" />
         <module name="lwh-sso-restful-springmvc" />
         <module name="micro-oauth2-gateway" />
+        <module name="jdk8" />
         <module name="lwh-redis2021-study01" />
         <module name="micro-eureka-7003" />
         <module name="micro-eureka-7002" />
+        <module name="jdk9" />
         <module name="micro-eureka-7001" />
         <module name="lwh-es-rest-client" />
         <module name="lwh-sec-demo" />
@@ -136,6 +155,7 @@
         <module name="order-server" />
         <module name="lwh-rpc-demo" />
         <module name="cloud-consumer-hystrix-dashboard9001" />
+        <module name="05泛型" />
         <module name="lwh-seckill" />
         <module name="lwh-xxl-job" />
         <module name="lwh-Mybatis-Spring-2020" />
@@ -149,18 +169,23 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="lwh-seata2020" target="1.8" />
       <module name="lwh-spring-data-elasticsearch" target="1.7" />
       <module name="lwh-springboot-data-elasticsearch2020" target="1.8" />
       <module name="lwh-springcloud" target="1.8" />
       <module name="lwh-springcloud-eureka" target="1.8" />
       <module name="lwh-springcloud-eureka-client" target="1.8" />
       <module name="lwh-springcloud-product" target="1.7" />
+      <module name="seata-commmon" target="1.8" />
+      <module name="seata-order" target="1.8" />
+      <module name="seata-pay" target="1.8" />
+      <module name="seata-storage" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eureka" options="" />
-      <module name="lwh-springboot-sqlite-pxe-example" options="-bootclasspath /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/jre/lib/rt.jar" />
+      <module name="lwh-springboot-sqlite-pxe-example" options="-bootclasspath &quot;C:\Program Files\Java\jdk1.8.0_281/jre/lib/rt.jar&quot;" />
       <module name="lwh-springcloud" options="" />
       <module name="lwh-springcloud-product" options="" />
     </option>
