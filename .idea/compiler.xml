@@ -80,6 +80,7 @@
         <module name="lwh-redis2020-study05" />
         <module name="lwh-hibernate-search-example" />
         <module name="eureka" />
+        <module name="nacos-business-service" />
         <module name="dubbo-order-service-consumer" />
         <module name="seata-order-service2001" />
         <module name="micro-config-dept-client-8001" />

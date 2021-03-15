@@ -85,17 +85,12 @@
     <file url="file://$PROJECT_DIR$/lwh-seata/seata-file/seata-storage-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-seata/seata-nacos/nacos-account-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-seata/seata-nacos/nacos-account-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lwh-seata/seata-nacos/nacos-business-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lwh-seata/seata-nacos/nacos-business-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-seata/seata-nacos/nacos-order-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-seata/seata-nacos/nacos-order-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-seata/seata-nacos/nacos-storage-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-seata/seata-nacos/nacos-storage-service/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lwh-seata2020/seata-commmon/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lwh-seata2020/seata-order/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lwh-seata2020/seata-order/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lwh-seata2020/seata-pay/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lwh-seata2020/seata-pay/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lwh-seata2020/seata-storage/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lwh-seata2020/seata-storage/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-seckill/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-seckill/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-security2019/lwh-sec-app/src/main/java" charset="UTF-8" />
