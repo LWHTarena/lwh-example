@@ -127,6 +127,7 @@
         <module name="lwh-sec-browser" />
         <module name="cloud-eureka-server7001" />
         <module name="12数据库" />
+        <module name="myspringboot" />
         <module name="cloud-eureka-server7002" />
         <module name="micro-zuul-gateway-9527" />
         <module name="lwh-zero-configuration-example" />

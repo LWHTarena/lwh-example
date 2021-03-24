@@ -11,6 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
 @SpringBootTest
 class SpringbootRedisApplicationTests {
 
@@ -48,6 +51,14 @@ class SpringbootRedisApplicationTests {
 //        redisTemplate.opsForValue().set("user2",user);
         String jsonstr = redisTemplate.opsForValue().get("user");
         System.out.println(jsonstr);
+    }
+
+    private static String REDIS_LOCK ="lwhlock";
+    public void test3(){
+        String val =UUID.randomUUID().toString()+Thread.currentThread().getName();
+//        Boolean flag = redisTemplate.opsForValue().setIfAbsent(REDIS_LOCK, val);//setNX
+//        redisTemplate.expire(REDIS_LOCK,10l, TimeUnit.SECONDS);//设置过期时间
+        Boolean flag = redisTemplate.opsForValue().setIfAbsent(REDIS_LOCK, val, 10l, TimeUnit.MINUTES);
     }
 
     public void demo(){
