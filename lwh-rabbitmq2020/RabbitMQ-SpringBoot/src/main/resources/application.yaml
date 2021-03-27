@@ -8,3 +8,5 @@ spring:
     username: guest
     password: guest
     virtual-host: lwhdemo
+    publisher-confirm-type: simple
+    publisher-returns: true
