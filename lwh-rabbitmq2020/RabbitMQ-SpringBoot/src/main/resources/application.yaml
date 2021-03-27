@@ -1,0 +1,10 @@
+server:
+  port: 18765
+spring:
+  rabbitmq:
+    host: 192.168.56.15
+    #映射2个端口：15672是Web管理界面的端口；5672是MQ访问的端口。
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: lwhdemo
