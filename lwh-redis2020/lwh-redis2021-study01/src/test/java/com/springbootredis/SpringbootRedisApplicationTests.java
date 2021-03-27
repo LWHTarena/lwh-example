@@ -58,7 +58,7 @@ class SpringbootRedisApplicationTests {
         String val =UUID.randomUUID().toString()+Thread.currentThread().getName();
 //        Boolean flag = redisTemplate.opsForValue().setIfAbsent(REDIS_LOCK, val);//setNX
 //        redisTemplate.expire(REDIS_LOCK,10l, TimeUnit.SECONDS);//设置过期时间
-        Boolean flag = redisTemplate.opsForValue().setIfAbsent(REDIS_LOCK, val, 10l, TimeUnit.MINUTES);
+        redisTemplate.opsForValue().setIfAbsent(REDIS_LOCK, val, 10l, TimeUnit.MINUTES);
     }
 
     public void demo(){
