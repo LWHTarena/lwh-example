@@ -30,7 +30,7 @@ public class ElasticseachConfig {
     public RestHighLevelClient restHighLevelClient(){
         /**单机版**/
         RestHighLevelClient restHighLevelClient = new RestHighLevelClient(
-                RestClient.builder(new HttpHost("192.168.1.8",19200,"http")));
+                RestClient.builder(new HttpHost("192.168.56.15",9200,"http")));
         return restHighLevelClient;
     }
 

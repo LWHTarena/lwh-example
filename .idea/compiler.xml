@@ -23,12 +23,10 @@
         <module name="lwh-kafka2020-study" />
         <module name="oauth2-jwt-server" />
         <module name="10反射" />
-        <module name="lwh-rabbitmq-springboot" />
         <module name="lwh-sso-client1" />
         <module name="11GoogleGuava" />
         <module name="lwh-sso-client2" />
         <module name="cloud-config-client-3366" />
-        <module name="lwh-rabbitmq-spring" />
         <module name="seata-order-service" />
         <module name="lwh-springboot-data-jpa-example" />
         <module name="micro-consumer-dept-feign" />
@@ -49,7 +47,6 @@
         <module name="alibaba-consumer-nacos-order84" />
         <module name="spring-servlet" />
         <module name="lwh-netty" />
-        <module name="lwh-rabbitmq-java-client" />
         <module name="dubbo-user-service-provider" />
         <module name="cloud-consumerconsul-order80" />
         <module name="service-user" />
@@ -72,6 +69,7 @@
         <module name="lwh-lucene2020" />
         <module name="alibaba-provider-payment9003" />
         <module name="alibaba-provider-payment9004" />
+        <module name="RabbitMQ-SpringBoot" />
         <module name="order-client" />
         <module name="alibaba-provider-payment9001" />
         <module name="config" />
@@ -118,6 +116,7 @@
         <module name="lwh-sqlite-example" />
         <module name="cloud-gateway-gateway9527" />
         <module name="api-gateway" />
+        <module name="lwh-es2021" />
         <module name="order-service-consumer" />
         <module name="micro-config-eureka-client-7001" />
         <module name="boot-web-restfulcrud" />
@@ -166,11 +165,14 @@
         <module name="spring-annotation" />
         <module name="lwh-es-data-example" />
         <module name="cloud-consumer-order80" />
-        <module name="lwh-rabbitmq-springcloud" />
         <module name="oauth2-redis-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="lwh-rabbitmq-java-client" target="1.8" />
+      <module name="lwh-rabbitmq-spring" target="1.8" />
+      <module name="lwh-rabbitmq-springboot" target="1.8" />
+      <module name="lwh-rabbitmq-springcloud" target="1.8" />
       <module name="lwh-seata2020" target="1.8" />
       <module name="lwh-spring-data-elasticsearch" target="1.7" />
       <module name="lwh-springboot-data-elasticsearch2020" target="1.8" />

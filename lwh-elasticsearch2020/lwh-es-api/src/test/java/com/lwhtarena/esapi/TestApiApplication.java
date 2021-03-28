@@ -58,7 +58,7 @@ public class TestApiApplication {
     @Test
     public void testCreateIndex() throws IOException {
         /**1、创建索引请求**/
-        CreateIndexRequest request = new CreateIndexRequest("liwh_demo1");
+        CreateIndexRequest request = new CreateIndexRequest("jd_goods");
         /**2、执行请求**/
         CreateIndexResponse response =
                 restHighLevelClient.indices().create(request, RequestOptions.DEFAULT);
@@ -71,7 +71,7 @@ public class TestApiApplication {
      */
     @Test
     public void testGetIndex() throws IOException {
-        GetIndexRequest request = new GetIndexRequest("liwh_demo1");
+        GetIndexRequest request = new GetIndexRequest("jd_goods");
         /**索引是否存在**/
         boolean bool = restHighLevelClient.indices().exists(request, RequestOptions.DEFAULT);
         System.out.println(bool);
@@ -80,8 +80,9 @@ public class TestApiApplication {
     /**
      * 测试删除索引
      */
+    @Test
     public void deleteIndex() throws IOException {
-        DeleteIndexRequest request = new DeleteIndexRequest("liwh_demo1");
+        DeleteIndexRequest request = new DeleteIndexRequest("jd_goods");
         AcknowledgedResponse response = restHighLevelClient.indices().delete(request, RequestOptions.DEFAULT);
         System.out.println(response);
     }
@@ -89,9 +90,10 @@ public class TestApiApplication {
     /**
      * 添加创建文档
      */
+    @Test
     public void createDocument() throws IOException {
         User user = new User("狂神说", 3, "广州市天河区上元岗四横路110号");
-        IndexRequest request = new IndexRequest("liwh_demo1");
+        IndexRequest request = new IndexRequest("kuang_index");
 
         request.id("1");
         request.timeout(TimeValue.timeValueSeconds(1));
@@ -107,6 +109,7 @@ public class TestApiApplication {
     /**
      * 获取文档
      */
+    @Test
     public void getDocument() throws IOException {
         GetRequest request = new GetRequest("liwh_demo1", "1");
 //        request.fetchSourceContext(new FetchSourceContext(false));

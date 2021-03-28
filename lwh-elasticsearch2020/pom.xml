@@ -16,6 +16,7 @@
     <module>lwh-es-api</module>
     <module>lwh-es-rest-client</module>
       <module>lwh-es-data-search</module>
+      <module>lwh-es2021</module>
   </modules>
 
 
@@ -23,8 +24,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
-    <elasticsearch.version>7.9.0</elasticsearch.version>
+    <spring-boot.version>2.3.8.RELEASE</spring-boot.version>
+    <elasticsearch.version>7.10.1</elasticsearch.version>
   </properties>
 
   <dependencies>
