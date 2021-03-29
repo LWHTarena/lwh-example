@@ -4,7 +4,7 @@
  * A num+1
  * B num-1
  */
-public class A {
+class A {
     public static void main(String[] args) {
         Data data = new Data();
         new Thread(()->{
