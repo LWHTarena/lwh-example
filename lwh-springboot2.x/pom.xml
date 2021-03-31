@@ -13,7 +13,8 @@
     <modules>
         <module>boot-helloworld</module>
         <module>boot-web-restfulcrud</module>
-        <module>myspringboot</module>
+        <module>boot-fastdfs</module>
+        <module>boot-minio</module>
     </modules>
     <groupId>com.lwhtarena</groupId>
     <version>1.0.0</version>
@@ -31,7 +32,7 @@
         <lombok.version>1.18.12</lombok.version>
         <mysql.version>8.0.20</mysql.version>
         <druid.version>1.1.22</druid.version>
-        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.8.RELEASE</spring-boot.version>
         <mybatis.spring.boot.version>2.1.2</mybatis.spring.boot.version>
         <druid.spring-boot.version>1.1.22</druid.spring-boot.version>
         <jquery.version>3.5.1</jquery.version>

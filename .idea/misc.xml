@@ -48,6 +48,7 @@
         <option value="$PROJECT_DIR$/lwh-rabbitmq2020/lwh-rabbitmq-springboot/pom.xml" />
         <option value="$PROJECT_DIR$/lwh-rabbitmq2020/lwh-rabbitmq-springcloud/pom.xml" />
         <option value="$PROJECT_DIR$/lwh-seata2020/pom.xml" />
+        <option value="$PROJECT_DIR$/lwh-springboot2.x/myspringboot/pom.xml" />
       </set>
     </option>
   </component>

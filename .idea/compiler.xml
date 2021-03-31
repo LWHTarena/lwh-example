@@ -25,6 +25,7 @@
         <module name="10反射" />
         <module name="lwh-sso-client1" />
         <module name="11GoogleGuava" />
+        <module name="boot-fastdfs" />
         <module name="lwh-sso-client2" />
         <module name="cloud-config-client-3366" />
         <module name="seata-order-service" />
@@ -126,7 +127,6 @@
         <module name="lwh-sec-browser" />
         <module name="cloud-eureka-server7001" />
         <module name="12数据库" />
-        <module name="myspringboot" />
         <module name="cloud-eureka-server7002" />
         <module name="micro-zuul-gateway-9527" />
         <module name="lwh-zero-configuration-example" />
@@ -150,6 +150,7 @@
         <module name="lwh-sec-demo" />
         <module name="service-doc" />
         <module name="lwh-sso-server" />
+        <module name="boot-minio" />
         <module name="lwh-sso-cross-domain" />
         <module name="oauth2-client-sso" />
         <module name="lwh-juc" />
@@ -180,6 +181,7 @@
       <module name="lwh-springcloud-eureka" target="1.8" />
       <module name="lwh-springcloud-eureka-client" target="1.8" />
       <module name="lwh-springcloud-product" target="1.7" />
+      <module name="myspringboot" target="1.8" />
       <module name="seata-commmon" target="1.8" />
       <module name="seata-order" target="1.8" />
       <module name="seata-pay" target="1.8" />

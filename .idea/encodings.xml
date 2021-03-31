@@ -140,11 +140,13 @@
     <file url="file://$PROJECT_DIR$/lwh-springboot-sqlite-pxe-example/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-springboot-sqlite-pxe-example/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-springboot-sqlite-pxe-example/src/main/webapp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lwh-springboot2.x/boot-fastdfs/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lwh-springboot2.x/boot-fastdfs/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-springboot2.x/boot-helloworld/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lwh-springboot2.x/boot-minio/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lwh-springboot2.x/boot-minio/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-springboot2.x/boot-web-restfulcrud/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-springboot2.x/boot-web-restfulcrud/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lwh-springboot2.x/myspringboot/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lwh-springboot2.x/myspringboot/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-springcloud-2018/micro-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-springcloud-2018/micro-config-3344/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lwh-springcloud-2018/micro-config-3344/src/main/resources" charset="UTF-8" />
