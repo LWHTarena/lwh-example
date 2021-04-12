@@ -157,6 +157,7 @@
         <module name="order-server" />
         <module name="lwh-rpc-demo" />
         <module name="cloud-consumer-hystrix-dashboard9001" />
+        <module name="lwh-es-java" />
         <module name="05泛型" />
         <module name="lwh-seckill" />
         <module name="lwh-xxl-job" />

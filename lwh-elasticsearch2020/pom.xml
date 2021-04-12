@@ -17,6 +17,7 @@
     <module>lwh-es-rest-client</module>
       <module>lwh-es-data-search</module>
       <module>lwh-es2021</module>
+      <module>lwh-es-java</module>
   </modules>
 
 
