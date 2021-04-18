@@ -26,6 +26,7 @@
         <module name="lwh-sso-client1" />
         <module name="11GoogleGuava" />
         <module name="boot-fastdfs" />
+        <module name="lwh-redisson" />
         <module name="lwh-sso-client2" />
         <module name="cloud-config-client-3366" />
         <module name="seata-order-service" />
