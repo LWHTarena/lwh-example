@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2021/03/27 12:59:03
  * @description
  */
-@Configuration
+//@Configuration
 public class TopicRabbitConfig {
     public final static String message = "topic.message";
     public final static String infomation = "topic.infomation";

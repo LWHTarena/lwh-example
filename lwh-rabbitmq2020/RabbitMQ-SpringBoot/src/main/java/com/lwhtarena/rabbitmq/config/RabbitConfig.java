@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2021/03/27 12:01:33
  * @description
  */
-@Configuration
+//@Configuration
 public class RabbitConfig {
     @Bean
     public Queue helloQueue() {

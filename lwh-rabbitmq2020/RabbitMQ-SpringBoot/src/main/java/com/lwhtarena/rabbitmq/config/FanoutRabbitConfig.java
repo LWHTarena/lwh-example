@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2021/03/27 12:53:14
  * @description
  */
-@Configuration
+//@Configuration
 public class FanoutRabbitConfig {
 
     @Bean
