@@ -1,6 +1,5 @@
 package com.lwhtarena.rabbitmq.ack;
 
-import com.lwhtarena.rabbitmq.ack.MyAckReceiver;
 import com.lwhtarena.rabbitmq.config.AckRabbitMQConfig;
 import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -13,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * @author liwh
  * @version 1.0
  * @date 2021/03/27 18:24:06
- * @description
+ * @description 消费者配置监听
  */
 @Configuration
 public class MessageListenerConfig {

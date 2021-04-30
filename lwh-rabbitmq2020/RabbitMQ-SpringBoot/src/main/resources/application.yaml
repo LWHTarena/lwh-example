@@ -10,3 +10,4 @@ spring:
     virtual-host: lwhdemo
     publisher-confirm-type: simple
     publisher-returns: true
+

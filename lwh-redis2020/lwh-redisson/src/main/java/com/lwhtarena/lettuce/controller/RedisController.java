@@ -1,12 +1,19 @@
 package com.lwhtarena.lettuce.controller;
 
 import com.lwhtarena.lettuce.service.RedisService;
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.VoidType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.Cursor;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -43,6 +50,9 @@ public class RedisController {
     @Autowired
     RedisService redisService;
 
+    @Autowired
+    RedisTemplate<String,Object> redisTemplate;
+
     /**
      * 点击
      */
@@ -72,5 +82,62 @@ public class RedisController {
     public Set<Object> search7(){
         Set<Object> set =redisService.search7();
         return set;
+    }
+
+    /***
+     * 描述 集合操作实现微博微信关注模型
+     **/
+    @GetMapping("/weibo")
+    @ResponseBody
+    public List weibo(){
+        String z3_set="zhangsanSet";
+        String l4_set="lisiSet";
+        /***张三关注的人*/
+        redisTemplate.opsForSet().add(z3_set, "李四","王五","周星驰");
+
+        /***李四关注的人*/
+        redisTemplate.opsForSet().add(l4_set, "张三","赵六","王五","周星驰");
+
+        /**张三和李四共同关注的人**/
+        Set<Object> set = redisTemplate.opsForSet().intersect(z3_set, l4_set); //intersect获取2个变量中的交集。ntersect(K key, Collection<K> otherKeys)获取多个变量之间的交集。
+
+        /**张三关注的人也关注周星驰**/
+        Set<Object> members = redisTemplate.opsForSet().members(z3_set);
+
+        /**张三可能认识的人**/
+        Set<Object> set2 = redisTemplate.opsForSet().difference(l4_set, z3_set);
+        List list =new ArrayList();
+        list.add(set);
+        list.add(members);
+        list.add(set2);
+        return list;
+    }
+
+    @GetMapping("/wechat")
+    public List wechat(){
+        /***
+         * 1.点赞： SADD  like:{消息ID}  {用户ID}
+         * 2.取消点赞： SREM like:{消息ID}  {用户ID}
+         * 3.检查用户是否点过赞： SISMEMBER  like:{消息ID}  {用户ID}
+         * 4.获取点赞的用户列表： SMEMBERS like:{消息ID}
+         * 5.获取点赞用户数： SCARD like:{消息ID}
+         * 6.微博共同关注： sinter
+         * 7.我关注的人也关注它（共同爱好）:
+         *    SISMEMBER s1 one
+         *    SISMEMBER s2 one
+         **/
+        String title ="like:1001";
+        redisTemplate.opsForSet().add(title, "张译","张鲁一"); //张译、张鲁一点赞了文章1001
+
+        redisTemplate.opsForSet().remove(title,"张鲁一"); //张鲁一 取消点赞
+
+        // 匹配获取键值对，ScanOptions.NONE为获取全部键值对；ScanOptions.scanOptions().match("C").build()匹配获取键位map1的键值对,不能模糊匹配。
+        Cursor<Object> scan = redisTemplate.opsForSet().scan(title, ScanOptions.NONE);//获取点赞用户数： SCARD like:{消息ID}
+        while (scan.hasNext()){
+            System.out.println("===> "+ scan.next());
+        }
+
+        List list =new ArrayList();
+        return list;
     }
 }

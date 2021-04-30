@@ -30,6 +30,7 @@
         <module name="lwh-sso-client2" />
         <module name="cloud-config-client-3366" />
         <module name="seata-order-service" />
+        <module name="lwh-sso2021" />
         <module name="lwh-springboot-data-jpa-example" />
         <module name="micro-consumer-dept-feign" />
         <module name="lwh-spring-security-example" />
