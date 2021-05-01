@@ -52,6 +52,7 @@
         <module name="lwh-netty" />
         <module name="dubbo-user-service-provider" />
         <module name="cloud-consumerconsul-order80" />
+        <module name="seckill-model" />
         <module name="service-user" />
         <module name="lwh-springboot-data-elasticsearch-example" />
         <module name="lwh-sso-spring-session" />
@@ -65,10 +66,12 @@
         <module name="cloud-provider-payment8001" />
         <module name="cloud-providor-hystrix-payment8001" />
         <module name="02内部类" />
+        <module name="seckill-service" />
         <module name="lwh-sso-security" />
         <module name="dubbo-interface" />
         <module name="boot-helloworld" />
         <module name="alibaba-provider-payment9002" />
+        <module name="seckill-api" />
         <module name="lwh-lucene2020" />
         <module name="alibaba-provider-payment9003" />
         <module name="alibaba-provider-payment9004" />

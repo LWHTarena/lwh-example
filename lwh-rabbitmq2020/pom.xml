@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>RabbitMQ-SpringBoot</module>
+        <module>lwh-rabbitmq-seckill</module>
     </modules>
 
     <properties>
