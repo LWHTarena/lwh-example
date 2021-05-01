@@ -29,7 +29,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>2.0.9.RELEASE</version>
+            <version>2.1.0.RELEASE</version>
         </dependency>
 
         <!--引入Hibernate框架的时候,只引入核心版本就可以了,不用引入Hibernaet entitymanager,
